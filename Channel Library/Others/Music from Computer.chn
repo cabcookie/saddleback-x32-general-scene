@@ -1,0 +1,31 @@
+#2.7# 80 "Music" 0 %0011111100111100 1                                                                                         
+/config "Music L" 62 CYi
+/delay OFF   0.3
+/preamp +0.0 OFF ON 24  84
+/gate ON GATE -67.5 60.0 1  502  983 0
+/gate/filter OFF 3.0 990.9
+/dyn ON COMP PEAK LOG -20.0 2.0 0 3.00 54 10.0  658 POST 0 100 OFF
+/dyn/filter OFF 3.0 990.9
+/eq ON
+/eq/1 PEQ 124.7 +0.00 2.0
+/eq/2 PEQ 751.7 -7.00 2.8
+/eq/3 PEQ 1k60 -4.50 3.5
+/eq/4 PEQ 7k34 -5.00 2.8
+/mix ON  -0.3 ON -100 ON   0.0
+/mix/01 ON   -oo -100 PRE
+/mix/02 ON   -oo
+/mix/03 ON   -oo -100 PRE
+/mix/04 ON   -oo
+/mix/05 ON   -oo -100 PRE
+/mix/06 ON   -oo
+/mix/07 ON   -oo -100 PRE
+/mix/08 ON   -oo
+/mix/09 ON   -oo -100 POST
+/mix/10 ON   -oo
+/mix/11 ON  -5.5 -100 POST
+/mix/12 ON  -5.5
+/mix/13 ON   -oo -100 POST
+/mix/14 ON   -oo
+/mix/15 ON   -oo -100 POST
+/mix/16 ON   -oo
+/headamp/080 +41.0 OFF
