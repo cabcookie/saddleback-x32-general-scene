@@ -1,0 +1,15 @@
+#2.7# 60 "" 0 %0011111100110000 1
+/config "Tony" 1 YE
+/delay OFF   0.3
+/preamp +0.0 OFF ON 24 117
+/gate ON EXP4 -57.5 27.0 20  100  576 0
+/gate/filter OFF 3.0 1k39
+/dyn ON COMP PEAK LIN -31.0 2.5 2 9.00 71 0.03  315 POST 0 100 OFF
+/dyn/filter OFF 3.0 1k06
+/insert OFF POST OFF
+/eq ON
+/eq/1 PEQ 158.9 -2.75 2.1
+/eq/2 PEQ 447.7 -2.75 2.8
+/eq/3 PEQ 1k97 +4.50 1.8
+/eq/4 PEQ 6k39 -0.50 1.9
+/mix OFF   -oo ON +0 OFF   -oo

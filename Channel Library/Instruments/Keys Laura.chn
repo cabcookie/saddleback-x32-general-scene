@@ -1,0 +1,15 @@
+#2.7# 30 "" 0 %0011111100100100 1
+/config "Keys Laura" 30 GN
+/delay OFF   0.3
+/preamp +0.0 OFF ON 24 104
+/gate OFF GATE -60.0 39.0 32 0.02  412 0
+/gate/filter OFF 3.0 1k39
+/dyn ON COMP RMS LIN -21.0 2.5 2 8.00 49 0.03  504 POST 0 100 OFF
+/dyn/filter OFF 3.0 990.9
+/insert OFF POST OFF
+/eq ON
+/eq/1 PEQ 195.4 -3.25 3.2
+/eq/2 PEQ 532.1 -5.25 2.9
+/eq/3 PEQ 1k66 -6.75 1.6
+/eq/4 HShv 10k02 +0.00 2.0
+/mix ON  -2.1 ON -100 ON -13.5

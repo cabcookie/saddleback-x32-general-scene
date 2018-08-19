@@ -1,0 +1,15 @@
+#2.7# 30 "" 0 %0011111100100100 1
+/config "Acc Dave" 23 GN
+/delay OFF   0.3
+/preamp +0.0 OFF ON 24  77
+/gate OFF GATE -17.5 10.0 8 79.6  124 0
+/gate/filter OFF 3.0 1k39
+/dyn ON COMP PEAK LIN -27.0 1.5 0 6.00 49 0.04  658 POST 0 100 OFF
+/dyn/filter ON 2.0 2k43
+/insert OFF POST OFF
+/eq ON
+/eq/1 PEQ 138.4 -12.2 4.3
+/eq/2 PEQ 957.3 -6.75 3.7
+/eq/3 PEQ 2k60 -0.25 7.8
+/eq/4 HShv 10k02 +0.00 2.0
+/mix ON  -8.3 ON +0 ON   0.0

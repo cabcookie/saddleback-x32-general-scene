@@ -1,0 +1,15 @@
+#2.7# 30 "" 0 %0011111100100100 1
+/config "EGit Olivier" 23 GN
+/delay OFF   0.3
+/preamp +0.0 OFF ON 24  66
+/gate ON GATE -62.5 40.0 10 79.6  124 0
+/gate/filter ON 3.0 1k21
+/dyn ON COMP PEAK LIN -19.0 3.0 2 0.00 7 0.04   9 POST 0 100 OFF
+/dyn/filter ON 2.0 2k43
+/insert OFF POST OFF
+/eq ON
+/eq/1 PEQ 124.7 +0.00 2.0
+/eq/2 PEQ 496.6 +0.00 2.0
+/eq/3 PEQ 1k97 +0.00 2.0
+/eq/4 HShv 10k02 +0.00 2.0
+/mix ON  -0.7 ON +0 ON   0.0
