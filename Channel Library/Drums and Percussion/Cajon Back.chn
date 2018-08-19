@@ -1,14 +1,15 @@
 #2.7# 70 "Cajon Back" 0 %0011111100110100 1
 /config "Cajon Back" 1 RD
 /delay OFF   0.3
-/preamp +0.0 ON ON 24  30
+/preamp +0.0 OFF ON 24  30
 /gate OFF GATE -48.5 60.0 0 7.10  108 0
 /gate/filter ON 5.0 2k04
-/dyn ON COMP PEAK LOG -27.5 3.0 0 9.00 19 0.06  412 POST 0 100 OFF
-/dyn/filter ON 3.0 120.5
+/dyn ON COMP PEAK LOG -27.5 3.0 0 9.00 71 0.06  95 POST 0 100 OFF
+/dyn/filter OFF 3.0 120.5
+/insert OFF POST OFF
 /eq ON
-/eq/1 PEQ 176.2 -6.25 3.4
-/eq/2 PEQ 390.0 -7.25 3.5
+/eq/1 PEQ 143.2 -1.75 3.4
+/eq/2 PEQ 390.0 -3.25 3.5
 /eq/3 PEQ 1k06 -0.25 4.3
-/eq/4 HCut 5k20 -13.5 1.5
-/mix ON  -8.1 ON +0 ON   0.0
+/eq/4 HCut 893.4 -13.5 1.5
+/mix ON  -0.8 ON +0 ON   0.0
