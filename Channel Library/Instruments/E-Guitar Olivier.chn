@@ -1,18 +1,18 @@
-#2.7# 30 "Acc Diazno" 0 %0011111100100100 1                                                                                    
-/config "Acc Diazno" 23 GN
+#2.7# 30 "" 0 %0011111100100100 1
+/config "EGit Olivier" 23 GN
 /delay OFF   0.3
-/preamp +0.0 OFF ON 24 163
-/gate OFF GATE -17.5 10.0 8 79.6  124 0
-/gate/filter OFF 3.0 1k39
-/dyn ON COMP PEAK LIN -26.5 2.0 2 4.50 55 0.04  576 POST 0 100 OFF
+/preamp +0.0 OFF ON 24  66
+/gate ON GATE -62.5 40.0 10 79.6  124 0
+/gate/filter ON 3.0 1k21
+/dyn ON COMP PEAK LIN -19.0 3.0 2 0.00 7 0.04   9 POST 0 100 OFF
 /dyn/filter ON 2.0 2k43
 /insert OFF POST OFF
 /eq ON
 /eq/1 PEQ 124.7 +0.00 2.0
-/eq/2 PEQ 570.2 +0.50 1.9
-/eq/3 PEQ 1k13 -4.50 3.1
+/eq/2 PEQ 496.6 +0.00 2.0
+/eq/3 PEQ 1k97 +0.00 2.0
 /eq/4 HShv 10k02 +0.00 2.0
-/mix ON  -3.8 ON +0 ON   0.0
+/mix ON  -0.7 ON +0 ON   0.0
 /mix/01 ON -15.5 +0 PRE
 /mix/02 ON -26.0
 /mix/03 ON  -4.0 +0 PRE

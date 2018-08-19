@@ -1,18 +1,18 @@
 #2.7# 60 "" 0 %0011111100110000 1
-/config "Dave" 50 YE
+/config "Tony" 1 YE
 /delay OFF   0.3
-/preamp +0.0 OFF ON 24 149
-/gate OFF GATE -33.5 55.0 26 0.02  315 0
+/preamp +0.0 OFF ON 24 117
+/gate ON EXP4 -57.5 27.0 20  100  576 0
 /gate/filter OFF 3.0 1k39
-/dyn ON COMP PEAK LIN -23.5 3.0 2 10.5 74 0.02  211 POST 0 100 OFF
-/dyn/filter OFF 3.0 990.9
+/dyn ON COMP PEAK LIN -31.0 2.5 2 9.00 71 0.03  315 POST 0 100 OFF
+/dyn/filter OFF 3.0 1k06
 /insert OFF POST OFF
 /eq ON
-/eq/1 PEQ 376.7 -11.2 7.1
-/eq/2 PEQ 611.0 -9.75  10
-/eq/3 PEQ 5k20 +2.25 1.1
-/eq/4 PEQ 195.4 -4.25 3.5
-/mix ON  -6.5 ON +0 OFF   -oo
+/eq/1 PEQ 158.9 -2.75 2.1
+/eq/2 PEQ 447.7 -2.75 2.8
+/eq/3 PEQ 1k97 +4.50 1.8
+/eq/4 PEQ 6k39 -0.50 1.9
+/mix OFF   -oo ON +0 OFF   -oo
 /mix/01 ON   -oo +0 PRE
 /mix/02 ON   -oo
 /mix/03 ON   -oo +0 PRE

@@ -1,17 +1,18 @@
-#2.7# 75 "Tom Floor" 0 %0011111100111100 1                                                                                     
+#2.7# 75 "Tom Floor" 0 %0011111100111100 1
 /config "Tom Floor" 8 RD
 /delay OFF   0.3
 /preamp +0.0 OFF ON 24 101
-/gate ON GATE -33.0 30.0 1  502  983 0
+/gate ON GATE -36.5 30.0 1  502  983 0
 /gate/filter OFF 3.0 990.9
 /dyn ON COMP PEAK LOG -21.5 3.0 0 8.00 71 0.10  337 POST 0 100 OFF
 /dyn/filter OFF LC12 2k89
+/insert OFF POST OFF
 /eq ON
 /eq/1 PEQ 202.3 +0.00 2.6
 /eq/2 PEQ 496.6 +0.00 2.0
 /eq/3 PEQ 1k97 +0.00 2.0
 /eq/4 HCut 3k43 +0.50 8.6
-/mix OFF   -oo ON -30 ON   0.0
+/mix ON  -6.5 ON -30 ON   0.0
 /mix/01 ON -81.0 +0 PRE
 /mix/02 ON   -oo
 /mix/03 ON   -oo +0 PRE

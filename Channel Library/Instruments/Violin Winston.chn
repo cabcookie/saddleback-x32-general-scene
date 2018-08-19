@@ -1,18 +1,18 @@
-#2.7# 30 "Acc Diazno" 0 %0011111100100100 1
-/config "Acc Diazno" 23 GN
+#2.7# 30 "" 0 %0011111100100100 1
+/config "Violin Winst" 1 GN
 /delay OFF   0.3
-/preamp +0.0 OFF ON 24 163
-/gate OFF GATE -17.5 10.0 8 79.6  124 0
-/gate/filter OFF 3.0 1k39
-/dyn ON COMP PEAK LIN -26.5 2.0 2 4.50 55 0.04  576 POST 0 100 OFF
-/dyn/filter ON 2.0 2k43
+/preamp +0.0 OFF OFF 24  77
+/gate ON GATE -47.0 38.0 1  502  983 0
+/gate/filter OFF 3.0 990.9
+/dyn ON COMP PEAK LOG -25.0 2.5 1 5.00 70 10.0  538 POST 0 100 OFF
+/dyn/filter OFF 3.0 990.9
 /insert OFF POST OFF
 /eq ON
 /eq/1 PEQ 124.7 +0.00 2.0
-/eq/2 PEQ 570.2 +0.50 1.9
-/eq/3 PEQ 1k13 -4.50 3.1
+/eq/2 PEQ 496.6 +3.25 2.1
+/eq/3 PEQ 1k97 +0.00 2.0
 /eq/4 HShv 10k02 +0.00 2.0
-/mix ON  -1.5 ON +0 ON   0.0
+/mix ON  -1.2 ON +0 OFF   -oo
 /mix/01 ON -15.5 +0 PRE
 /mix/02 ON -26.0
 /mix/03 ON  -4.0 +0 PRE

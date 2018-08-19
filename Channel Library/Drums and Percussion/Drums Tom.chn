@@ -1,4 +1,4 @@
-#2.7# 76 "Tom" 0 %0011111100111100 1                                                                                           
+#2.7# 76 "Tom" 0 %0011111100111100 1
 /config "Tom" 7 RD
 /delay OFF   0.3
 /preamp +0.0 OFF ON 24 104
@@ -6,12 +6,13 @@
 /gate/filter OFF 3.0 1k39
 /dyn ON COMP RMS LIN -33.5 2.0 0 8.00 74 0.03  412 POST 0 100 OFF
 /dyn/filter ON 3.0 463.5
+/insert OFF POST OFF
 /eq ON
 /eq/1 PEQ 202.3 +1.75 1.4
 /eq/2 PEQ 1k21 -5.50 2.4
 /eq/3 PEQ 1k97 +0.00 2.0
 /eq/4 HCut 7k34 +0.00 2.0
-/mix OFF   -oo ON +28 ON   0.0
+/mix ON  -4.7 ON +28 ON   0.0
 /mix/01 ON   -oo +0 PRE
 /mix/02 ON   -oo
 /mix/03 ON   -oo +0 PRE

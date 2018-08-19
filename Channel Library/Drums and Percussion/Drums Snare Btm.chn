@@ -1,4 +1,4 @@
-#2.7# 74 "Snare Btm" 0 %0011111100111100 1                                                                                     
+#2.7# 74 "Snare Btm" 0 %0011111100111100 1
 /config "Snare Btm" 4 RD
 /delay OFF   0.3
 /preamp +0.0 OFF ON 24 104
@@ -6,12 +6,13 @@
 /gate/filter ON 5.0 164.4
 /dyn ON COMP PEAK LIN -30.0 3.0 0 6.00 46 0.04  68 POST 0 100 OFF
 /dyn/filter OFF HC12 1k26
+/insert OFF POST OFF
 /eq ON
 /eq/1 PEQ 805.4 -9.00 2.3
 /eq/2 PEQ 2k19 +0.50 2.0
 /eq/3 PEQ 4k37 -7.50 2.6
 /eq/4 HShv 10k02 +0.00 2.0
-/mix OFF   -oo ON -10 ON   -oo
+/mix ON  -3.5 ON -10 ON   -oo
 /mix/01 ON   -oo +0 PRE
 /mix/02 ON   -oo
 /mix/03 ON   -oo +0 PRE

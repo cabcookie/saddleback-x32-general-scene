@@ -1,18 +1,18 @@
-#2.7# 30 "Acc Diazno" 0 %0011111100100100 1
-/config "Acc Diazno" 23 GN
+#2.7# 30 "" 0 %0011111100100100 1
+/config "Keys Laura" 30 GN
 /delay OFF   0.3
-/preamp +0.0 OFF ON 24 163
-/gate OFF GATE -17.5 10.0 8 79.6  124 0
+/preamp +0.0 OFF ON 24 104
+/gate OFF GATE -60.0 39.0 32 0.02  412 0
 /gate/filter OFF 3.0 1k39
-/dyn ON COMP PEAK LIN -26.5 2.0 2 4.50 55 0.04  576 POST 0 100 OFF
-/dyn/filter ON 2.0 2k43
+/dyn ON COMP RMS LIN -21.0 2.5 2 8.00 49 0.03  504 POST 0 100 OFF
+/dyn/filter OFF 3.0 990.9
 /insert OFF POST OFF
 /eq ON
-/eq/1 PEQ 124.7 +0.00 2.0
-/eq/2 PEQ 570.2 +0.50 1.9
-/eq/3 PEQ 1k13 -4.50 3.1
+/eq/1 PEQ 195.4 -3.25 3.2
+/eq/2 PEQ 532.1 -5.25 2.9
+/eq/3 PEQ 1k66 -6.75 1.6
 /eq/4 HShv 10k02 +0.00 2.0
-/mix ON  -1.5 ON +0 ON   0.0
+/mix ON  -2.1 ON -100 ON -13.5
 /mix/01 ON -15.5 +0 PRE
 /mix/02 ON -26.0
 /mix/03 ON  -4.0 +0 PRE
