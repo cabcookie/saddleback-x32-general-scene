@@ -1,0 +1,15 @@
+#2.7# 2 "" 0 %0011111100111100 1
+/config "Steph" 1 CY
+/delay OFF   0.3
+/preamp +8.0 OFF ON 24 136
+/gate ON EXP2 -24.0 55.0 30 0.02  315 0
+/gate/filter OFF 3.0 1k39
+/dyn ON COMP RMS LIN -25.5 2.0 1 7.00 47 0.02  804 POST 0 100 OFF
+/dyn/filter OFF 3.0 990.9
+/insert OFF POST OFF
+/eq ON
+/eq/1 PEQ 124.7 +0.00 2.0
+/eq/2 PEQ 479.8 -5.00 3.2
+/eq/3 PEQ 1k97 +5.25 0.9
+/eq/4 HShv 10k02 +0.00 2.0
+/mix ON  -2.9 ON +0 OFF   -oo

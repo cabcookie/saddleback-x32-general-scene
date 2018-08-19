@@ -1,4 +1,4 @@
-#2.7# 50 "Room Mic" 0 %0011111100000001 1                                                                                      
+#2.7# 50 "Room Mic" 0 %0011111100000001 1
 /config "Room L" 1 WH
 /delay OFF   0.3
 /preamp +0.0 OFF OFF 24 114
@@ -12,20 +12,3 @@
 /eq/3 PEQ 1k97 +0.00 2.0
 /eq/4 HShv 10k02 +0.00 2.0
 /mix ON   -oo OFF -100 OFF   -oo
-/mix/01 ON   -oo -100 PRE
-/mix/02 ON   -oo
-/mix/03 ON   -oo -100 PRE
-/mix/04 ON   -oo
-/mix/05 ON   -oo -100 PRE
-/mix/06 ON   -oo
-/mix/07 ON   -oo -100 PRE
-/mix/08 ON   -oo
-/mix/09 ON   -oo -100 POST
-/mix/10 ON   -oo
-/mix/11 ON  -1.8 -100 PRE
-/mix/12 ON  -1.8
-/mix/13 ON   -oo -100 POST
-/mix/14 ON   -oo
-/mix/15 ON   -oo -100 POST
-/mix/16 ON   -oo
-/headamp/044 +33.5 ON

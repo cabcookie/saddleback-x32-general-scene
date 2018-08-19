@@ -1,0 +1,15 @@
+#2.7# 2 "" 0 %0011111100111100 1
+/config "Mani" 1 CY
+/delay OFF   0.3
+/preamp +0.0 OFF ON 24 101
+/gate OFF EXP4 -38.5 27.0 20  100  576 0
+/gate/filter OFF 3.0 1k39
+/dyn ON COMP RMS LIN -23.0 2.0 1 8.00 74 0.03  576 POST 0 100 OFF
+/dyn/filter OFF 3.0 990.9
+/insert OFF POST OFF
+/eq ON
+/eq/1 VEQ 232.3 -6.00 4.3
+/eq/2 PEQ 514.1 -5.00 3.4
+/eq/3 PEQ 1k21 -4.25 4.3
+/eq/4 HCut 11k91 +0.00 2.0
+/mix ON  +1.0 ON +0 OFF   -oo
