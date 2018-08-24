@@ -214,30 +214,32 @@ Equalizer settings can be made in mixer channels, auxiliary input channels, effe
 /eq/[no of EQ (between 1-4 or 1-6)] [type of EQ (see below)] [filter frequency] [gain +/- in dB] [bandwith or quality]
 ```
 #### Types of EQ
-* `LCut`:
-* `LShv`:
-* `PEQ`:
-* `VEQ`:
-* `HShv`:
-* `HCut`:
+* `LCut`: low cut filter
+* `LShv`: low shelve filter
+* `PEQ`: parametric EQ
+* `VEQ`: vintage EQ (parametric as well)
+* `HShv`: high shelve filter
+* `HCut`: high cut filter
 
 ####  Special types for matrix or main channels
 The following equalizer types can only be used with equalizer 1 or 6. If these modes are used, the settings for equalizers 2 and 5 are automatically ignored. This means that only 4 equalizers can be used if both equalizer 1 and equalizer 6 use these EQ types.
-* `BU6`:
-* `BU12`:
-* `BS12`:
-* `LR12`:
-* `BU18`:
-* `BU24`:
-* `BS24`:
-* `LR24`:
+
+These filters are low-pass and high-pass filters with different strengths of the frequency short cut (dB reduction per octave) and slightly different curves. The number in the filter expresses how much the reduction is in dB per octave.
+* `BU6`
+* `BU12`
+* `BS12`
+* `LR12`
+* `BU18`
+* `BU24`
+* `BS24`
+* `LR24`
 
 ### Mix Sends
 The “Mix Sends” may look slightly different for the different channel types.
 #### Sends to Main
 In any case, each channel type has the following “Mix Send”:
 ```
-/mix [ON/OFF (OFF if muted)]  [dB to L/R (-oo if “off”)] [ON/OFF (send to L/R)] [panoramo (-100 for L, +100 for R)] [ON/OFF (send to M/C)]   [dB to M/C (-oo if “off”)]
+/mix [ON/OFF (OFF if muted)]  [dB to L/R (-oo if “off”)] [ON/OFF (send to L/R)] [panorama (-100 for L, +100 for R)] [ON/OFF (send to M/C)]   [dB to M/C (-oo if “off”)]
 ```
 The matrix channels and the main channels only have the following “Mix Send”:
 ```
@@ -245,11 +247,16 @@ The matrix channels and the main channels only have the following “Mix Send”
 ```
 The main stereo channel (L/R) also looks like this:
 ```
-/main/st/mix [ON/OFF (OFF if muted)]  [dB to L/R (-oo if “off”)] [panoramo (-100 for L, +100 for R)]
+/main/st/mix [ON/OFF (OFF if muted)]  [dB to L/R (-oo if “off”)] [panorama (-100 for L, +100 for R)]
 ```
 #### Sends to Mix Bus or Matrix Bus
-/ch/01/mix/01 ON  -0.8 +0 PRE
-/ch/01/mix/02 ON -10.5
+The mixer channels, auxiliary input channels and effect return channels can each be sent to the mix bus channels. The mix bus channels and the main channels can be sent to the matrix channels. The settings are organized the same in all cases. Two mix bus or matrix channels each are PRE or POST faders set - only the odd channel sets this option.
+
+The panorama setting can also only be set in the mix bus with the odd channel number. The idea is as follows: For example, if two mixer channels are linked together, as is usually the case with the keyboard, and these two channels are sent to a stereo mix bus, then the left channel of the keyboard sends the signal with the panorama setting -100 (the far left) to the two linked mix buses, and the right channel of the keyboard is sent to the two linked mix buses with the panorama setting +100 (the far right). This way the left keyboard signal gets into the left mix bus and the right keyboard signal into the right mix bus.
+```
+/mix/[odd channel no] [ON/OFF (OFF if muted)]  [+/- dB to mix channel] [panorama (-100 for L, +100 for R)] [PRE/POST fader]
+/mix/[even channel no] [ON/OFF (OFF if muted)] [+/- dB to mix channel]
+```
 
 ### Group Configuration
 Group settings can be made for mixer channels, auxiliary input channels, effect return channels and mix bus channels. There are DCA groups and mute groups. The configuration is always organized as follows:
