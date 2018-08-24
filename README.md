@@ -43,6 +43,10 @@ The settings, from which sources the signals are obtained (digital snake, local 
 /config/routing REC
 ```
 ### User control section (Not yet evaluated)
+These settings describe how the user controls on the right side of the X32 are configured. This allows very flexible, fast settings to be made, which are otherwise distributed in various submenus.
+
+![User Controls](/X32-images/user-controls.jpg)
+
 ```
 /config/userctrl/A MG
 /config/userctrl/A/enc "X000" "X100" "X201" "X300"
@@ -62,6 +66,9 @@ The settings, from which sources the signals are obtained (digital snake, local 
 ## Channel Configuration
 The next 1024 lines are a simple repetition of the following 32 lines for each of the 32 channels of the X32 - the channel configuration.
 Each line starts with the characters `/ch/` followed by the number of the respective mixer channel (e.g. `/ch/01/`). Of course, each channel has its own settings. However, we want to describe only once which settings can be set in a mixer channel using the example of the first channel.
+
+![Channel Settings](/X32-images/channel-settings.jpg)
+
 ```
 /ch/01/config "Mani" 1 CY 1
 /ch/01/delay OFF   0.3
