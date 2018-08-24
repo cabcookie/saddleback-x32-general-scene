@@ -2,7 +2,8 @@
 The Behringer X32 Scene File of Saddleback Berlin Church's Production Team.
 
 Open topics:
-- [] How many icons can be selected?
+- [ ] How many icons can be selected? (see [Configuration](#configuration))
+- [ ] Explain the EQ types (see [Equalizer Configuration](#equalizer-configuration))
 
 ![X32](/X32-images/Behringer-X32.jpg)
 
@@ -15,12 +16,10 @@ Table of Contents
      * [Linking Channels](#linking-channels)
      * [Monitoring settings (Not yet evaluated)](#monitoring-settings-not-yet-evaluated)
      * [Routing](#routing)
-        * [Not yet evaluated](#not-yet-evaluated)
      * [User control section (Not yet evaluated)](#user-control-section-not-yet-evaluated)
      * [Not yet evaluated](#not-yet-evaluated-1)
   * [Channel Configuration](#channel-configuration)
      * [Configuration](#configuration)
-        * [Colors](#colors)
      * [Delay](#delay)
      * [Pre Amps](#pre-amps)
      * [Gate Configuration](#gate-configuration)
@@ -44,9 +43,10 @@ Table of Contents
      * [Additional Outputs](#additional-outputs)
   * [Headamps (Not yet evaluated)](#headamps-not-yet-evaluated)
 
-Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
+Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc). Usage: `./gh-md-toc saddleback-x32-general-scene/README.md` and then copy the output of the terminal into the README.md file by replacing the exsting table of content.
 
 ## General Configuration
+[Back to TOC](#table-of-content)
 ### Linking Channels
 The following settings link two adjacent channels. For example, channels 1 & 2 or 5 & 6 are linked together when the switch is set to ON. The channels remain independent of each other when the switch is set to OFF.
 
@@ -106,6 +106,8 @@ These settings describe how the user controls on the right side of the X32 are c
 ```
 
 ## Channel Configuration
+[Back to TOC](#table-of-content)
+
 The next 1024 lines are a simple repetition of the following 32 lines for each of the 32 channels of the X32 - the channel configuration.
 Each line starts with the characters `/ch/` followed by the number of the respective mixer channel (e.g. `/ch/01/`). Of course, each channel has its own settings. However, we want to describe only once which settings can be set in a mixer channel using the example of the first channel.
 
@@ -154,19 +156,19 @@ This setting is used for mixer channels, aux input channels (both including the 
 /config "[name]" [icon] [color] [input channel - if appropriate]
 ```
 
-`name`: The name is shown in the display and can be up to 12 characters long.
-`icon`: The X32 supports various icons that are shown in the display. The icon is selected by a number between 1 and ?.
-`color`: For the different colors that the display supports, there is an abbreviation of two letters each. If the color of the display is to be inverted, then a small i will be put after the abbreviation. See colors below.
-`input channel`: If it is a mixer channel or an auxiliary input channel, the number of the input channel is indicated here. Otherwise, this setting is not set.
+* `name`: The name is shown in the display and can be up to 12 characters long.
+* `icon`: The X32 supports various icons that are shown in the display. The icon is selected by a number between 1 and ?.
+* `color`: For the different colors that the display supports, there is an abbreviation of two letters each. If the color of the display is to be inverted, then a small i will be put after the abbreviation. See colors below.
+* `input channel`: If it is a mixer channel or an auxiliary input channel, the number of the input channel is indicated here. Otherwise, this setting is not set.
 
 #### Colors
-`GN`: green
-`CY`: cyan
-`MG`: magenta
-`WH`: white
-`YE`: yellow
-`RD`: red
-`BL`: blue
+* `GN`: green
+* `CY`: cyan
+* `MG`: magenta
+* `WH`: white
+* `YE`: yellow
+* `RD`: red
+* `BL`: blue
 
 ### Delay
 A delay can be set for mixer channels and main output channels.
@@ -178,7 +180,7 @@ A delay can be set for mixer channels and main output channels.
 Preamplifiers are set for mixer channels, aux input channels and matrix channels. The settings are slightly different.
 This is what the settings for a mixer channel look like:
 ```
-/preamp [amplification with +/-] [ON/OFF for polarity] [ON/OFF for high pass filter (Low))] [Strength of the high-pass filter in dB per octave (always 24)] [Frequency of the high pass filter]
+/preamp [amplification with +/-] [ON/OFF for polarity] [ON/OFF for low cut filter (Low))] [Strength of the low cut filter in dB per octave (always 24)] [Frequency of the low cut filter]
 ```
 Aux input channels support only the gain and ON/OFF setting for polarity, matrix channels even only the ON/OFF for polarity.
 
@@ -190,31 +192,84 @@ Gate settings are only available for mixer channels. They look like this.
 ```
 
 ### Dynamics Configuration
-/ch/01/dyn ON COMP RMS LIN -23.0 2.0 1 8.00 74 0.03  576 POST 0 100 OFF
-/ch/01/dyn/filter OFF 3.0 990.9
+Dynamic settings can be made in mixer channels, mix bus channels, matrix channels and in the main channels (L/R and M/C). The parameters are always identical.
+```
+/dyn [ON/OFF] [COMP/EXP] [RMS/PEAK] [LIN/LOG] [threshold in +/- dB] [ratio x:1] [knee] [gain] [attack in milliseconds] [hold in milliseconds]  [release in milliseconds] [POST/PRE (before or after EQ)] 0 100 OFF
+/dyn/filter [ON/OFF] [type (width)] [frequency of filter]
+```
 
 ### Insert Configuration
-/ch/01/insert OFF POST OFF
+Insert settings can be made in mixer channels, mix bus channels, matrix channels and in the main channels (L/R and M/C). The parameters are always identical.
+```
+/insert [OFF/ON] [POST/PRE (before or after EQ and dynamics)] [OFF, FX or AUX insert target]
+```
+The name of the inserted signals begins with FX or AUX followed by the number of the corresponding channel and - in the case of FX - an L or R for the corresponding left or right channel of the assigned effect device. A few examples:
+* `FX1L`: The current channel is sent to the left input channel of the first effect device.
+* `AUX2`: The current channel is transmitted via the second auxiliary channel. The channel accordingly expects the revised signal back via the input of the second auxiliary channel, so that this signal can be further processed in the channel strip.
 
 ### Equalizer Configuration
-/ch/01/eq ON
-/ch/01/eq/1 VEQ 232.3 -6.00 4.3
-/ch/01/eq/2 PEQ 514.1 -5.00 3.4
-/ch/01/eq/3 PEQ 1k21 -4.25 4.3
-/ch/01/eq/4 HCut 11k91 +0.00 2.0
+Equalizer settings can be made in mixer channels, auxiliary input channels, effect return channels, mixer bus channels, matrix channels and in the main channels (L/R and M/C). The equalizer settings take up most of the space in the X32 scene file. You need a total of 408 lines, which is almost one-fifth of the total file size. The settings are almost always the same, but the mixer channels, auxiliary input channels and effect return channels each have only four parametric equalizers, while the mixer bus channels, the matrix channels and the main channels each have six parametric equalizers.
+```
+/eq [ON/OFF]
+/eq/[no of EQ (between 1-4 or 1-6)] [type of EQ (see below)] [filter frequency] [gain +/- in dB] [bandwith or quality]
+```
+#### Types of EQ
+* `LCut`:
+* `LShv`:
+* `PEQ`:
+* `VEQ`:
+* `HShv`:
+* `HCut`:
+
+####  Special types for matrix or main channels
+The following equalizer types can only be used with equalizer 1 or 6. If these modes are used, the settings for equalizers 2 and 5 are automatically ignored. This means that only 4 equalizers can be used if both equalizer 1 and equalizer 6 use these EQ types.
+* `BU6`:
+* `BU12`:
+* `BS12`:
+* `LR12`:
+* `BU18`:
+* `BU24`:
+* `BS24`:
+* `LR24`:
 
 ### Mix Sends
-/ch/01/mix ON  +0.2 ON +0 OFF   -oo
+The “Mix Sends” may look slightly different for the different channel types.
+#### Sends to Main
+In any case, each channel type has the following “Mix Send”:
+```
+/mix [ON/OFF (OFF if muted)]  [dB to L/R (-oo if “off”)] [ON/OFF (send to L/R)] [panoramo (-100 for L, +100 for R)] [ON/OFF (send to M/C)]   [dB to M/C (-oo if “off”)]
+```
+The matrix channels and the main channels only have the following “Mix Send”:
+```
+/mix [ON/OFF (OFF if muted)]  [dB to L/R (-oo if “off”)]
+```
+The main stereo channel (L/R) also looks like this:
+```
+/main/st/mix [ON/OFF (OFF if muted)]  [dB to L/R (-oo if “off”)] [panoramo (-100 for L, +100 for R)]
+```
+#### Sends to Mix Bus or Matrix Bus
 /ch/01/mix/01 ON  -0.8 +0 PRE
 /ch/01/mix/02 ON -10.5
 
 ### Group Configuration
-/ch/01/grp %00000001 %000000
+Group settings can be made for mixer channels, auxiliary input channels, effect return channels and mix bus channels. There are DCA groups and mute groups. The configuration is always organized as follows:
+```
+/grp %[switches for DCA groups] %[switches for mute groups]
+```
+The switches are organized from right to left and are switched on with 1 and off with 0. So the first group is on the far right, the last group (DCA 8 or Mute 6) is on the far left in the list.
 
-### Automix Configuration
+For a better understanding a few examples:
+* `01010101`: This channel is assigned to DCA groups 1, 3, 5 and 7.
+* `011000`: This channel is assigned to mute groups 4 and 5.
+
+### Automix Configuration (Not yet evaluated)
+```
 /ch/01/automix OFF -12.0
-
+```
 ## Auxiliary Input Configuration (Not yet evaluated)
+[Back to TOC](#table-of-content)
+
+The auxiliary channel inputs provide the settings shown below. These are described in detail in section [Channel Configuration](#channel-configuration).
 ```
 /auxin/01/config "" 55 GN 33
 /auxin/01/preamp +8.8 OFF
@@ -244,6 +299,9 @@ Gate settings are only available for mixer channels. They look like this.
 ```
 
 ## Effects Return Configuration (Not yet evaluated)
+[Back to TOC](#table-of-content)
+
+The effect return channels provide the settings shown below. These are described in detail in section [Channel Configuration](#channel-configuration).
 ```
 /fxrtn/01/config "" 61 MG
 /fxrtn/01/eq ON
@@ -272,6 +330,9 @@ Gate settings are only available for mixer channels. They look like this.
 ```
 
 ## Mix Bus Configuration (Not yet evaluated)
+[Back to TOC](#table-of-content)
+
+The mix bus channels provide the settings shown below. These are described in detail in section [Channel Configuration](#channel-configuration).
 ```
 /bus/01/config "1 Mani" 53 WH
 /bus/01/dyn ON COMP RMS LOG -22.5 2.0 0 0.00 35 0.25  226 POST 0 100 OFF
@@ -295,6 +356,9 @@ Gate settings are only available for mixer channels. They look like this.
 ```
 
 ## Matrix Configuration (Not yet evaluated)
+[Back to TOC](#table-of-content)
+
+The matrix channels provide the settings shown below. These are described in detail in section [Channel Configuration](#channel-configuration).
 ```
 /mtx/01/config "Spk L Del" 66 GNi
 /mtx/01/preamp OFF
@@ -312,8 +376,11 @@ Gate settings are only available for mixer channels. They look like this.
 ```
 
 ## Main Bus Configuration (Not yet evaluated)
+[Back to TOC](#table-of-content)
+
 There are two main busses that can be configured: `/main/st/` (the stereo bus) and `/main/m/` (the mono bus, mostly used for the subwoofer). The settings are identical except for one, which is why we will only discuss the stereo bus and the only exception below.
 
+The main channels provide the settings shown below. These are described in detail in section [Channel Configuration](#channel-configuration).
 ```
 /main/st/config "" 73 GNi
 /main/st/dyn OFF COMP RMS LOG 0.0 4.0 1 0.00 10 10.0  151 POST 100 OFF
@@ -341,6 +408,8 @@ In the mono bus the setting `/mix` lacks an option:
 ```
 
 ## DCA Groups (Not yet evaluated)
+[Back to TOC](#table-of-content)
+
 The settings for the 8 DCA groups are always identical, which is why only one is listed here.
 ```
 /dca/1 OFF  -2.2
@@ -348,6 +417,8 @@ The settings for the 8 DCA groups are always identical, which is why only one is
 ```
 
 ## Settings for Effect Devices (Not yet evaluated)
+[Back to TOC](#table-of-content)
+
 The X32 supports eight effect devices. The respective settings depend strongly on the selected effect, but the settings are always identical, which is why we will only give an example here.
 ```
 /fx/1 VREV
@@ -356,6 +427,8 @@ The X32 supports eight effect devices. The respective settings depend strongly o
 ```
 
 ## Output Channels (Not yet evaluated)
+[Back to TOC](#table-of-content)
+
 ### Main Outputs
 ```
 /outputs/main/01 4 PRE OFF
@@ -382,6 +455,8 @@ The X32 supports eight effect devices. The respective settings depend strongly o
 ```
 
 ## Headamps (Not yet evaluated)
+[Back to TOC](#table-of-content)
+
 There are a total of 128 head amplifiers in the X32 that can be set via the scene file. The count starts at 000 and goes to 127.
 ```
 /headamp/000 +41.0 OFF
