@@ -2,6 +2,7 @@
 The Behringer X32 Scene File of Saddleback Berlin Church's Production Team.
 
 ![X32](/X32-images/Behringer-X32.jgp)
+
 This description explains the structure of the X32 scene file from top to bottom. Little by little we will be able to describe all parts of the file. At the moment, those parts that have not yet been fully evaluated are marked with the text "Not yet evaluated".
 
 ## General Configuration
