@@ -1,6 +1,9 @@
 # saddleback-x32-general-scene
 The Behringer X32 Scene File of Saddleback Berlin Church's Production Team.
 
+Open topics:
+- [] How many icons can be selected?
+
 ![X32](/X32-images/Behringer-X32.jpg)
 
 This description explains the structure of the X32 scene file from top to bottom. Little by little we will be able to describe all parts of the file. At the moment, those parts that have not yet been fully evaluated are marked with the text "Not yet evaluated".
@@ -63,6 +66,7 @@ These settings describe how the user controls on the right side of the X32 are c
 /config/tape 0.0 0.0 ON
 /config/amixenable OFF OFF
 ```
+
 ## Channel Configuration
 The next 1024 lines are a simple repetition of the following 32 lines for each of the 32 channels of the X32 - the channel configuration.
 Each line starts with the characters `/ch/` followed by the number of the respective mixer channel (e.g. `/ch/01/`). Of course, each channel has its own settings. However, we want to describe only once which settings can be set in a mixer channel using the example of the first channel.
@@ -104,6 +108,75 @@ Each line starts with the characters `/ch/` followed by the number of the respec
 /ch/01/automix OFF -12.0
 ```
 
+Many of the settings in one mixer channel also reappear in other areas. Since the structure is always very comparable, we want to deal with the individual settings in general.
+
+### Configuration
+This setting is used for mixer channels, aux input channels (both including the setting for the input channel), effect return channels, mix busses, matrix channels, main channels and DCA groups and always includes the following structure.
+```
+/config "[name]" [icon] [color] [input channel - if appropriate]
+```
+
+`name`: The name is shown in the display and can be up to 12 characters long.
+`icon`: The X32 supports various icons that are shown in the display. The icon is selected by a number between 1 and ?.
+`color`: For the different colors that the display supports, there is an abbreviation of two letters each. If the color of the display is to be inverted, then a small i will be put after the abbreviation. See colors below.
+`input channel`: If it is a mixer channel or an auxiliary input channel, the number of the input channel is indicated here. Otherwise, this setting is not set.
+
+#### Colors
+`GN`: green
+`CY`: cyan
+`MG`: magenta
+`WH`: white
+`YE`: yellow
+`RD`: red
+`BL`: blue
+
+### Delay
+Für Mischpultkanäle und Haupt-Ausgangskanäle kann ein Delay eingestellt werden.
+```
+/delay [ON/OFF]   [milliseconds]
+```
+
+### Pre Amps
+Preamplifiers are set for mixer channels, aux input channels and matrix channels. The settings are slightly different.
+This is what the settings for a mixer channel look like:
+```
+/preamp [amplification with +/-] [ON/OFF for ? (maybe 48V or polarity)] [ON/OFF for ? (maybe high pass filter)] [Strength of the high-pass filter in dB per octave (mostly 24)] [Frequency of the high pass filter]
+```
+Aux input channels support only the gain and first ON/OFF settings, matrix channels even only the first ON/OFF.
+
+### Gate Configuration
+Gate settings are only available for mixer channels. They look like this.
+```
+/gate [ON/OFF] [type of gate (EXPx or GATE)] [threshold in +/- dB] 27.0 [attack in milliseconds]  [hold in milliseconds]  [release in milliseconds] 0
+/gate/filter [ON/OFF] 3.0 [frequency of filter]
+```
+
+### Dynamics Configuration
+/ch/01/dyn ON COMP RMS LIN -23.0 2.0 1 8.00 74 0.03  576 POST 0 100 OFF
+/ch/01/dyn/filter OFF 3.0 990.9
+
+### Insert Configuration
+/ch/01/insert OFF POST OFF
+
+### Equalizer Configuration
+/ch/01/eq ON
+/ch/01/eq/1 VEQ 232.3 -6.00 4.3
+/ch/01/eq/2 PEQ 514.1 -5.00 3.4
+/ch/01/eq/3 PEQ 1k21 -4.25 4.3
+/ch/01/eq/4 HCut 11k91 +0.00 2.0
+
+### Mix Sends
+/ch/01/mix ON  +0.2 ON +0 OFF   -oo
+/ch/01/mix/01 ON  -0.8 +0 PRE
+/ch/01/mix/02 ON -10.5
+
+### Group Configuration
+/ch/01/grp %00000001 %000000
+
+### Automix Configuration
+/ch/01/automix OFF -12.0
+
+## Auxiliary Input Configuration (Not yet evaluated)
 ```
 /auxin/01/config "" 55 GN 33
 /auxin/01/preamp +8.8 OFF
@@ -132,6 +205,7 @@ Each line starts with the characters `/ch/` followed by the number of the respec
 /auxin/01/grp %00000000 %000000
 ```
 
+## Effects Return Configuration (Not yet evaluated)
 ```
 /fxrtn/01/config "" 61 MG
 /fxrtn/01/eq ON
@@ -159,6 +233,7 @@ Each line starts with the characters `/ch/` followed by the number of the respec
 /fxrtn/01/grp %00001000 %000000
 ```
 
+## Mix Bus Configuration (Not yet evaluated)
 ```
 /bus/01/config "1 Mani" 53 WH
 /bus/01/dyn ON COMP RMS LOG -22.5 2.0 0 0.00 35 0.25  226 POST 0 100 OFF
@@ -181,6 +256,7 @@ Each line starts with the characters `/ch/` followed by the number of the respec
 /bus/01/grp %00000000 %000000
 ```
 
+## Matrix Configuration (Not yet evaluated)
 ```
 /mtx/01/config "Spk L Del" 66 GNi
 /mtx/01/preamp OFF
@@ -196,6 +272,9 @@ Each line starts with the characters `/ch/` followed by the number of the respec
 /mtx/01/eq/6 HShv 10k02 +0.00 2.0
 /mtx/01/mix ON -16.8
 ```
+
+## Main Bus Configuration (Not yet evaluated)
+There are two main busses that can be configured: `/main/st/` (the stereo bus) and `/main/m/` (the mono bus, mostly used for the subwoofer). The settings are identical except for one, which is why we will only discuss the stereo bus and the only exception below.
 
 ```
 /main/st/config "" 73 GNi
@@ -216,260 +295,56 @@ Each line starts with the characters `/ch/` followed by the number of the respec
 /main/st/mix/04 ON   0.0
 /main/st/mix/05 ON   -oo +0 POST
 /main/st/mix/06 ON   -oo
-/main/m/config "Sub" 67 GNi
-/main/m/dyn OFF COMP RMS LOG 0.0 3.0 1 0.00 10 10.0  151 POST 100 OFF
-/main/m/dyn/filter OFF 3.0 990.9
-/main/m/insert OFF PRE OFF
-/main/m/eq ON
-/main/m/eq/1 PEQ 64.7 +0.00 1.5
-/main/m/eq/2 PEQ 133.7 +0.00 3.7
-/main/m/eq/3 PEQ 447.7 +0.00 2.0
-/main/m/eq/4 PEQ 1k97 +0.00 2.0
-/main/m/eq/5 PEQ 5k02 +0.00 2.0
-/main/m/eq/6 HCut 98.0 +0.00 2.0
+```
+
+In the mono bus the setting `/mix` lacks an option:
+```
 /main/m/mix ON -16.8
-/main/m/mix/01 ON   -oo +0 POST
-/main/m/mix/02 ON   -oo
-/main/m/mix/03 ON   -oo -2 POST
-/main/m/mix/04 ON   -oo
-/main/m/mix/05 ON   -oo +0 POST
-/main/m/mix/06 ON   -oo
+```
+
+## DCA Groups (Not yet evaluated)
+The settings for the 8 DCA groups are always identical, which is why only one is listed here.
+```
 /dca/1 OFF  -2.2
 /dca/1/config "Vocals" 43 CY
-/dca/2 OFF  -4.0
-/dca/2/config "Instruments" 23 GN
-/dca/3 OFF  -7.4
-/dca/3/config "Cajon" 11 RD
-/dca/4 OFF -10.7
-/dca/4/config "Effects" 68 MG
-/dca/5 ON -67.0
-/dca/5/config "Music" 62 CYi
-/dca/6 ON   -oo
-/dca/6/config "Sermon" 53 BL
-/dca/7 ON   -oo
-/dca/7/config "Announcer" 1 YE
-/dca/8 ON   -oo
-/dca/8/config "" 1 OFF
+```
+
+## Settings for Effect Devices (Not yet evaluated)
+The X32 supports eight effect devices. The respective settings depend strongly on the selected effect, but the settings are always identical, which is why we will only give an example here.
+```
 /fx/1 VREV
 /fx/1/source MIX15 MIX15
 /fx/1/par 40 3.0 100 OFF FRONT 0.0 76 11k9 1.00 0.70 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-/fx/2 CRS
-/fx/2/source MIX16 MIX16
-/fx/2/par 0.48 20 20 15.1 16.6 100 83 10k4 120 100 100 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-/fx/3 DLY
-/fx/3/source INS INS
-/fx/3/par 100 390 ST 1 1 25 10 20k0 97 72 70 20k0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-/fx/4 CRS
-/fx/4/source INS INS
-/fx/4/par 1.44 15 15 19.9 19.9 100 97 15k1 120 100 85 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-/fx/5 TEQ
-/fx/5/par 0.0 0.0 0.0 2.5 2.5 3.5 4.5 0.5 1.0 1.5 3.0 -0.5 -2.5 -3.5 -2.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-/fx/6 GEQ2
-/fx/6/par 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-/fx/7 GEQ2
-/fx/7/par 0.0 0.0 0.5 0.0 0.0 0.0 -8.5 -12.5 -6.0 -12.5 0.0 -2.5 -11.0 -4.5 0.0 -13.0 -9.5 0.0 0.5 -11.0 -11.0 -2.5 -0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-/fx/8 GEQ
-/fx/8/par 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.5 3.0 2.5 -0.5 -2.0 -2.0 0.0 -1.0 -2.5 -2.5 0.5 1.5 0.5 -1.0 -1.5 -3.5 -4.0 -2.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+```
+
+## Output Channels (Not yet evaluated)
+### Main Outputs
+```
 /outputs/main/01 4 PRE OFF
 /outputs/main/01/delay OFF   0.3
-/outputs/main/02 5 PRE OFF
-/outputs/main/02/delay OFF   0.3
-/outputs/main/03 6 PRE OFF
-/outputs/main/03/delay OFF   0.3
-/outputs/main/04 7 PRE OFF
-/outputs/main/04/delay OFF   0.3
-/outputs/main/05 8 PRE OFF
-/outputs/main/05/delay OFF   0.3
-/outputs/main/06 9 PRE OFF
-/outputs/main/06/delay OFF   0.3
-/outputs/main/07 10 PRE OFF
-/outputs/main/07/delay OFF   0.3
-/outputs/main/08 24 PRE OFF
-/outputs/main/08/delay OFF   0.3
-/outputs/main/09 14 POST OFF
-/outputs/main/09/delay OFF   0.3
-/outputs/main/10 15 POST OFF
-/outputs/main/10/delay OFF   0.3
-/outputs/main/11 13 POST OFF
-/outputs/main/11/delay OFF   0.3
-/outputs/main/12 20 POST OFF
-/outputs/main/12/delay ON  12.0
-/outputs/main/13 21 POST OFF
-/outputs/main/13/delay ON  12.0
-/outputs/main/14 22 POST OFF
-/outputs/main/14/delay OFF   0.3
-/outputs/main/15 23 POST OFF
-/outputs/main/15/delay OFF   0.3
-/outputs/main/16 3 POST OFF
-/outputs/main/16/delay OFF   0.3
+```
+
+### Auxiliary Outputs
+```
 /outputs/aux/01 13 PRE OFF
-/outputs/aux/02 12 PRE OFF
-/outputs/aux/03 0 POST OFF
-/outputs/aux/04 0 POST OFF
-/outputs/aux/05 0 POST OFF
-/outputs/aux/06 0 POST OFF
+```
+
+### P16 Outputs
+```
 /outputs/p16/01 26 <-EQ OFF
 /outputs/p16/01/iQ OFF none Linear 0
-/outputs/p16/02 27 <-EQ OFF
-/outputs/p16/02/iQ OFF none Linear 0
-/outputs/p16/03 28 <-EQ OFF
-/outputs/p16/03/iQ OFF none Linear 0
-/outputs/p16/04 29 <-EQ OFF
-/outputs/p16/04/iQ OFF none Linear 0
-/outputs/p16/05 30 <-EQ OFF
-/outputs/p16/05/iQ OFF none Linear 0
-/outputs/p16/06 31 <-EQ OFF
-/outputs/p16/06/iQ OFF none Linear 0
-/outputs/p16/07 32 <-EQ OFF
-/outputs/p16/07/iQ OFF none Linear 0
-/outputs/p16/08 33 <-EQ OFF
-/outputs/p16/08/iQ OFF none Linear 0
-/outputs/p16/09 34 <-EQ OFF
-/outputs/p16/09/iQ OFF none Linear 0
-/outputs/p16/10 35 <-EQ OFF
-/outputs/p16/10/iQ OFF none Linear 0
-/outputs/p16/11 36 <-EQ OFF
-/outputs/p16/11/iQ OFF none Linear 0
-/outputs/p16/12 37 <-EQ OFF
-/outputs/p16/12/iQ OFF none Linear 0
-/outputs/p16/13 38 <-EQ OFF
-/outputs/p16/13/iQ OFF none Linear 0
-/outputs/p16/14 39 <-EQ OFF
-/outputs/p16/14/iQ OFF none Linear 0
-/outputs/p16/15 40 <-EQ OFF
-/outputs/p16/15/iQ OFF none Linear 0
-/outputs/p16/16 41 <-EQ OFF
-/outputs/p16/16/iQ OFF none Linear 0
+```
+
+### Additional Outputs
+```
 /outputs/aes/01 0 POST OFF
 /outputs/aes/02 0 POST OFF
 /outputs/rec/01 14 PRE
 /outputs/rec/02 15 PRE
+```
+
+## Headamps (Not yet evaluated)
+There are a total of 128 head amplifiers in the X32 that can be set via the scene file. The count starts at 000 and goes to 127.
+```
 /headamp/000 +41.0 OFF
-/headamp/001 +0.0 OFF
-/headamp/002 +0.0 OFF
-/headamp/003 +0.0 OFF
-/headamp/004 +0.0 OFF
-/headamp/005 +10.0 OFF
-/headamp/006 +0.0 OFF
-/headamp/007 +0.0 OFF
-/headamp/008 +0.0 OFF
-/headamp/009 +0.0 OFF
-/headamp/010 +0.0 OFF
-/headamp/011 +0.0 OFF
-/headamp/012 +0.0 OFF
-/headamp/013 +0.0 OFF
-/headamp/014 +0.0 OFF
-/headamp/015 +0.0 OFF
-/headamp/016 +36.5 OFF
-/headamp/017 +39.0 ON
-/headamp/018 +32.0 OFF
-/headamp/019 +48.5 OFF
-/headamp/020 +0.0 OFF
-/headamp/021 +0.0 OFF
-/headamp/022 +60.0 OFF
-/headamp/023 +38.5 OFF
-/headamp/024 +0.0 OFF
-/headamp/025 +0.0 OFF
-/headamp/026 +0.0 OFF
-/headamp/027 +0.0 OFF
-/headamp/028 +0.0 OFF
-/headamp/029 +0.0 OFF
-/headamp/030 +0.0 OFF
-/headamp/031 +0.0 OFF
-/headamp/032 +42.5 OFF
-/headamp/033 +33.0 OFF
-/headamp/034 +48.0 OFF
-/headamp/035 +40.0 ON
-/headamp/036 +19.5 OFF
-/headamp/037 +12.5 OFF
-/headamp/038 +8.0 OFF
-/headamp/039 +11.0 OFF
-/headamp/040 +8.5 OFF
-/headamp/041 +8.5 OFF
-/headamp/042 +26.5 ON
-/headamp/043 +35.5 ON
-/headamp/044 +33.5 ON
-/headamp/045 +33.5 ON
-/headamp/046 +41.0 ON
-/headamp/047 +32.5 ON
-/headamp/048 +19.0 OFF
-/headamp/049 +42.5 OFF
-/headamp/050 +34.0 OFF
-/headamp/051 +38.5 OFF
-/headamp/052 +38.5 OFF
-/headamp/053 +60.0 OFF
-/headamp/054 +34.5 ON
-/headamp/055 +34.5 ON
-/headamp/056 +0.0 OFF
-/headamp/057 +0.0 OFF
-/headamp/058 +0.0 OFF
-/headamp/059 +0.0 OFF
-/headamp/060 +0.0 OFF
-/headamp/061 +0.0 OFF
-/headamp/062 +0.0 OFF
-/headamp/063 +0.0 OFF
-/headamp/064 +0.0 OFF
-/headamp/065 +0.0 OFF
-/headamp/066 +0.0 OFF
-/headamp/067 +0.0 OFF
-/headamp/068 +0.0 OFF
-/headamp/069 +0.0 OFF
-/headamp/070 +0.0 OFF
-/headamp/071 +0.0 OFF
-/headamp/072 +0.0 OFF
-/headamp/073 +0.0 OFF
-/headamp/074 +0.0 OFF
-/headamp/075 +0.0 OFF
-/headamp/076 +0.0 OFF
-/headamp/077 +0.0 OFF
-/headamp/078 +0.0 OFF
-/headamp/079 +0.0 OFF
-/headamp/080 +43.5 OFF
-/headamp/081 +43.5 OFF
-/headamp/082 +51.5 OFF
-/headamp/083 +51.5 OFF
-/headamp/084 +60.0 OFF
-/headamp/085 +60.0 OFF
-/headamp/086 +0.0 OFF
-/headamp/087 -3.5 OFF
-/headamp/088 +0.0 OFF
-/headamp/089 +0.0 OFF
-/headamp/090 +0.0 OFF
-/headamp/091 +0.0 OFF
-/headamp/092 +0.0 OFF
-/headamp/093 +0.0 OFF
-/headamp/094 +0.0 OFF
-/headamp/095 +0.0 OFF
-/headamp/096 +0.0 OFF
-/headamp/097 +0.0 OFF
-/headamp/098 +0.0 OFF
-/headamp/099 +0.0 OFF
-/headamp/100 +0.0 OFF
-/headamp/101 +0.0 OFF
-/headamp/102 +0.0 OFF
-/headamp/103 +0.0 OFF
-/headamp/104 +0.0 OFF
-/headamp/105 +0.0 OFF
-/headamp/106 +0.0 OFF
-/headamp/107 +0.0 OFF
-/headamp/108 +0.0 OFF
-/headamp/109 +0.0 OFF
-/headamp/110 +0.0 OFF
-/headamp/111 +0.0 OFF
-/headamp/112 +0.0 OFF
-/headamp/113 +0.0 OFF
-/headamp/114 +0.0 OFF
-/headamp/115 +0.0 OFF
-/headamp/116 +0.0 OFF
-/headamp/117 +0.0 OFF
-/headamp/118 +0.0 OFF
-/headamp/119 +0.0 OFF
-/headamp/120 +0.0 OFF
-/headamp/121 +0.0 OFF
-/headamp/122 +0.0 OFF
-/headamp/123 +0.0 OFF
-/headamp/124 +0.0 OFF
-/headamp/125 +0.0 OFF
-/headamp/126 +0.0 OFF
-/headamp/127 +0.0 OFF
 ```
