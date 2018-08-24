@@ -6,7 +6,45 @@ Open topics:
 
 ![X32](/X32-images/Behringer-X32.jpg)
 
-This description explains the structure of the X32 scene file from top to bottom. Little by little we will be able to describe all parts of the file. At the moment, those parts that have not yet been fully evaluated are marked with the text "Not yet evaluated".
+This description explains the structure of the X32 scene file from top to bottom. Little by little we will be able to describe all parts of the file. At the moment, those parts that have not yet been fully evaluated are marked with the text “Not yet evaluated”.
+
+Table of Contents
+=================
+
+  * [General Configuration](#general-configuration)
+     * [Linking Channels](#linking-channels)
+     * [Monitoring settings (Not yet evaluated)](#monitoring-settings-not-yet-evaluated)
+     * [Routing](#routing)
+        * [Not yet evaluated](#not-yet-evaluated)
+     * [User control section (Not yet evaluated)](#user-control-section-not-yet-evaluated)
+     * [Not yet evaluated](#not-yet-evaluated-1)
+  * [Channel Configuration](#channel-configuration)
+     * [Configuration](#configuration)
+        * [Colors](#colors)
+     * [Delay](#delay)
+     * [Pre Amps](#pre-amps)
+     * [Gate Configuration](#gate-configuration)
+     * [Dynamics Configuration](#dynamics-configuration)
+     * [Insert Configuration](#insert-configuration)
+     * [Equalizer Configuration](#equalizer-configuration)
+     * [Mix Sends](#mix-sends)
+     * [Group Configuration](#group-configuration)
+     * [Automix Configuration](#automix-configuration)
+  * [Auxiliary Input Configuration (Not yet evaluated)](#auxiliary-input-configuration-not-yet-evaluated)
+  * [Effects Return Configuration (Not yet evaluated)](#effects-return-configuration-not-yet-evaluated)
+  * [Mix Bus Configuration (Not yet evaluated)](#mix-bus-configuration-not-yet-evaluated)
+  * [Matrix Configuration (Not yet evaluated)](#matrix-configuration-not-yet-evaluated)
+  * [Main Bus Configuration (Not yet evaluated)](#main-bus-configuration-not-yet-evaluated)
+  * [DCA Groups (Not yet evaluated)](#dca-groups-not-yet-evaluated)
+  * [Settings for Effect Devices (Not yet evaluated)](#settings-for-effect-devices-not-yet-evaluated)
+  * [Output Channels (Not yet evaluated)](#output-channels-not-yet-evaluated)
+     * [Main Outputs](#main-outputs)
+     * [Auxiliary Outputs](#auxiliary-outputs)
+     * [P16 Outputs](#p16-outputs)
+     * [Additional Outputs](#additional-outputs)
+  * [Headamps (Not yet evaluated)](#headamps-not-yet-evaluated)
+
+Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
 ## General Configuration
 ### Linking Channels
@@ -131,7 +169,7 @@ This setting is used for mixer channels, aux input channels (both including the 
 `BL`: blue
 
 ### Delay
-Für Mischpultkanäle und Haupt-Ausgangskanäle kann ein Delay eingestellt werden.
+A delay can be set for mixer channels and main output channels.
 ```
 /delay [ON/OFF]   [milliseconds]
 ```
@@ -140,15 +178,15 @@ Für Mischpultkanäle und Haupt-Ausgangskanäle kann ein Delay eingestellt werde
 Preamplifiers are set for mixer channels, aux input channels and matrix channels. The settings are slightly different.
 This is what the settings for a mixer channel look like:
 ```
-/preamp [amplification with +/-] [ON/OFF for ? (maybe 48V or polarity)] [ON/OFF for ? (maybe high pass filter)] [Strength of the high-pass filter in dB per octave (mostly 24)] [Frequency of the high pass filter]
+/preamp [amplification with +/-] [ON/OFF for polarity] [ON/OFF for high pass filter (Low))] [Strength of the high-pass filter in dB per octave (always 24)] [Frequency of the high pass filter]
 ```
-Aux input channels support only the gain and first ON/OFF settings, matrix channels even only the first ON/OFF.
+Aux input channels support only the gain and ON/OFF setting for polarity, matrix channels even only the ON/OFF for polarity.
 
 ### Gate Configuration
 Gate settings are only available for mixer channels. They look like this.
 ```
-/gate [ON/OFF] [type of gate (EXPx or GATE)] [threshold in +/- dB] 27.0 [attack in milliseconds]  [hold in milliseconds]  [release in milliseconds] 0
-/gate/filter [ON/OFF] 3.0 [frequency of filter]
+/gate [ON/OFF] [type of gate (EXPx or GATE)] [threshold in +/- dB] [range of reduction in dB] [attack in milliseconds]  [hold in milliseconds]  [release in milliseconds] [source channel (0 = self)]
+/gate/filter [ON/OFF] [type (width)] [frequency of filter]
 ```
 
 ### Dynamics Configuration
