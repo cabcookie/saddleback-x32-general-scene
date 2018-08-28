@@ -1,8 +1,8 @@
 const loadPeopleAndPositions = (url, user, pwd) => importPCOData(url, user, pwd, filterPeopleAndPositions);
 
-const filterPeopleAndPositions = plans => ({
-    const filtPeople = [];
-    for (let i = 0; i < plans.data.length; i++) {
+const filterPeopleAndPositions = plans => {
+    let filtPeople = [];
+    for (var i = 0; i < plans.data.length; i++) {
         const data = plans.data[i];
         const attr = data.attributes;
         const times = data.relationships.times.data;
@@ -17,16 +17,16 @@ const filterPeopleAndPositions = plans => ({
             position: attr.team_position_name,
             decline_reason: attr.decline_reason,
             times: t
-        }
+        };
         filtPeople[i] = obj;
     }
     return filtPeople;
-});
+}
 
-const peoplePositionsToTable = people => ({
-    const lines = [];
-    for (var i = 0; i < people.length; i++) {
+const peoplePositionsToTable = people => {
+    let lines = [];
+    for (let i = 0; i < people.length; i++) {
         lines[i] = [people[i].name, people[i].photo, people[i].status, people[i].position];
     }
     return lines;
-});
+}
