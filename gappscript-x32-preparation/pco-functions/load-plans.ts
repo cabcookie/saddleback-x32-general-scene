@@ -1,6 +1,6 @@
 const loadPCOPlans = (serviceType, user, pwd, lines) => {
     const url = URL_PLANS.replace(SERVICE_TYPE, serviceType).replace(LINES, lines);
-    return importPCOData(url, user, pwd, filtPlans);
+    return importPCOData(url, user, pwd, filterPlans);
 }
 
 const filterPlans = plans => {
