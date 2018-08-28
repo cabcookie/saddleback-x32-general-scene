@@ -1,4 +1,7 @@
-const loadPeopleAndPositions = (url, user, pwd) => importPCOData(url, user, pwd, filterPeopleAndPositions);
+const loadPeopleAndPositions = (serviceType, planId, channelsOfTheMixer, positionSettings, user, pwd) => {
+    const url = URL_PEOPLE_POSITIONS.replace(SERVICE_TYPE, serviceType).replace(LINES, 50).replace(PLAN_ID, planId);
+    return importPCOData(url, user, pwd, filterPeopleAndPositions);
+}
 
 const filterPeopleAndPositions = plans => {
     let filtPeople = [];

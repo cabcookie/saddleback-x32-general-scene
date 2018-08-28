@@ -23,9 +23,7 @@
  * @return a two-dimensional array containing the proposal for the Mixer Setup
  **/
 function CreateProposalForChannels(serviceType, planId, channelsOfTheMixer, positionSettings, user, pwd) {
-  var url = URL_PEOPLE_POSITIONS.replace(SERVICE_TYPE, serviceType).replace(LINES, 50).replace(PLAN_ID, planId);
-  var peopleAndPositions = loadPeopleAndPositions(url, user, pwd);
-  return peoplePositionsToTable(peopleAndPositions);
+  return peoplePositionsToTable(loadPeopleAndPositions(serviceType, planId, channelsOfTheMixer, positionSettings, user, pwd));
 }
 
 /**
@@ -40,6 +38,5 @@ function CreateProposalForChannels(serviceType, planId, channelsOfTheMixer, posi
  * @return a two-dimensional array containing the plans
  **/
 function GetNextPCOPlans(serviceType, user, pwd, lines) {
-  var url = URL_PLANS.replace(SERVICE_TYPE, serviceType).replace(LINES, lines);
-  return planDataToTable(loadPCOPlans(url, user, pwd, filterPlans));
+  return planDataToTable(loadPCOPlans(serviceType, user, pwd, lines));
 }
