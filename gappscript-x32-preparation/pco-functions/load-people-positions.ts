@@ -1,17 +1,17 @@
-const loadPeopleAndPositions = (serviceType, planId, channelsOfTheMixer, positionSettings, user, pwd) => {
+const loadPeopleAndPositions = (serviceType, planId, user, pwd) => {
     const url = URL_PEOPLE_POSITIONS.replace(SERVICE_TYPE, serviceType).replace(LINES, 50).replace(PLAN_ID, planId);
     return importPCOData(url, user, pwd, filterPeopleAndPositions);
 }
 
 const filterPeopleAndPositions = plans => {
+    const DECLINED = "D";
     let filtPeople = [];
-    for (var i = 0; i < plans.data.length; i++) {
-        const data = plans.data[i];
-        const attr = data.attributes;
-        const times = data.relationships.times.data;
-        const t = [];
-        for (let j = 0; j < times.length; j++) {
-            t[j] = times[j].id;
+    for (let item of plans.data) {
+        const attr = item.attributes;
+        const times = item.relationships.times.data;
+        let t = [];
+        for (let time of times) {
+            t.push(time.id);
         }
         const obj = {
             name: attr.name,
@@ -21,15 +21,17 @@ const filterPeopleAndPositions = plans => {
             decline_reason: attr.decline_reason,
             times: t
         };
-        filtPeople[i] = obj;
+        if (obj.status !== DECLINED) {
+            filtPeople.push(obj);
+        }
     }
     return filtPeople;
 }
 
 const peoplePositionsToTable = people => {
     let lines = [];
-    for (let i = 0; i < people.length; i++) {
-        lines[i] = [people[i].name, people[i].photo, people[i].status, people[i].position];
+    for (let item of people) {
+        lines.push([item.name, item.photo, item.status, item.position]);
     }
     return lines;
 }

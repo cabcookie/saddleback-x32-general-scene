@@ -16,14 +16,15 @@
  *                                      prefixChannelNaming      a prefix which is used to name the channel on the board
  *                                      prefixFileNaming         a prefix which is used for the preset file name
  *                                      positionType             the types name is being used on the mixer template
+ * @param {positionsNotForMixer}  positions that will appear in PCO but aren't relevant for the mixer setup (e.g. Sound Engineer)
  * @param {user}                  username for basic authentication
  * @param {pwd}                   password for basic authentication
  * @customfunction
  *
  * @return a two-dimensional array containing the proposal for the Mixer Setup
  **/
-function CreateProposalForChannels(serviceType, planId, channelsOfTheMixer, positionSettings, user, pwd) {
-  return peoplePositionsToTable(loadPeopleAndPositions(serviceType, planId, channelsOfTheMixer, positionSettings, user, pwd));
+function CreateProposalForChannels(serviceType, planId, channelsOfTheMixer, positionSettings, positionsNotForMixer, user, pwd) {
+    return createX32Proposal(serviceType, planId, channelsOfTheMixer, positionSettings, positionsNotForMixer, user, pwd);
 }
 
 /**

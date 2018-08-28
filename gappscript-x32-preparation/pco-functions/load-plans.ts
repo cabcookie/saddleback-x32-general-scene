@@ -5,21 +5,20 @@ const loadPCOPlans = (serviceType, user, pwd, lines) => {
 
 const filterPlans = plans => {
     let filtPlans = [];
-    for (let i = 0; i < plans.data.length; i++) {
-        const item = plans.data[i];
+    for (let item of plans.data) {
         const obj = {
             date: item.attributes.dates,
             id: item.id
-        };
-        filtPlans[i] = obj;
+        }
+        filtPlans.push(obj);
     }
     return filtPlans;
 }
 
 const planDataToTable = plans => {
     let lines = [];
-    for (let i = 0; i < plans.length; i++) {
-        lines[i] = [plans[i].date, plans[i].id];
+    for (let item of plans) {
+        lines.push([item.date, item.id]);
     }
     return lines;
 }
