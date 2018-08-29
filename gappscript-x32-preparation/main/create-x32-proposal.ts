@@ -2,7 +2,7 @@ const createX32Proposal = (serviceType, planId, timeId, channelsOfTheMixer, posS
     try {
         const scheduledPeople = loadScheduledPeople(serviceType, planId, timeId);
         const positionSettings = getPositionSettings(posSettings);
-        const matchedPeoplePositions = matchPeoplePositions(scheduledPeople, positionSettings, namesForNonPCOPositions);
+        const matchedPeoplePositions = matchPeoplePositions(scheduledPeople, positionSettings, namesForNonPCOPositions, positionsNotForMixer);
         return peoplePositionsToTable(matchedPeoplePositions);
 
         if (channelsOfTheMixer.length === 1) {

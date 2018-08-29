@@ -1,4 +1,4 @@
-const matchPeoplePositions = (people, positions, namesNonPCO) => {
+const matchPeoplePositions = (people, positions, namesNonPCO, posNotForMixer) => {
     let matched = [];
     people.forEach(p => {
         const pos = positions[p.position];
@@ -10,14 +10,14 @@ const matchPeoplePositions = (people, positions, namesNonPCO) => {
                 matched.push(i);
             }
         } else {
-            // TODO: handle positions not relevant for mixer setup
+            const known = posNotForMixer.filter(m => m == p.position);
+            if (known.length == 0) throw new Error("ERROR: Position '"+ p.position +"' is not defined. Please describe this position in the list 'Relevant for mixer setup' or in the list 'Not relevant for mixer'.");
         }
     });
     for (let key in positions) {
         const pos = positions[key];
         if (pos.noPCOScheduling) {
             const obj = {
-                // name: "placeholder",
                 position: key
             };
             const names = namesNonPCO.filter(n => n[0].toUpperCase() == key.toUpperCase());
@@ -86,27 +86,8 @@ const makeChannelName = (o, s, ch) => {
 }
 
 const peoplePositionsToTable = p => {
-    let l = [[
-        "personId",
-        "name",
-        // "photo",
-        // "status",
-        "position",
-        "channelName",
-        "positionType",
-        "presetFileName"
-    ]];
-    for (let i of p) {
-        l.push([
-            i.personId,
-            i.name,
-            // i.photo,
-            // i.status,
-            i.position,
-            i.channelName,
-            i.positionType,
-            i.presetFileName
-        ]);
-    }
+    let l = [["personId", "name", "position", "channelName", "positionType", "presetFileName"]];
+    // "status", "photo"
+    for (let i of p) l.push([i.personId, i.name, i.position, i.channelName, i.positionType, i.presetFileName]);
     return l;
 }
