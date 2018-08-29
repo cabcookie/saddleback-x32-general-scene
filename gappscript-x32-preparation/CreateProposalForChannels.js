@@ -6,6 +6,7 @@
  *
  * @param {serviceType}           ID of service type
  * @param {planID}                ID of plan for which the position are to be loaded
+ * @param {timeId}                ID of time for which the position are to be loaded
  * @param {channelsOfTheMixer}    a list of channels with their position types
  * @param {positionSettings}      two dimensional array with settings on the PCO positions; the first row of this array should include the following headers
  *                                      PCOPosition              name of the position from PCO
@@ -23,8 +24,9 @@
  *
  * @return a two-dimensional array containing the proposal for the Mixer Setup
  **/
-function CreateProposalForChannels(serviceType, planId, channelsOfTheMixer, positionSettings, positionsNotForMixer, user, pwd) {
-    return createX32Proposal(serviceType, planId, channelsOfTheMixer, positionSettings, positionsNotForMixer, user, pwd);
+function CreateProposalForChannels(serviceType, planId, timeId, channelsOfTheMixer, positionSettings, positionsNotForMixer, user, pwd) {
+    // return createX32Proposal(309883, 37484746, 90413739, ["Leader","Vocals","Vocals","Vocals","Guitars","Guitars","Guitars","Guitars","Keys","Keys","Misc","Misc","Room Mic","Room Mic","Stage Mgr","Announcer","Drums","Drums","Drums","Drums","Drums","Drums","Drums","Klick","Sermon EN","Sermon DE","Translator","Slide Mgr","Music","Music","Free","Free"], [], [], "6761983d8e26cb71ef2454a1a8351a62d437b4c32b98918f7afea0a1fbd08680", "f8a2833b6dad9f9a09f8ef89ca73d4d1ea3f1a7c0f10ad638dec2bf2623d4044");
+    return createX32Proposal(serviceType, planId, timeId, channelsOfTheMixer, positionSettings, positionsNotForMixer, user, pwd);
 }
 
 /**
@@ -39,5 +41,6 @@ function CreateProposalForChannels(serviceType, planId, channelsOfTheMixer, posi
  * @return a two-dimensional array containing the plans
  **/
 function GetNextPCOPlans(serviceType, user, pwd, lines) {
-  return planDataToTable(loadPCOPlans(serviceType, user, pwd, lines));
+    // return loadPCOPlans(309883, "6761983d8e26cb71ef2454a1a8351a62d437b4c32b98918f7afea0a1fbd08680", "f8a2833b6dad9f9a09f8ef89ca73d4d1ea3f1a7c0f10ad638dec2bf2623d4044", 50);
+    return loadPCOPlans(serviceType, user, pwd, lines);
 }

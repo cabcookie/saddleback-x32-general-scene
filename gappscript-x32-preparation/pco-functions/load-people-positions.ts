@@ -1,37 +1,31 @@
-const loadPeopleAndPositions = (serviceType, planId, user, pwd) => {
+const loadScheduledPeople = (serviceType, planId, timeId, user, pwd) => {
     const url = URL_PEOPLE_POSITIONS.replace(SERVICE_TYPE, serviceType).replace(LINES, 50).replace(PLAN_ID, planId);
-    return importPCOData(url, user, pwd, filterPeopleAndPositions);
+    return importPCOData(url, user, pwd, filterScheduledPeople(timeId));
 }
 
-const filterPeopleAndPositions = plans => {
+const filterScheduledPeople = curry((timeId, plans) => {
     const DECLINED = "D";
+    const f = plans.data.filter(p => p.relationships.times.data.filter(t => t.id == timeId).length == 1 && p.attributes.status != DECLINED);
     let filtPeople = [];
-    for (let item of plans.data) {
+    for (let item of f) {
         const attr = item.attributes;
-        const times = item.relationships.times.data;
-        let t = [];
-        for (let time of times) {
-            t.push(time.id);
-        }
         const obj = {
             name: attr.name,
+            id: item.relationships.person.data.id,
             photo: attr.photo_thumbnail,
             status: attr.status,
             position: attr.team_position_name,
-            decline_reason: attr.decline_reason,
-            times: t
+            decline_reason: attr.decline_reason
         };
-        if (obj.status !== DECLINED) {
-            filtPeople.push(obj);
-        }
+        filtPeople.push(obj);
     }
     return filtPeople;
-}
+});
 
-const peoplePositionsToTable = people => {
-    let lines = [];
-    for (let item of people) {
-        lines.push([item.name, item.photo, item.status, item.position]);
+const scheduledPeopleToTable = p => {
+    let l = [];
+    for (let i of p) {
+        l.push([i.name, i.photo, i.status, i.position, i.decline_reason]);
     }
-    return lines;
+    return l;
 }
