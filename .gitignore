@@ -3,4 +3,4 @@ Icon
 .gitignore
 .clasp.json
 node_modules
-security/tokens.ts
+tokens.ts
