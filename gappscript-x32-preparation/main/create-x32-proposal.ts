@@ -1,10 +1,9 @@
-const createX32Proposal = (serviceType, planId, timeId, channelsOfTheMixer, posSettings, positionsNotForMixer, user, pwd) => {
+const createX32Proposal = (serviceType, planId, timeId, channelsOfTheMixer, posSettings, positionsNotForMixer, namesForNonPCOPositions, user, pwd) => {
     try {
         const scheduledPeople = loadScheduledPeople(serviceType, planId, timeId, user, pwd);
         const positionSettings = getPositionSettings(posSettings);
-        const matchedPeoplePositions = matchPeoplePositions(scheduledPeople, positionSettings);
+        const matchedPeoplePositions = matchPeoplePositions(scheduledPeople, positionSettings, namesForNonPCOPositions);
         return peoplePositionsToTable(matchedPeoplePositions);
-
 
         if (channelsOfTheMixer.length === 1) {
             channelsOfTheMixer = channelsOfTheMixer[0];
@@ -22,16 +21,6 @@ const createX32Proposal = (serviceType, planId, timeId, channelsOfTheMixer, posS
         });
 
         scheduledPeople.forEach(pp => {
-            // const person = {
-            //     name: attr.name,
-            //     photo: attr.photo_thumbnail,
-            //     status: attr.status,
-            //     position: attr.team_position_name,
-            //     decline_reason: attr.decline_reason,
-            //     times: t
-            // };
-
-            // times are ignored for now
             const posSettings = positionSettings[pp.position];
             if (posSettings) {
                 let channelFound;

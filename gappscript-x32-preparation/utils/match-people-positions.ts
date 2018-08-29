@@ -1,4 +1,4 @@
-const matchPeoplePositions = (people, positions) => {
+const matchPeoplePositions = (people, positions, namesNonPCO) => {
     let matched = [];
     people.forEach(p => {
         const pos = positions[p.position];
@@ -20,6 +20,8 @@ const matchPeoplePositions = (people, positions) => {
                 // name: "placeholder",
                 position: key
             };
+            const names = namesNonPCO.filter(n => n[0].toUpperCase() == key.toUpperCase());
+            if (names.length > 0) obj.name = names[0][1];
             const toPush = makeChannels(obj, pos);
             for (let i of toPush) {
                 matched.push(i);
