@@ -1,6 +1,6 @@
-const createX32Proposal = (serviceType, planId, timeId, channelsOfTheMixer, posSettings, positionsNotForMixer, namesForNonPCOPositions, user, pwd) => {
+const createX32Proposal = (serviceType, planId, timeId, channelsOfTheMixer, posSettings, positionsNotForMixer, namesForNonPCOPositions) => {
     try {
-        const scheduledPeople = loadScheduledPeople(serviceType, planId, timeId, user, pwd);
+        const scheduledPeople = loadScheduledPeople(serviceType, planId, timeId);
         const positionSettings = getPositionSettings(posSettings);
         const matchedPeoplePositions = matchPeoplePositions(scheduledPeople, positionSettings, namesForNonPCOPositions);
         return peoplePositionsToTable(matchedPeoplePositions);

@@ -1,6 +1,6 @@
-const loadScheduledPeople = (serviceType, planId, timeId, user, pwd) => {
+const loadScheduledPeople = (serviceType, planId, timeId) => {
     const url = URL_PEOPLE_POSITIONS.replace(SERVICE_TYPE, serviceType).replace(LINES, 50).replace(PLAN_ID, planId);
-    return importPCOData(url, user, pwd, filterScheduledPeople(timeId));
+    return importPCOData(url, filterScheduledPeople(timeId));
 }
 
 const filterScheduledPeople = curry((timeId, plans) => {

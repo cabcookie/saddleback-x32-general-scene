@@ -19,29 +19,23 @@
  *                                      positionType             the types name is being used on the mixer template
  * @param {positionsNotForMixer}  positions that will appear in PCO but aren't relevant for the mixer setup (e.g. Sound Engineer)
  * @param {namesForNonPCOPositions} names for people not being scheduled via PCO
- * @param {user}                  username for basic authentication
- * @param {pwd}                   password for basic authentication
  * @customfunction
  *
  * @return a two-dimensional array containing the proposal for the Mixer Setup
  **/
-function CreateProposalForChannels(serviceType, planId, timeId, channelsOfTheMixer, positionSettings, positionsNotForMixer, namesForNonPCOPositions, user, pwd) {
-    // return createX32Proposal(309883, 37484746, 90413739, ["Leader","Vocals","Vocals","Vocals","Guitars","Guitars","Guitars","Guitars","Keys","Keys","Misc","Misc","Room Mic","Room Mic","Stage Mgr","Announcer","Drums","Drums","Drums","Drums","Drums","Drums","Drums","Klick","Sermon EN","Sermon DE","Translator","Slide Mgr","Music","Music","Free","Free"], [], [], "6761983d8e26cb71ef2454a1a8351a62d437b4c32b98918f7afea0a1fbd08680", "f8a2833b6dad9f9a09f8ef89ca73d4d1ea3f1a7c0f10ad638dec2bf2623d4044");
-    return createX32Proposal(serviceType, planId, timeId, channelsOfTheMixer, positionSettings, positionsNotForMixer, namesForNonPCOPositions, user, pwd);
+function CreateProposalForChannels(serviceType, planId, timeId, channelsOfTheMixer, positionSettings, positionsNotForMixer, namesForNonPCOPositions) {
+    return createX32Proposal(serviceType, planId, timeId, channelsOfTheMixer, positionSettings, positionsNotForMixer, namesForNonPCOPositions);
 }
 
 /**
  * With this function the next x plans can be loaded from PCO.
  *
  * @param {serviceType}           ID of service type which includes the specific plans
- * @param {user}                  username for basic authentication
- * @param {pwd}                   password for basic authentication
  * @param {lines}                 no of lines being returned
  * @customfunction
  *
  * @return a two-dimensional array containing the plans
  **/
-function GetNextPCOPlans(serviceType, user, pwd, lines) {
-    // return loadPCOPlans(309883, "6761983d8e26cb71ef2454a1a8351a62d437b4c32b98918f7afea0a1fbd08680", "f8a2833b6dad9f9a09f8ef89ca73d4d1ea3f1a7c0f10ad638dec2bf2623d4044", 50);
-    return loadPCOPlans(serviceType, user, pwd, lines);
+function GetNextPCOPlans(serviceType, lines) {
+    return loadPCOPlans(serviceType, lines);
 }

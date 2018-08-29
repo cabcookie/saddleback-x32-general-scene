@@ -1,14 +1,14 @@
-const loadPCOPlans = (serviceType, user, pwd, lines) => {
+const loadPCOPlans = (serviceType, lines) => {
     const url = URL_PLANS.replace(SERVICE_TYPE, serviceType).replace(LINES, lines);
-    return planDataToTable(importPCOData(url, user, pwd, filterPlans(serviceType, user, pwd)));
+    return planDataToTable(importPCOData(url, filterPlans(serviceType)));
 }
 
-const filterPlans = curry((serviceType, user, pwd, plans) => {
+const filterPlans = curry((serviceType, plans) => {
     let filtPlans = [];
     for (let item of plans.data) {
         const obj = {
             date: item.attributes.short_dates,
-            times: loadPCOPlanTimes(serviceType, item.id, user, pwd),
+            times: loadPCOPlanTimes(serviceType, item.id),
             id: item.id
         }
         filtPlans.push(obj);
@@ -16,9 +16,9 @@ const filterPlans = curry((serviceType, user, pwd, plans) => {
     return filtPlans;
 });
 
-const loadPCOPlanTimes = (serviceType, planId, user, pwd) => {
+const loadPCOPlanTimes = (serviceType, planId) => {
     const url = URL_PLAN_TIMES.replace(SERVICE_TYPE, serviceType).replace(PLAN_ID, planId);
-    return importPCOData(url, user, pwd, filterPlanTimes);
+    return importPCOData(url, filterPlanTimes);
 }
 
 const filterPlanTimes = times => {
