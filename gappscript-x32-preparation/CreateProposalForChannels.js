@@ -80,6 +80,5 @@ function GetUnidentifiedTeamPositions(serviceType, planId, timeId, positions, po
 * @return one-dimensional array (one column) with all position names not knwon
 **/
 function GetPositionTypesNotKnownInSoundbard(positionTypes, mixerSettings) {
-    var arr = ["TODO"];
-    return arr;
+    return listUnknownTypes(positionTypes, mixerSettings);
 }

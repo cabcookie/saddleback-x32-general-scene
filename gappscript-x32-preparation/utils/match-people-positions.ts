@@ -1,10 +1,19 @@
 const matchPeoplePositions = (people, positions, namesNonPCO, posNotForMixer) => {
     let matched = [];
+    const peopleWithInEar = [];
     people.forEach(p => {
         const pos = positions[p.position];
         if (pos) {
             const obj = cloneObject(p);
             obj.personId = obj.id;
+            const index = -1;
+            peopleWithInEar.filter((p,i) => if (obj.personId == p) index = i);
+            if (index < 0) {
+                obj.inEar = peopleWithInEar.length + 1;
+                peopleWithInEar.push(obj.personId);
+            } else {
+                obj.inEar = index+1;
+            }
             const toPush = makeChannels(obj, pos);
             for (let i of toPush) {
                 matched.push(i);
@@ -86,8 +95,8 @@ const makeChannelName = (o, s, ch) => {
 }
 
 const peoplePositionsToTable = p => {
-    let l = [["personId", "name", "position", "channelName", "positionType", "presetFileName"]];
+    let l = [["personId", "name", "position", "channelName", "positionType", "presetFileName", "inEar"]];
     // "status", "photo"
-    for (let i of p) l.push([i.personId, i.name, i.position, i.channelName, i.positionType, i.presetFileName]);
+    for (let i of p) l.push([i.personId, i.name, i.position, i.channelName, i.positionType, i.presetFileName, i.inEar]);
     return l;
 }
