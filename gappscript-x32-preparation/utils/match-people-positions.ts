@@ -56,7 +56,7 @@ const makeChannelSettings = (o, s, ch) => {
 }
 
 const makePresetFileName = (o, s, ch) => {
-    let name = s.prefixFileNaming + " ";
+    let name = s.folderGitHub + "/" + s.prefixFileNaming + " ";
     const NAME = "[NAME]";
     if (s.isPeopleSpecific) name = name + NAME + " ";
     if (s.toLoadPrefsForChannels) name = name + ch;

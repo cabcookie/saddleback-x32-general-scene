@@ -7,6 +7,7 @@ const getPositionSettings = posSettings => {
         noPCOScheduling: -1,
         prefixChannelNaming: -1,
         prefixFileNaming: -1,
+        folderGitHub: -1,
         positionType: -1
     };
     const headersWithBoolean = {
