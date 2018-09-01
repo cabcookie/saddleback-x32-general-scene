@@ -3,7 +3,7 @@ The Behringer X32 Scene File of Saddleback Berlin Church's Production Team.
 
 Open topics:
 - [ ] How many icons can be selected? (see [Configuration](#configuration))
-- [ ] Explain the EQ types (see [Equalizer Configuration](#equalizer-configuration))
+- [ ] Explain the special EQ types (see [Special types for matrix or main channels](##special-types-for-matrix-or-main-channels))
 
 ![X32](/X32-images/Behringer-X32.jpg)
 
@@ -44,6 +44,15 @@ Table of Contents
   * [Headamps (Not yet evaluated)](#headamps-not-yet-evaluated)
 
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc). Usage: `./gh-md-toc saddleback-x32-general-scene/README.md` and then copy the output of the terminal into the README.md file by replacing the exsting table of content.
+
+## How to use the template
+`[SCN] - take settings from scene file template (Soundboard Setup.scn)
+`[CH] - number of the mixer channel
+`[IE] - number of the In Ear channel
+`[AUX] - number of the aux input channel
+`[LIB] - takes the settings from the channel's library
+`[IEM] - takes the settings from the In Ear library (bus settings)
+`[IEM-S] - takes the settings from the In Ear library (bus send settings)
 
 ## General Configuration
 [Back to TOC](#table-of-content)
