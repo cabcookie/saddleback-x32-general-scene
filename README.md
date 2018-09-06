@@ -46,13 +46,13 @@ Table of Contents
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc). Usage: `./gh-md-toc saddleback-x32-general-scene/README.md` and then copy the output of the terminal into the README.md file by replacing the exsting table of content.
 
 ## How to use the template
-`[SCN] - take settings from scene file template (Soundboard Setup.scn)
-`[CH] - number of the mixer channel
-`[IE] - number of the In Ear channel
-`[AUX] - number of the aux input channel
-`[LIB] - takes the settings from the channel's library
-`[IEM] - takes the settings from the In Ear library (bus settings)
-`[IEM-S] - takes the settings from the In Ear library (bus send settings)
+`[SCN]` - take settings from scene file template (Soundboard Setup.scn)
+`[CH]` - number of the mixer channel
+`[IE]` - number of the In Ear channel
+`[AUX]` - number of the aux input channel
+`[LIB]` - takes the settings from the channel's library
+`[IEM]` - takes the settings from the In Ear library (bus settings)
+`[IEM-S]` - takes the settings from the In Ear library (bus send settings)
 
 ## General Configuration
 [Back to TOC](#table-of-content)
