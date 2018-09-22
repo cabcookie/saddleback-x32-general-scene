@@ -1,0 +1,15 @@
+#2.7# 2 "" 0 %0011111100111100 1
+/config "Zoe K" 1 CY
+/delay OFF   0.3
+/preamp +3.0 OFF OFF 24  59
+/gate ON GATE -37.5 42.0 32 2.00  504 0
+/gate/filter OFF 3.0 1k39
+/dyn ON COMP RMS LIN -19.0 2.5 2 6.00 47 0.02  860 POST 0 100 OFF
+/dyn/filter OFF 3.0 990.9
+/insert OFF POST OFF
+/eq ON
+/eq/1 PEQ 105.0 -8.75 6.1
+/eq/2 PEQ 148.3 -8.00 5.8
+/eq/3 PEQ 1k97 +0.00 2.0
+/eq/4 HShv 10k02 +0.00 2.0
+/mix ON  -2.6 ON +0 OFF   -oo

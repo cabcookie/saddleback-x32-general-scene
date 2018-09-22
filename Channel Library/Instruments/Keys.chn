@@ -1,5 +1,5 @@
 #2.7# 30 "" 0 %0011111100100100 1
-/config "Keys Laura" 30 GN
+/config "Keys" 30 GN
 /delay OFF   0.3
 /preamp +0.0 OFF ON 24 104
 /gate OFF GATE -60.0 39.0 32 0.02  412 0

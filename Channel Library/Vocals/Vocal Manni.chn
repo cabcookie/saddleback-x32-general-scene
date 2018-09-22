@@ -1,7 +1,7 @@
 #2.7# 2 "" 0 %0011111100111100 1
 /config "Mani" 1 CY
 /delay OFF   0.3
-/preamp +0.0 OFF ON 24 101
+/preamp +0.0 OFF ON 24 136
 /gate OFF EXP4 -38.5 27.0 20  100  576 0
 /gate/filter OFF 3.0 1k39
 /dyn ON COMP RMS LIN -23.0 2.0 1 8.00 74 0.03  576 POST 0 100 OFF

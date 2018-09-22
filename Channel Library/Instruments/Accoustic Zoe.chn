@@ -1,0 +1,15 @@
+#2.7# 31 "" 0 %0011111100100000 1
+/config "Acc Zoe" 23 GN
+/delay OFF   0.3
+/preamp +0.0 OFF OFF 24 110
+/gate ON EXP4 -41.0 34.0 7 79.6  211 0
+/gate/filter OFF 3.0 1k39
+/dyn ON COMP PEAK LIN -25.0 2.0 0 4.50 49 0.04  658 POST 0 100 OFF
+/dyn/filter ON 2.0 2k43
+/insert OFF POST OFF
+/eq ON
+/eq/1 PEQ 138.4 -11.7 4.3
+/eq/2 PEQ 957.3 -6.75 3.7
+/eq/3 PEQ 1k97 +0.00 2.0
+/eq/4 HShv 10k02 +0.00 2.0
+/mix ON  -4.3 ON +0 ON   0.0
