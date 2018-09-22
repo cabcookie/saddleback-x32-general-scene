@@ -1,0 +1,15 @@
+#2.7# 2 "" 0 %0011111100111100 1
+/config "Toluwanimi" 1 CY
+/delay OFF   0.3
+/preamp +0.0 OFF OFF 24  77
+/gate ON EXP4 -42.5 27.0 20  100  576 0
+/gate/filter OFF 3.0 1k39
+/dyn ON COMP RMS LIN -23.0 2.0 1 8.00 74 0.03  576 POST 0 100 OFF
+/dyn/filter OFF 3.0 990.9
+/insert OFF POST OFF
+/eq ON
+/eq/1 PEQ 124.7 +0.00 2.0
+/eq/2 PEQ 248.9 -12.0 2.3
+/eq/3 PEQ 3k43 +0.25 3.9
+/eq/4 PEQ 10k74 +0.50 3.5
+/mix ON -11.9 ON +0 OFF   -oo
