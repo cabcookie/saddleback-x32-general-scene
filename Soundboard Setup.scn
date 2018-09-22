@@ -438,8 +438,8 @@
 /ch/13/mix/08 ON   -oo
 /ch/13/mix/09 ON   -oo -100 POST
 /ch/13/mix/10 ON   -oo
-/ch/13/mix/11 ON  +4.3 -100 PRE
-/ch/13/mix/12 ON  +4.3
+/ch/13/mix/11 ON  +1.0 -100 PRE
+/ch/13/mix/12 ON  +1.0
 /ch/13/mix/13 ON   -oo -100 POST
 /ch/13/mix/14 ON   -oo
 /ch/13/mix/15 ON   -oo -100 POST
@@ -470,8 +470,8 @@
 /ch/14/mix/08 ON   -oo
 /ch/14/mix/09 ON   -oo +100 POST
 /ch/14/mix/10 ON   -oo
-/ch/14/mix/11 ON  +4.3 +100 PRE
-/ch/14/mix/12 ON  +4.3
+/ch/14/mix/11 ON  +1.0 +100 PRE
+/ch/14/mix/12 ON  +1.0
 /ch/14/mix/13 ON   -oo +100 POST
 /ch/14/mix/14 ON   -oo
 /ch/14/mix/15 ON   -oo +100 POST
@@ -512,18 +512,18 @@
 /ch/15/automix OFF -12.0
 /ch/16/config "Dave" 50 YE 16
 /ch/16/delay OFF   0.3
-/ch/16/preamp +0.0 OFF ON 24 149
+/ch/16/preamp +0.0 OFF ON 24 121
 /ch/16/gate OFF GATE -33.5 55.0 26 0.02  315 0
 /ch/16/gate/filter OFF 3.0 1k39
-/ch/16/dyn ON COMP PEAK LIN -23.5 3.0 2 10.5 74 0.02  211 POST 0 100 OFF
+/ch/16/dyn ON COMP RMS LIN -26.0 3.0 0 7.00 65 0.02  504 POST 0 100 OFF
 /ch/16/dyn/filter OFF 3.0 990.9
 /ch/16/insert OFF POST OFF
 /ch/16/eq ON
-/ch/16/eq/1 PEQ 376.7 -11.2 7.1
-/ch/16/eq/2 PEQ 611.0 -9.75  10
-/ch/16/eq/3 PEQ 5k20 +2.25 1.1
-/ch/16/eq/4 PEQ 195.4 -4.25 3.5
-/ch/16/mix ON  -6.5 ON +0 OFF   -oo
+/ch/16/eq/1 PEQ 376.7 -14.7 7.1
+/ch/16/eq/2 PEQ 611.0 -15.0  10
+/ch/16/eq/3 PEQ 5k20 +3.50 1.0
+/ch/16/eq/4 PEQ 153.5 +4.00 1.0
+/ch/16/mix ON  -3.6 ON +0 OFF   -oo
 /ch/16/mix/01 ON   -oo +0 PRE
 /ch/16/mix/02 ON   -oo
 /ch/16/mix/03 ON   -oo +0 PRE
@@ -1869,7 +1869,7 @@
 /dca/2 OFF  -8.7
 /dca/2/config "Instruments" 23 GN
 /dca/3 OFF  -8.1
-/dca/3/config "Cajon" 11 RD
+/dca/3/config "Drums" 11 RD
 /dca/4 OFF -18.6
 /dca/4/config "Effects" 68 MG
 /dca/5 ON  -3.3
