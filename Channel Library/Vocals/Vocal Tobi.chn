@@ -1,0 +1,15 @@
+#2.7# 2 "" 0 %0011111100111100 1
+/config "Tobi" 1 CY
+/delay OFF   0.3
+/preamp +0.0 OFF OFF 24  77
+/gate ON GATE -49.5 39.0 33 0.02  361 0
+/gate/filter OFF 3.0 1k39
+/dyn ON COMP RMS LIN -30.0 2.5 1 11.0 47 0.03  860 POST 0 100 OFF
+/dyn/filter OFF 3.0 990.9
+/insert OFF POST OFF
+/eq ON
+/eq/1 PEQ 124.7 +0.00 2.0
+/eq/2 PEQ 496.6 +0.00 2.0
+/eq/3 PEQ 1k97 +0.00 2.0
+/eq/4 HCut 9k03 +0.00 2.0
+/mix ON  -3.2 ON +0 OFF   -oo
