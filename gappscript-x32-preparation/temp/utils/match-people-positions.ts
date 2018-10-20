@@ -1,44 +1,59 @@
 const matchPeoplePositions = (people, positions, namesNonPCO, posNotForMixer) => {
-    let matched = [];
     const peopleWithInEar = [];
-    people.forEach(p => {
-        const pos = positions[p.position];
+    const matched = [];
+    people.forEach((person) => {
+        const pos = positions[person.position];
         if (pos) {
-            const obj = cloneObject(p);
-            obj.personId = obj.id;
-            const index = -1;
-            peopleWithInEar.filter((p,i) => if (obj.personId == p) index = i);
-            if (index < 0) {
+            const obj = cloneObject(person);
+            const inEarOfPerson = getInEarOfPerson(obj.personId, peopleWithInEar);
+            if (inEarOfPerson < 0) {
                 obj.inEar = peopleWithInEar.length + 1;
                 peopleWithInEar.push(obj.personId);
             } else {
-                obj.inEar = index+1;
+                obj.inEar = inEarOfPerson + 1;
             }
             const toPush = makeChannels(obj, pos);
-            for (let i of toPush) {
+            for (const i of toPush) {
                 matched.push(i);
             }
         } else {
-            const known = posNotForMixer.filter(m => m == p.position);
-            if (known.length == 0) throw new Error("ERROR: Position '"+ p.position +"' is not defined. Please describe this position in the list 'Relevant for mixer setup' or in the list 'Not relevant for mixer'.");
+            const known = posNotForMixer.filter((m) => m === person.position);
+            if (known.length === 0) {
+                throw new Error("ERROR: Position '"
+                    + person.position
+                    + "' is not defined. Please describe this position in the list "
+                    + "'Relevant for mixer setup' or in the list 'Not relevant for mixer'.");
+            }
         }
     });
-    for (let key in positions) {
-        const pos = positions[key];
-        if (pos.noPCOScheduling) {
-            const obj = {
-                position: key
-            };
-            const names = namesNonPCO.filter(n => n[0].toUpperCase() == key.toUpperCase());
-            if (names.length > 0) obj.name = names[0][1];
-            const toPush = makeChannels(obj, pos);
-            for (let i of toPush) {
-                matched.push(i);
+    for (const key in positions) {
+        if (positions.hasOwnProperty(key)) {
+            const pos = positions[key];
+            if (pos.noPCOScheduling) {
+                const obj = { position: key };
+                const names = namesNonPCO.filter((n) => n[0].toUpperCase() === key.toUpperCase());
+                if (names.length > 0) {
+                    obj.name = names[0][1];
+                }
+                const toPush = makeChannels(obj, pos);
+                for (const i of toPush) {
+                    matched.push(i);
+                }
             }
         }
     }
     return matched;
-}
+};
+
+const getInEarOfPerson = (personId, listOfInEars) => {
+    let index = -1;
+    listOfInEars.filter((item, idx) => {
+        if (personId === item) {
+            index = idx;
+        }
+    });
+    return index;
+};
 
 const makeChannels = (o, s) => {
     let toPush = [];

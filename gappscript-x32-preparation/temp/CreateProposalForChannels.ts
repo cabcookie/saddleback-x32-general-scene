@@ -1,8 +1,10 @@
+// const X32 = {};
+// const helper = {};
 
 /**
- * With this function you create a proposal for the organization of the mixer. You post the link for the affected service
- * in PCO, the relevant information for the PCO positions and the template for the mixer and as a result you will receive
- * the suggestion.
+ * With this function you create a proposal for the organization of the mixer. You post the link
+ * for the affected service in PCO, the relevant information for the PCO positions and the template
+ * for the mixer and as a result you will receive the suggestion.
  *
  * @param {serviceType}           ID of service type
  * @param {planID}                ID of plan for which the position are to be loaded
@@ -34,9 +36,11 @@
  * @customfunction
  *
  * @return a two-dimensional array containing the proposal for the Mixer Setup
- **/
+ *
+**/
 function CreateProposalForChannels(serviceType, planId, timeId, channelsOfTheMixer, positionSettings, positionsNotForMixer, namesForNonPCOPositions) {
-    return createX32Proposal(serviceType, planId, timeId, channelsOfTheMixer, positionSettings, positionsNotForMixer, namesForNonPCOPositions);
+    return [["test", "test2"], [["test", "test2"]], [["test", "test2"]]];
+    //return createX32Proposal(serviceType, planId, timeId, channelsOfTheMixer, positionSettings, positionsNotForMixer, namesForNonPCOPositions);
 }
 
 /**
@@ -53,31 +57,30 @@ function GetNextPCOPlans(serviceType, lines) {
 }
 
 /**
-* Shows all positions in PCO for which there is no information provided in this sheet.
-*
-* @param {serviceType}           ID of service type
-* @param {planID}                ID of plan for which the position are to be loaded
-* @param {timeId}                ID of time for which the position are to be loaded
-* @param {positions}             list of names of the positions from PCO
-* @param {positionsNotForMixer}  positions that will appear in PCO but aren't relevant for the
-*                                mixer setup (e.g. Sound Engineer)
-*
-* @customfunction
-* @return one-dimensional array (one column) with all position names not knwon
+ * Shows all positions in PCO for which there is no information provided in this sheet.
+ *
+ * @param {serviceType}           ID of service type
+ * @param {planID}                ID of plan for which the position are to be loaded
+ * @param {timeId}                ID of time for which the position are to be loaded
+ * @param {positions}             list of names of the positions from PCO
+ * @param {positionsNotForMixer}  positions that will appear in PCO but aren't relevant for the
+ *                                mixer setup (e.g. Sound Engineer)
+ * @customfunction
+ * @return one-dimensional array (one column) with all position names not knwon
 **/
 function GetUnidentifiedTeamPositions(serviceType, planId, timeId, positions, positionsNotForMixer) {
     return listUnknownPositions(serviceType, planId, timeId, positions, positionsNotForMixer);
 }
 
 /**
-* Shows all position types described in this sheet for which there is no channel information
-* provided in this sheet.
-*
-* @param {positionTypes}    complete list of position types defined in this sheet
-* @param {mixerSettings}    complete list of channels of the mixer defined in this sheet
-*
-* @customfunction
-* @return one-dimensional array (one column) with all position names not knwon
+ * Shows all position types described in this sheet for which there is no channel information
+ * provided in this sheet.
+ *
+ * @param {positionTypes}    complete list of position types defined in this sheet
+ * @param {mixerSettings}    complete list of channels of the mixer defined in this sheet
+ *
+ * @customfunction
+ * @return one-dimensional array (one column) with all position names not knwon
 **/
 function GetPositionTypesNotKnownInSoundbard(positionTypes, mixerSettings) {
     return listUnknownTypes(positionTypes, mixerSettings);

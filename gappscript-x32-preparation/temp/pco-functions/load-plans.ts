@@ -1,11 +1,11 @@
 const loadPCOPlans = (serviceType, lines) => {
     const url = URL_PLANS.replace(SERVICE_TYPE, serviceType).replace(LINES, lines);
     return planDataToTable(importPCOData(url, filterPlans(serviceType)));
-}
+};
 
 const filterPlans = curry((serviceType, plans) => {
-    let filtPlans = [];
-    for (let item of plans.data) {
+    const filtPlans = [];
+    for (const item of plans.data) {
         const obj = {
             date: item.attributes.short_dates,
             times: loadPCOPlanTimes(serviceType, item.id),
@@ -19,9 +19,9 @@ const filterPlans = curry((serviceType, plans) => {
 const loadPCOPlanTimes = (serviceType, planId) => {
     const url = URL_PLAN_TIMES.replace(SERVICE_TYPE, serviceType).replace(PLAN_ID, planId);
     return importPCOData(url, filterPlanTimes);
-}
+};
 
-const filterPlanTimes = times => {
+const filterPlanTimes = (times) => {
     let filtPlanTimes = [];
     for (let item of times.data) {
         filtPlanTimes.push({
@@ -30,20 +30,20 @@ const filterPlanTimes = times => {
         });
     }
     return filtPlanTimes
-}
+};
 
-const planDataToTable = plans => {
-    let lines = [];
+const planDataToTable = (plans) => {
+    const lines = [];
     for (let plan of plans) {
         for (let time of plan.times) {
             lines.push([time.time, plan.id, time.id])
         }
     }
     return lines;
-}
+};
 
-const formatDate = dateStr => {
-    var d = new Date(dateStr);
+const formatDate = (dateStr) => {
+    const d = new Date(dateStr);
     d.setHours(d.getHours() - 9);
     return d;
-}
+};
