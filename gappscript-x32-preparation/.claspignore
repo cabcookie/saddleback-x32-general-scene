@@ -1,3 +1,4 @@
 tslint.json
 globals.d.ts
 temp/**/*
+utils/mock-functions.ts

@@ -1,4 +1,4 @@
-import { loadPCOPlans } from "./main/load-pco-plans";
+import { loadPcoPlans } from "./pco-data/load-pco-plans";
 
 /**
  * With this function you create a proposal for the organization of the mixer. You post the link
@@ -58,6 +58,7 @@ function CreateProposalForChannels(
             throw new Error("positionsNotForMixer is not defined");
         }
 
+        // TODO: implement function createX32Proposal
         return [
             ["1", "Vocals", "Birgit Engel", "1"],
             ["2", "Vocals", "Sarah Pitts", "2"],
@@ -91,7 +92,7 @@ function CreateProposalForChannels(
  * @return a two-dimensional array containing the plans
 **/
 function GetNextPCOPlans(serviceType: number, lines: number): string[][] {
-    return loadPCOPlans(serviceType, lines);
+    return loadPcoPlans(serviceType, lines);
 }
 
 /**
@@ -121,6 +122,8 @@ function GetUnidentifiedTeamPositions(
         if (!(positionsNotForMixer && positionsNotForMixer.length > 0)) {
             throw new Error("positionsNotForMixer is not defined");
         }
+
+        // TODO: create function listUnknownPositions
         return [
             ["Sermon Video Preparation"],
             ["ProPresenter Preparation"],
@@ -148,6 +151,7 @@ function GetPositionTypesNotKnownInSoundbard(positionTypes: string[][], channels
         throw new Error("channelsOfTheMixer is not defined");
     }
 
+    // TODO: create function listUnknownTypes
     return [["Leader"]];
     // return listUnknownTypes(positionTypes, channelsOfTheMixer);
 }

@@ -3,7 +3,7 @@ const loadScheduledPeople = (serviceType, planId, timeId) => {
         {key: SERVICE_TYPE, value: serviceType.toString()},
         {key: LINES, value: "50"},
         {key: PLAN_ID, value: planId.toString()}]);
-    return filterScheduledPeople(timeId, importPCOData(url) as IPCOPeoples);
+    return filterScheduledPeople(timeId, importPcoData(url) as IPCOPeoples);
 };
 
 const scheduledPeopleToTable = (people) => people.map((i) => [

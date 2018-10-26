@@ -5,7 +5,7 @@ const createX32Proposal = (
     channelsOfTheMixer: string[],
     posSettings: string[][],
     positionsNotForMixer: string[],
-    namesForNonPCOPositions: string[]) => {
+    namesForNonPcoPositions: string[]) => {
   try {
     const scheduledPeople = loadScheduledPeople(serviceType, planId, timeId);
     // TODO: create type for getPositionSettings
@@ -14,7 +14,7 @@ const createX32Proposal = (
     const matchedPeoplePositions = matchPeoplePositions(
       scheduledPeople,
       positionSettings,
-      namesForNonPCOPositions,
+      namesForNonPcoPositions,
       positionsNotForMixer);
     // TODO: create type for matchMixerPositions
     const matchedMixerPositions = matchMixerPositions(

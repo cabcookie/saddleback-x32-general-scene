@@ -141,17 +141,17 @@ describe("test main function (callable in Google Sheet)", () => {
             })
 
             it("should return a table that has exactly three columns", () => {
-                expect(result[0].length).to.equal(3);
+                expect(result[0].length).to.equal(4);
             })
 
             it("should equal to expected values of a table", () => {
                 const values = [
-                    ["10/21/2018", "38402156", "92596410"],
-                    ["10/21/2018", "38402156", "92596475"],
-                    ["10/28/2018", "38402157", "92596418"],
-                    ["10/28/2018", "38402157", "92596476"],
-                    ["11/4/2018", "38579002", "93006671"],
-                    ["11/4/2018", "38579002", "93006673"]];
+                    ["Date", "Time", "Plan ID", "Time ID"],
+                    ["Oct 28", "10:00 am", "38402157", "92596418"],
+                    ["Oct 28", "12:00 pm", "38402157", "92596476"],
+                    ["Nov 4", "11:00 am", "38579002", "93006671"],
+                    ["Nov 4", "01:00 pm", "38579002", "93006673"]];
+
                 expect(result).to.deep.equal(values);
             })
         })
