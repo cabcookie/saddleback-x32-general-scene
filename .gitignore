@@ -3,5 +3,5 @@ Icon
 .clasp.json
 node_modules
 tokens.ts
-gappscript-x32-preparation/temp
-gappscript-x32-preparation/node_modules
+gappscript-x32-preparation/temp/*
+gappscript-x32-preparation/node_modules/*
