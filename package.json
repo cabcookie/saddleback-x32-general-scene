@@ -4,7 +4,7 @@
     "description": "A script to help preparing the X32 scene file based on the scheduled team in PCO",
     "main": "Soundboard Setup.scn",
     "repository": "git@github.com:cabcookie/saddleback-x32-general-scene.git",
-    "author": "Carsten Koch<carsten.b.koch@gmail.com>",
+    "author": "CK Video<carsten.b.koch@gmail.com>",
     "license": "MIT",
     "devDependencies": {
         "@types/chai": "4.1.6",

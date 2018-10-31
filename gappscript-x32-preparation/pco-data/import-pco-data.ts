@@ -1,15 +1,6 @@
 import { PCO_APP_ID, PCO_SECRET } from "../security/tokens";
-import { IHeader, IJSONContent, UrlFetchApp, Utilities } from "../utils/mock-functions";
-
-interface IUrlEncodedSecret {
-    encodedSecret: string;
-    url: string;
-}
-
-interface IUrlHeader {
-    header: IHeader;
-    url: string;
-}
+import { IUrlEncodedSecret, IUrlHeader } from "../utils/interfaces";
+import { IJSONContent, UrlFetchApp, Utilities } from "../utils/mock-functions";
 
 const encodeSecret: (url: string) => IUrlEncodedSecret = (url) => {
     return {

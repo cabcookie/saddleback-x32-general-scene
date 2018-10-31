@@ -2,8 +2,7 @@ const TEST_PCO_TIME1 = {
   "links": {
     "self": "https://api.planningcenteronline.com/services/v2/service_types/309883/plans/38402157/plan_times?where[time_type]=service"
   },
-  "data": [
-    {
+  "data": [{
       "type": "PlanTime",
       "id": "92596418",
       "attributes": {
@@ -13,8 +12,7 @@ const TEST_PCO_TIME1 = {
         "live_starts_at": null,
         "name": "1st Service",
         "starts_at": "2018-10-28T17:00:00Z",
-        "team_reminders": [
-          {
+        "team_reminders": [{
             "team_id": "2995816",
             "value": 6
           },
@@ -44,12 +42,10 @@ const TEST_PCO_TIME1 = {
       },
       "relationships": {
         "assigned_teams": {
-          "data": [
-            {
-              "type": "Team",
-              "id": "2872793"
-            }
-          ]
+          "data": [{
+            "type": "Team",
+            "id": "2872793"
+          }]
         }
       },
       "links": {
@@ -66,8 +62,7 @@ const TEST_PCO_TIME1 = {
         "live_starts_at": null,
         "name": "2nd Service",
         "starts_at": "2018-10-28T19:00:00Z",
-        "team_reminders": [
-          {
+        "team_reminders": [{
             "team_id": "2995816",
             "value": 6
           },
@@ -126,8 +121,7 @@ const TEST_PCO_TIME2 = {
   "links": {
     "self": "https://api.planningcenteronline.com/services/v2/service_types/309883/plans/38579002/plan_times?where[time_type]=service"
   },
-  "data": [
-    {
+  "data": [{
       "type": "PlanTime",
       "id": "93006671",
       "attributes": {
@@ -137,8 +131,7 @@ const TEST_PCO_TIME2 = {
         "live_starts_at": null,
         "name": "1st Service",
         "starts_at": "2018-11-04T18:00:00Z",
-        "team_reminders": [
-          {
+        "team_reminders": [{
             "team_id": "2995816",
             "value": 6
           },
@@ -168,12 +161,10 @@ const TEST_PCO_TIME2 = {
       },
       "relationships": {
         "assigned_teams": {
-          "data": [
-            {
-              "type": "Team",
-              "id": "2872793"
-            }
-          ]
+          "data": [{
+            "type": "Team",
+            "id": "2872793"
+          }]
         }
       },
       "links": {
@@ -190,8 +181,7 @@ const TEST_PCO_TIME2 = {
         "live_starts_at": null,
         "name": "2nd Service",
         "starts_at": "2018-11-04T20:00:00Z",
-        "team_reminders": [
-          {
+        "team_reminders": [{
             "team_id": "2995816",
             "value": 6
           },
@@ -246,5 +236,7 @@ const TEST_PCO_TIME2 = {
   }
 };
 
-export { TEST_PCO_TIME1, TEST_PCO_TIME2 };
-  
+export {
+  TEST_PCO_TIME1,
+  TEST_PCO_TIME2
+};

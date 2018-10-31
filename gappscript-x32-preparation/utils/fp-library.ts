@@ -1,20 +1,17 @@
-import { Utilities } from "./mock-functions";
-
-interface IKeyValuePair {
-    orgVal: string | number;
-    newVal: string | number;
-}
+import {
+    IKeyValuePair,
+} from "./interfaces";
 
 const replace = (keyvalues: IKeyValuePair[]) => (str: string): string =>
     keyvalues.reduce((prev, curr) => prev.replace(toString(curr.orgVal), toString(curr.newVal)), str);
 
 const toString = (value: any): string =>
     typeof value === "string" ?
-        value :
+    value :
     (typeof value.toString === "function" ?
-    (value.toString() === "[object Object]" ?
-        JSON.stringify(value) :
-        value.toString()) :
+        (value.toString() === "[object Object]" ?
+            JSON.stringify(value) :
+            value.toString()) :
         JSON.stringify(value));
 
 const endsWith = (str: string, end: string): boolean =>
@@ -46,4 +43,59 @@ const formatTime = (date: string | Date): string => {
     return (hh < 10 ? "0" : "") + hh + ":" + (mm < 10 ? "0" : "") + mm + " " + ampm;
 };
 
-export { replace, toString, endsWith, flow, IKeyValuePair, formatDate, formatTime };
+const filter = (fn: (item: any) => boolean, arr: any[]): any[] => arr.filter((item) => fn(item));
+
+const filterById = (id: number | string, arr: any[]): any[] => filter((i) => toString(i.id) === toString(id), arr);
+
+const cloneObject = (obj: any): any => JSON.parse(JSON.stringify(obj));
+
+const pureUnshift = (arr: any[], elem: any): any[] => {
+    const newArr = cloneObject(arr);
+    newArr.unshift(elem);
+    return newArr;
+};
+
+const purePop = (arr: any[]): any[] => {
+    const newArr = cloneObject(arr);
+    newArr.pop();
+    return newArr;
+};
+
+const pureShift = (arr: any[]): any[] => {
+    const newArr = cloneObject(arr);
+    newArr.shift();
+    return newArr;
+};
+
+const purePush = (arr: any[], elem: any): any[] => {
+    const newArr = cloneObject(arr);
+    newArr.push(elem);
+    return newArr;
+};
+
+const pureSplice = (arr: any[], position: number, count: number): any[] => {
+    const newArr = cloneObject(arr);
+    newArr.splice(position, count);
+    return newArr;
+};
+
+const pureSpliceOne = (arr: any[], position: number): any[] => pureSplice(arr, position, 1);
+
+export {
+    replace,
+    toString,
+    endsWith,
+    flow,
+    IKeyValuePair,
+    formatDate,
+    formatTime,
+    filter,
+    filterById,
+    cloneObject,
+    pureUnshift,
+    purePop,
+    purePush,
+    pureShift,
+    pureSplice,
+    pureSpliceOne,
+};

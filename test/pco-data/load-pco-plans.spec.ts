@@ -25,16 +25,16 @@ describe("test file load-pco-plans", () => {
             })
 
             it("should return a table that has exactly three columns", () => {
-                expect(result[0].length).to.equal(4);
+                expect(result[0].length).to.equal(3);
             })
 
             it("should equal to expected values of a table", () => {
                 const values = [
-                    ["Date", "Time", "Plan ID", "Time ID"],
-                    ["Oct 28", "10:00 am", "38402157", "92596418"],
-                    ["Oct 28", "12:00 pm", "38402157", "92596476"],
-                    ["Nov 4", "11:00 am", "38579002", "93006671"],
-                    ["Nov 4", "01:00 pm", "38579002", "93006673"]];
+                    ["Date / Time", "Plan ID", "Time ID"],
+                    ["Oct 28 10:00 am", "38402157", "92596418"],
+                    ["Oct 28 12:00 pm", "38402157", "92596476"],
+                    ["Nov 4 11:00 am", "38579002", "93006671"],
+                    ["Nov 4 01:00 pm", "38579002", "93006673"]];
 
                 expect(result).to.deep.equal(values);
             })

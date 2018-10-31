@@ -1,4 +1,5 @@
 import { loadPcoPlans } from "./pco-data/load-pco-plans";
+import { createX32Proposal } from "./x32/create-x32-proposal";
 
 /**
  * With this function you create a proposal for the organization of the mixer. You post the link
@@ -11,7 +12,7 @@ import { loadPcoPlans } from "./pco-data/load-pco-plans";
  * @param {channelsOfTheMixer}    a list of channels with their position types
  * @param {positionSettings}      two dimensional array with settings on the PCO positions; the
  *                                first row of this array should include the following headers:
- *                                   PCOPosition                name of the position from PCO
+ *                                   PcoPosition                name of the position from PCO
  *                                   channels                   a position might need several
  *                                                              channels, name the channels in a
  *                                                              comma-separated list
@@ -21,7 +22,7 @@ import { loadPcoPlans } from "./pco-data/load-pco-plans";
  *                                   toLoadPrefsForChannels     a flag [yes/no] to tell if the
  *                                                              presets need to be loaded for every
  *                                                              single channel from the channel list
- *                                   noPCOScheduling            flag [yes/no] to tell if this
+ *                                   noPcoScheduling            flag [yes/no] to tell if this
  *                                                              position is never scheduled on PCO
  *                                   prefixChannelNaming        a prefix which is used to name the
  *                                                              channel on the board
@@ -31,7 +32,7 @@ import { loadPcoPlans } from "./pco-data/load-pco-plans";
  *                                                              mixer template
  * @param {positionsNotForMixer}  positions that will appear in PCO but aren't relevant for the
  *                                mixer setup (e.g. Sound Engineer)
- * @param {namesForNonPCOPositions} names for people not being scheduled via PCO
+ * @param {namesForNonPcoPositions} names for people not being scheduled via PCO
  * @customfunction
  *
  * @return a two-dimensional array containing the proposal for the Mixer Setup
@@ -44,7 +45,7 @@ function CreateProposalForChannels(
     channelsOfTheMixer: any[],
     positionSettings: string [][],
     positionsNotForMixer: string[][],
-    namesForNonPCOPositions: string[][]): string[][] {
+    namesForNonPcoPositions: string[][]): string[][] {
         if (!(serviceType && serviceType > 0)) { throw new Error("serviceType is not defined"); }
         if (!(planId && planId > 0)) { throw new Error("planId is not defined"); }
         if (!(timeId && timeId > 0)) { throw new Error("timeId is not defined"); }
@@ -58,28 +59,14 @@ function CreateProposalForChannels(
             throw new Error("positionsNotForMixer is not defined");
         }
 
-        // TODO: implement function createX32Proposal
-        return [
-            ["1", "Vocals", "Birgit Engel", "1"],
-            ["2", "Vocals", "Sarah Pitts", "2"],
-            ["3", "Guitars", "Lynne Armstrong", "3"],
-            ["4", "Guitars", "", ""],
-            ["5", "Bass", "", ""],
-            ["6", "Keys", "Brian Miller", "4"],
-            ["7", "Keys", "Brian Miller", "4"],
-            ["8", "Drums", "Dave Schnitter", "5"],
-            ["9", "Drums", "Dave Schnitter", "5"],
-            ["10", "Drums", "Dave Schnitter", "5"],
-            ["11", "Sermon EN", "Rick Warren", ""]];
-
-        // return createX32Proposal(
-        //     serviceType,
-        //     planId,
-        //     timeId,
-        //     channelsOfTheMixer,
-        //     positionSettings,
-        //     positionsNotForMixer,
-        //     namesForNonPCOPositions);
+        return createX32Proposal(
+            serviceType,
+            planId,
+            timeId,
+            channelsOfTheMixer,
+            positionSettings,
+            positionsNotForMixer,
+            namesForNonPcoPositions);
 }
 
 /**
@@ -91,7 +78,7 @@ function CreateProposalForChannels(
  *
  * @return a two-dimensional array containing the plans
 **/
-function GetNextPCOPlans(serviceType: number, lines: number): string[][] {
+function GetNextPcoPlans(serviceType: number, lines: number): string[][] {
     return loadPcoPlans(serviceType, lines);
 }
 
@@ -158,6 +145,6 @@ function GetPositionTypesNotKnownInSoundbard(positionTypes: string[][], channels
 
 export {
     CreateProposalForChannels,
-    GetNextPCOPlans,
+    GetNextPcoPlans,
     GetUnidentifiedTeamPositions,
     GetPositionTypesNotKnownInSoundbard };
