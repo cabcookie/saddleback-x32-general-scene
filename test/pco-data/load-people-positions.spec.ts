@@ -1,25 +1,23 @@
 import { loadPeoplePositions } from "../../gappscript-x32-preparation/pco-data/load-people-positions";
+import { PLAN_ID, TIME_ID, SERVICE_TYPE } from "../CreateProposalForChannels.spec";
 
 const expect = require('chai').expect;
-const SERVICE_TYPE = 309883;
-const PLAN_ID = 38402157;
-const TIME_ID = 92596418;
 
 describe("test file load-people-positions", () => {
     describe("test loadPeoplePositions", () => {
         describe("all parameters should be provided correctly", () => {
             it("should throw an error if no service type is provided", () => {
-                const fn = () => loadPeoplePositions(undefined, PLAN_ID, TIME_ID);
+                const fn = loadPeoplePositions(undefined, PLAN_ID, TIME_ID);
                 expect(fn).to.throw("serviceType");
             })
             
             it("should throw an error if no plan id is provided", () => {
-                const fn = () => loadPeoplePositions(SERVICE_TYPE, undefined, TIME_ID);
+                const fn = loadPeoplePositions(SERVICE_TYPE, undefined, TIME_ID);
                 expect(fn).to.throw("planId");
             })
             
             it("should throw an error if no time id is provided", () => {
-                const fn = () => loadPeoplePositions(SERVICE_TYPE, PLAN_ID, undefined);
+                const fn = loadPeoplePositions(SERVICE_TYPE, PLAN_ID, undefined);
                 expect(fn).to.throw("timeId");
             })
         })
@@ -28,11 +26,11 @@ describe("test file load-people-positions", () => {
             const result = loadPeoplePositions(SERVICE_TYPE, PLAN_ID, TIME_ID);
 
             it("should return a table with at least one row", () => {
-                expect(result).to.be.an('array').that.is.not.empty;
+                expect(result()).to.be.an('array').that.is.not.empty;
             })
 
             it("should return an object with 13 entries", () => {
-                expect(result.length).to.equal(13);
+                expect(result().length).to.equal(13);
             })
 
             it("should equal to expected values of a table", () => {
@@ -133,7 +131,7 @@ describe("test file load-people-positions", () => {
                     personId: "12165087",
                 }];
                                             
-                expect(result).to.deep.equal(values);
+                expect(result()).to.deep.equal(values);
             })
         })
     })

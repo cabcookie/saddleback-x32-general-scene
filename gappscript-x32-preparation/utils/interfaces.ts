@@ -44,6 +44,7 @@ interface IPeoplePosition {
     positionType?: string;
     presetFileName?: string;
     folderGithub?: string;
+    noPcoScheduling?: boolean;
 }
 interface IPcoPeople {
     id?: string;
@@ -70,6 +71,16 @@ interface IPositionSettings {
     folderGitHub: string;
     positionType: string;
 }
+interface IMixerChannel {
+    channelName: string;
+    channelNumber: number;
+    folderGithub: string;
+    inEar: number;
+    personName: string;
+    photoThumbnail: string;
+    positionType: string;
+    presetFileName: string;
+}
 
 export {
     IPlan,
@@ -82,4 +93,5 @@ export {
     IPcoPeople,
     IPcoPeoples,
     IPeoplePosition,
-    IPositionSettings };
+    IPositionSettings,
+    IMixerChannel };

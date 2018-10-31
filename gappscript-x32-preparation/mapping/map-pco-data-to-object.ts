@@ -1,5 +1,5 @@
 import { loadPcoPlanTimes } from "../pco-data/load-pco-plans";
-import { filterById, formatTime } from "../utils/fp-library";
+import { filterById, formatTime, toString } from "../utils/fp-library";
 import { IPcoPeoples, IPcoPlans, IPcoTimes, IPeoplePosition, IPlan, ITime } from "../utils/interfaces";
 
 const mapPlanTimes: (times: IPcoTimes) => ITime[] = (times) => times.data.map((item) => {
@@ -29,7 +29,7 @@ const mapPeople = (timeId: number) => (pcoPeople: IPcoPeoples): IPeoplePosition[
             return {
                 declineReason: attr.decline_reason,
                 name: attr.name,
-                personId: data.id,
+                personId: toString(data.id),
                 photoThumbnail: attr.photo_thumbnail,
                 status: attr.status,
                 teamPositionName: attr.team_position_name,

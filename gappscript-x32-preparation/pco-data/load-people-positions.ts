@@ -4,7 +4,7 @@ import { flow, replace } from "../utils/fp-library";
 import { IPeoplePosition } from "../utils/interfaces";
 import { createHeader, encodeSecret, fetchData, parseData } from "./import-pco-data";
 
-const loadPeoplePositions = (serviceType: number, planId: number, timeId: number): IPeoplePosition[] => {
+const loadPeoplePositions = (serviceType: number, planId: number, timeId: number) => (): IPeoplePosition[] => {
     if (!(serviceType && serviceType > 0)) { throw new Error("serviceType is not defined"); }
     if (!(planId && planId > 0)) { throw new Error("planId are not defined"); }
     if (!(timeId && timeId > 0)) { throw new Error("timeId are not defined"); }

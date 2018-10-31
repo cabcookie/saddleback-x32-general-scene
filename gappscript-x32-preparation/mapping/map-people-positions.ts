@@ -1,16 +1,7 @@
-import {
-    posSettingsTableToObject,
-} from "../mapping/map-table-to-objects";
-import {
-    MAX_LENGTH_CHANNEL_NAME,
-} from "../utils/constants";
-import {
-    cloneObject,
-} from "../utils/fp-library";
-import {
-    IPeoplePosition,
-    IPositionSettings,
-} from "../utils/interfaces";
+import { posSettingsTableToObject } from "../mapping/map-table-to-objects";
+import { MAX_LENGTH_CHANNEL_NAME } from "../utils/constants";
+import { cloneObject } from "../utils/fp-library";
+import { IPeoplePosition, IPositionSettings } from "../utils/interfaces";
 
 const mapNonPcoPositions = (posSettings: string[][], namesForNonPcoPositions: string[][]): IPeoplePosition[] => {
     const channels = [];
@@ -37,6 +28,7 @@ const isLabelSetToYes = (attribute: string): boolean => attribute.toUpperCase() 
 const mapPersonToChannelSettings = (person: IPeoplePosition, posSettings: IPositionSettings): IPeoplePosition[] => {
     person.folderGithub = posSettings.folderGitHub;
     person.positionType = posSettings.positionType;
+    person.noPcoScheduling = isLabelSetToYes(posSettings.noPcoScheduling);
 
     const splitChannels = posSettings.channels.split(",");
     let channels = [];
@@ -65,8 +57,12 @@ const mapPersonToChannelSettings = (person: IPeoplePosition, posSettings: IPosit
 const mapPeoplePositions = (
         posSettings: string[][],
         namesForNonPcoPositions: string[][],
-        positionsNotForMixer: string[][]) =>
-    (peoplePosition: IPeoplePosition[]): any[] => {
+        positionsNotForMixer: string[]) =>
+    (peoplePosition: IPeoplePosition[]): IPeoplePosition[] => {
+        if (!(posSettings && posSettings.length > 0 && posSettings[0].length > 0)) {
+            throw new Error("positionSettings is not defined");
+        }
+
         const result = [];
 
         peoplePosition.forEach((person) => {
@@ -75,7 +71,7 @@ const mapPeoplePositions = (
 
             if (positionSettings === undefined) {
                 if (positionsNotForMixer
-                    .filter((posNotForMix) => posNotForMix[0] === person.teamPositionName)
+                    .filter((posNotForMix) => posNotForMix === person.teamPositionName)
                     .length === 0) {
                     throw new Error(person.teamPositionName + " is not defined");
                 }

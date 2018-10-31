@@ -1,27 +1,10 @@
 import { IPeoplePosition } from "../../gappscript-x32-preparation/utils/interfaces";
 import { mapPeoplePositions } from "../../gappscript-x32-preparation/mapping/map-people-positions";
-import { cloneObject, purePush } from "../../gappscript-x32-preparation/utils/fp-library";
+import { mapArrayToOneDimArray } from "../../gappscript-x32-preparation/mapping/map-arrays";
+import { POSITIONS_NOT_FOR_MIXER, POSITION_SETTINGS, NAMES_FOR_NON_PCO_POSITIONS } from "../CreateProposalForChannels.spec";
 
 const expect = require('chai').expect;
 
-const SERVICE_TYPE = 309883;
-const PLAN_ID = 38013798;
-const TIME_ID = 91687168;
-const CHANNELS_OF_THE_MIXER = ["Vocals", "Vocals", "Guitars", "Guitars", "Bass", "Keys", "Keys", "Drums", "Drums", "Drums", "Sermon EN"];
-// const POSITIONS = [["pcoPosition"], ["Vocal Team"], ["Keys"], ["Drums"], ["Worship Leader"], ["Acoustic Guitar"], ["Bass"], ["Sermon EN"]];
-// const POSITION_TYPES = [["positionType"], ["Vocals"], ["Keys"], ["Drums"], ["Leader"], ["Guitars"], ["Bass"], ["Sermon EN"]];
-const POSITION_SETTINGS = [
-    ["pcoPosition","channels","isPeopleSpecific","toLoadPrefsForChannels","noPcoScheduling","prefixChannelNaming","prefixFileNaming","folderGitHub","positionType"],
-    ["Vocal Team","","yes","","no","","Vocals","Vocals","Vocals"],
-    ["Keys","L, R","no","","no","Keys","Keys","Instruments","Keys"],
-    ["Drums","Kick, Snare, Overhead","no","yes","no","","Drums","Drums and Percussion","Drums"],
-    ["Worship Leader","","yes","","no","","Vocals","Vocals","Leader"],
-    ["Acoustic Guitar","","yes","","no","Acc","Acoustic","Instruments","Guitars"],
-    ["Bass","","yes","","no","Bass","Bass","Instruments","Bass"],
-    ["Sermon EN","","yes","","yes","Serm","Sermon","Others","Sermon EN"]
-];
-const POSITIONS_NOT_FOR_MIXER = [["Production Lead"], ["Sound Engineer"], ["Graphics Operator"]];
-const NAMES_FOR_NON_PCO_POSITIONS = [["Sermon EN", "Rick Warren"]];
 const people: IPeoplePosition[] = [{
         declineReason: null,
         name: "CD Person",
@@ -127,6 +110,7 @@ const result: IPeoplePosition[] = [{
         presetFileName: "Vocals CD Person 36308664",
         teamPositionName: "Worship Leader",
         folderGithub: "Vocals",
+        noPcoScheduling: false,
         personId: "36308664",
     }, {
         name: "CD Person",
@@ -138,6 +122,7 @@ const result: IPeoplePosition[] = [{
         presetFileName: "Acoustic CD Person 36308664",
         teamPositionName: "Acoustic Guitar",
         folderGithub: "Instruments",
+        noPcoScheduling: false,
         personId: "36308664",
     }, {
         name: "JM Drummer",
@@ -149,6 +134,7 @@ const result: IPeoplePosition[] = [{
         presetFileName: "Drums Kick",
         teamPositionName: "Drums",
         folderGithub: "Drums and Percussion",
+        noPcoScheduling: false,
         personId: "16662151",
     }, {
         name: "JM Drummer",
@@ -160,6 +146,7 @@ const result: IPeoplePosition[] = [{
         presetFileName: "Drums Snare",
         teamPositionName: "Drums",
         folderGithub: "Drums and Percussion",
+        noPcoScheduling: false,
         personId: "16662151",
     }, {
         name: "JM Drummer",
@@ -171,6 +158,7 @@ const result: IPeoplePosition[] = [{
         presetFileName: "Drums Overhead",
         teamPositionName: "Drums",
         folderGithub: "Drums and Percussion",
+        noPcoScheduling: false,
         personId: "16662151",
     }, {
         name: "VH Keys",
@@ -182,6 +170,7 @@ const result: IPeoplePosition[] = [{
         presetFileName: "Keys",
         teamPositionName: "Keys",
         folderGithub: "Instruments",
+        noPcoScheduling: false,
         personId: "39811704",
     }, {
         name: "VH Keys",
@@ -193,6 +182,7 @@ const result: IPeoplePosition[] = [{
         presetFileName: "Keys",
         teamPositionName: "Keys",
         folderGithub: "Instruments",
+        noPcoScheduling: false,
         personId: "39811704",
     }, {
         name: "TA Singer",
@@ -204,6 +194,7 @@ const result: IPeoplePosition[] = [{
         presetFileName: "Vocals TA Singer 29767105",
         teamPositionName: "Vocal Team",
         folderGithub: "Vocals",
+        noPcoScheduling: false,
         personId: "29767105",
     }, {
         name: "MG Bass",
@@ -215,6 +206,7 @@ const result: IPeoplePosition[] = [{
         presetFileName: "Bass MG Bass 25024004",
         teamPositionName: "Bass",
         folderGithub: "Instruments",
+        noPcoScheduling: false,
         personId: "25024004",
     }, {
         name: "SP Sings",
@@ -226,6 +218,7 @@ const result: IPeoplePosition[] = [{
         presetFileName: "Vocals SP Sings 40587017",
         teamPositionName: "Vocal Team",
         folderGithub: "Vocals",
+        noPcoScheduling: false,
         personId: "40587017",
     }, {
         name: "Rick Warren",
@@ -237,19 +230,20 @@ const result: IPeoplePosition[] = [{
         presetFileName: "Sermon Rick Warren",
         teamPositionName: "Sermon EN",
         folderGithub: "Others",
+        noPcoScheduling: true,
         personId: "",
     }];
 
 describe("test file map-people-positions", () => {
     describe("test mapPeoplePositions", () => {
-        const posNotForMixer: string[][] = cloneObject(POSITIONS_NOT_FOR_MIXER);
+        const posNotForMixer: string[] = mapArrayToOneDimArray(POSITIONS_NOT_FOR_MIXER);
 
         describe("check exceptions", () => {
             const fn = () => mapPeoplePositions(POSITION_SETTINGS, NAMES_FOR_NON_PCO_POSITIONS, posNotForMixer)(people);
             ["Interpreter", "ProPresenter Preparation", "Sermon Video Preparation"].forEach((pos) =>
                 it("should throw " + pos, () => {
                     expect(fn).to.throw(pos);
-                    posNotForMixer.push([pos]);
+                    posNotForMixer.push(pos);
                 })
             );
         })

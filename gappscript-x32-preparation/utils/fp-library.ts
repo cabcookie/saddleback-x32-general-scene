@@ -1,6 +1,4 @@
-import {
-    IKeyValuePair,
-} from "./interfaces";
+import { IKeyValuePair } from "./interfaces";
 
 const replace = (keyvalues: IKeyValuePair[]) => (str: string): string =>
     keyvalues.reduce((prev, curr) => prev.replace(toString(curr.orgVal), toString(curr.newVal)), str);
