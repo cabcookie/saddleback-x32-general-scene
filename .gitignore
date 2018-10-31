@@ -1,6 +1,5 @@
 .DS_Store
 Icon
-.gitignore
 .clasp.json
 node_modules
 tokens.ts
