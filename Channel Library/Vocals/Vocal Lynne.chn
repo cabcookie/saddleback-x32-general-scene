@@ -9,7 +9,7 @@
 /insert OFF POST OFF
 /eq ON
 /eq/1 PEQ 276.1 -2.25 2.5
-/eq/2 PEQ 778.1 -6.00 2.4
-/eq/3 PEQ 6k62 +4.50 1.3
-/eq/4 PEQ 20k00 -0.50 4.5
-/mix ON  +4.1 ON +0 OFF   -oo
+/eq/2 PEQ 778.1 -6.50 2.3
+/eq/3 PEQ 2k89 -0.25 2.0
+/eq/4 PEQ 10k37 +3.00 2.4
+/mix ON  -1.3 ON +0 OFF   -oo
