@@ -6,9 +6,10 @@
 /gate/filter OFF 3.0 1k39
 /dyn ON COMP RMS LIN -25.5 2.0 2 8.00 48 0.03  538 POST 0 100 OFF
 /dyn/filter OFF 3.0 1k06
+/insert OFF POST OFF
 /eq ON
 /eq/1 PEQ 276.1 -2.25 2.5
 /eq/2 PEQ 778.1 -6.00 2.4
-/eq/3 PEQ 3k81 -0.25 2.0
-/eq/4 PEQ 10k37 -6.25 3.5
-/mix ON  -0.8 ON +0 OFF   -oo
+/eq/3 PEQ 6k62 +4.50 1.3
+/eq/4 PEQ 20k00 -0.50 4.5
+/mix ON  +4.1 ON +0 OFF   -oo

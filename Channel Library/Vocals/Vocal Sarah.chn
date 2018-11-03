@@ -1,0 +1,15 @@
+#2.7# 2 "Voc Sarah" 0 %0011111100111100 1
+/config "Sarah" 1 CY
+/delay OFF   0.3
+/preamp +3.0 OFF OFF 24  79
+/gate ON EXP4 -41.5 27.0 32  100  658 0
+/gate/filter OFF 3.0 1k39
+/dyn ON COMP RMS LIN -23.5 2.5 1 3.00 48 0.63  538 POST 0 100 OFF
+/dyn/filter OFF 3.0 990.9
+/insert OFF POST OFF
+/eq ON
+/eq/1 PEQ 124.7 +0.00 2.0
+/eq/2 PEQ 778.1 -5.00 2.4
+/eq/3 PEQ 4k08 +3.75 1.6
+/eq/4 HCut 20k00 +0.00 2.0
+/mix ON  +0.7 ON +0 OFF   -oo

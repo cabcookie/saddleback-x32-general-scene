@@ -1,15 +1,15 @@
 #2.7# 31 "Acc Lynne" 0 %0011111100100000 1
 /config "Acc Lynne" 23 GN
 /delay OFF   0.3
-/preamp +0.0 OFF OFF 24 110
+/preamp +0.0 OFF OFF 24  84
 /gate ON GATE -38.0 24.0 8 79.6  124 0
 /gate/filter OFF 3.0 1k39
 /dyn ON COMP PEAK LIN -23.0 2.0 2 4.50 49 0.04  658 POST 0 100 OFF
 /dyn/filter ON 2.0 2k43
 /insert OFF POST OFF
-/eq OFF
+/eq ON
 /eq/1 PEQ 138.4 -11.7 4.3
-/eq/2 PEQ 957.3 -6.75 3.7
-/eq/3 PEQ 306.2 -4.50 5.5
+/eq/2 PEQ 726.2 +3.00 2.3
+/eq/3 PEQ 328.1 -4.75 5.5
 /eq/4 HShv 10k02 +0.00 2.0
-/mix ON  -8.3 ON +0 ON   -oo
+/mix ON  -0.2 ON +0 OFF   -oo

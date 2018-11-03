@@ -1,0 +1,15 @@
+#2.7# 30 "Violin" 0 %0011111100100100 1
+/config "Violin Verno" 1 GN
+/delay OFF   0.3
+/preamp +0.0 OFF ON 24 136
+/gate ON GATE -47.0 38.0 1  502  983 0
+/gate/filter OFF 3.0 990.9
+/dyn ON COMP PEAK LOG -25.0 2.5 1 5.00 70 10.0  538 POST 0 100 OFF
+/dyn/filter OFF 3.0 990.9
+/insert OFF POST OFF
+/eq ON
+/eq/1 PEQ 124.7 +0.00 2.0
+/eq/2 PEQ 514.1 +4.50 1.6
+/eq/3 PEQ 3k20 -4.50 1.5
+/eq/4 HShv 10k02 +0.00 2.0
+/mix ON  -0.6 ON +0 OFF   -oo

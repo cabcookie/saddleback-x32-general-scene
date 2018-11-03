@@ -1,15 +1,15 @@
-#2.7# 30 "" 0 %0011111100100100 1
+#2.7# 30 "Keys" 0 %0011111100100100 1
 /config "Keys" 30 GN
 /delay OFF   0.3
-/preamp +0.0 OFF ON 24  89
+/preamp +0.0 OFF ON 24  55
 /gate OFF GATE -60.0 39.0 32 0.02  412 0
 /gate/filter OFF 3.0 1k39
 /dyn ON COMP RMS LIN -21.0 2.5 2 8.00 49 0.03  504 POST 0 100 OFF
 /dyn/filter OFF 3.0 990.9
 /insert OFF POST OFF
 /eq ON
-/eq/1 PEQ 164.4 -4.00 2.6
+/eq/1 PEQ 143.2 +4.75 0.6
 /eq/2 PEQ 339.6 -6.00 2.2
-/eq/3 PEQ 1k26 +3.50 1.0
-/eq/4 HCut 5k57 +0.00 0.9
-/mix ON  -6.8 ON -100 ON -13.5
+/eq/3 PEQ 957.3 -2.00 1.9
+/eq/4 HCut 20k00 +0.00 0.9
+/mix ON  +0.2 ON -100 ON  -1.0
