@@ -94,27 +94,27 @@
 /ch/02/mix/16 ON   -oo
 /ch/02/grp %00000001 %000000
 /ch/02/automix OFF -12.0
-/ch/03/config "Rani V" 1 CY 3
+/ch/03/config "Rani" 1 CY 3
 /ch/03/delay OFF   0.3
-/ch/03/preamp +0.0 OFF OFF 24  92
-/ch/03/gate ON EXP4 -42.5 27.0 20  100  576 0
+/ch/03/preamp +0.0 OFF OFF 24 144
+/ch/03/gate ON GATE -38.5 42.0 20 89.3  504 0
 /ch/03/gate/filter OFF 3.0 1k39
-/ch/03/dyn ON COMP RMS LIN -25.5 2.0 2 8.00 48 0.03  538 POST 0 100 OFF
-/ch/03/dyn/filter OFF 3.0 1k06
+/ch/03/dyn ON COMP RMS LIN -27.0 2.5 2 6.00 47 0.02  860 POST 0 100 OFF
+/ch/03/dyn/filter OFF 3.0 990.9
 /ch/03/insert OFF POST OFF
 /ch/03/eq ON
-/ch/03/eq/1 PEQ 276.1 -2.25 2.5
-/ch/03/eq/2 PEQ 778.1 -6.00 2.4
-/ch/03/eq/3 PEQ 3k81 -0.25 2.0
-/ch/03/eq/4 PEQ 10k37 -6.25 3.5
-/ch/03/mix ON  -7.4 ON +0 OFF   -oo
-/ch/03/mix/01 ON -12.0 +0 PRE
-/ch/03/mix/02 ON -12.0
-/ch/03/mix/03 ON -15.5 +0 PRE
-/ch/03/mix/04 ON  -2.5
-/ch/03/mix/05 ON -24.0 +0 PRE
-/ch/03/mix/06 ON -22.5
-/ch/03/mix/07 ON -10.5 +0 PRE
+/ch/03/eq/1 PEQ 105.0 -8.75 6.1
+/ch/03/eq/2 PEQ 148.3 -8.00 5.8
+/ch/03/eq/3 PEQ 1k02 -5.50 3.4
+/ch/03/eq/4 HShv 10k02 +0.00 2.0
+/ch/03/mix ON  -6.5 ON -20 OFF   -oo
+/ch/03/mix/01 ON -25.5 +0 EQ->
+/ch/03/mix/02 ON -26.5
+/ch/03/mix/03 ON  -1.3 +0 EQ->
+/ch/03/mix/04 ON  -1.5
+/ch/03/mix/05 ON -38.0 +0 EQ->
+/ch/03/mix/06 ON -43.0
+/ch/03/mix/07 ON  -2.0 +0 EQ->
 /ch/03/mix/08 ON   -oo
 /ch/03/mix/09 ON   0.0 +0 POST
 /ch/03/mix/10 ON   -oo
@@ -510,20 +510,20 @@
 /ch/15/mix/16 ON   -oo
 /ch/15/grp %00000000 %000000
 /ch/15/automix OFF -12.0
-/ch/16/config "Dave" 50 YE 16
+/ch/16/config "Dave" 50 YE 2
 /ch/16/delay OFF   0.3
-/ch/16/preamp +0.0 OFF ON 24 121
+/ch/16/preamp +0.0 OFF OFF 24  62
 /ch/16/gate OFF GATE -33.5 55.0 26 0.02  315 0
 /ch/16/gate/filter OFF 3.0 1k39
-/ch/16/dyn ON COMP RMS LIN -26.0 3.0 0 7.00 65 0.02  504 POST 0 100 OFF
+/ch/16/dyn ON COMP PEAK LIN -23.5 3.0 2 10.5 74 0.02  211 POST 0 100 OFF
 /ch/16/dyn/filter OFF 3.0 990.9
 /ch/16/insert OFF POST OFF
 /ch/16/eq ON
-/ch/16/eq/1 PEQ 376.7 -14.7 7.1
-/ch/16/eq/2 PEQ 611.0 -15.0  10
-/ch/16/eq/3 PEQ 5k20 +3.50 1.0
-/ch/16/eq/4 PEQ 153.5 +4.00 1.0
-/ch/16/mix ON  -7.9 ON +0 OFF   -oo
+/ch/16/eq/1 PEQ 257.6 -1.00 2.0
+/ch/16/eq/2 PEQ 654.7 +1.50 2.0
+/ch/16/eq/3 PEQ 1k97 +3.00 1.9
+/ch/16/eq/4 HShv 10k02 +0.00 2.0
+/ch/16/mix ON  -4.6 ON +0 OFF   -oo
 /ch/16/mix/01 ON   -oo +0 PRE
 /ch/16/mix/02 ON   -oo
 /ch/16/mix/03 ON   -oo +0 PRE
