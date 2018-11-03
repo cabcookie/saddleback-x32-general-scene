@@ -2,14 +2,14 @@
 /config "Diazno" 1 CY
 /delay OFF   0.3
 /preamp +0.0 OFF OFF 24  79
-/gate OFF EXP4 -38.5 27.0 20  100  576 0
+/gate ON EXP4 -46.5 27.0 20  100  576 0
 /gate/filter OFF 3.0 1k39
-/dyn ON COMP PEAK LIN -23.0 2.0 0 8.00 63 0.03  658 POST 0 100 OFF
+/dyn ON COMP PEAK LIN -26.0 3.0 2 8.00 71 0.03  538 POST 0 100 OFF
 /dyn/filter ON 3.0 1k17
 /insert OFF POST OFF
 /eq ON
-/eq/1 PEQ 124.7 +0.00 2.0
-/eq/2 PEQ 496.6 +0.00 2.0
-/eq/3 PEQ 3k43 -4.00 2.3
-/eq/4 HShv 10k02 +0.00 2.0
-/mix ON  -0.2 ON -14 OFF   -oo
+/eq/1 PEQ 216.8 -2.50 1.8
+/eq/2 PEQ 463.5 -6.50 2.8
+/eq/3 PEQ 2k69 -1.50 2.0
+/eq/4 VEQ 5k97 +1.50 2.0
+/mix ON  +2.1 ON +0 OFF   -oo
