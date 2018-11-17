@@ -4,6 +4,7 @@ import { mapPeoplePositions } from "../mapping/map-people-positions";
 import { mapPositionsToMixer } from "../mapping/map-positions-to-mixer";
 import { loadPeoplePositions } from "../pco-data/load-people-positions";
 import { flow } from "../utils/fp-library";
+import { IMixerChannel } from "../utils/interfaces";
 
 const createX32Proposal = (
     serviceType: number,
@@ -12,7 +13,7 @@ const createX32Proposal = (
     channelsOfTheMixer: any[],
     posSettings: string[][],
     positionsNotForMixer: any[],
-    namesForNonPcoPositions: string[][]): string[][] => {
+    namesForNonPcoPositions: string[][]) => (): IMixerChannel[] => {
         if (!(channelsOfTheMixer && channelsOfTheMixer.length > 0)) {
             throw new Error("channelsOfTheMixer is not defined");
         }
@@ -24,7 +25,6 @@ const createX32Proposal = (
             loadPeoplePositions(serviceType, planId, timeId),
             mapPeoplePositions(posSettings, namesForNonPcoPositions, mapArrayToOneDimArray(positionsNotForMixer)),
             mapPositionsToMixer(mapArrayToOneDimArray(channelsOfTheMixer)),
-            mixerPositionsToTable,
         );
 
         return pipe();

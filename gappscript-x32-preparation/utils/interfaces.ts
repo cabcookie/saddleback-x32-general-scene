@@ -1,4 +1,4 @@
-import { IHeader } from "./mock-functions";
+import { IHeader, IJSONContent } from "./mock-functions";
 
 interface IPlan {
     date: string;
@@ -21,11 +21,11 @@ interface IPcoTime {
 }
 interface IPcoTimes { data: IPcoTime[]; }
 interface IUrlEncodedSecret {
-    encodedSecret: string;
+    encodedSecret?: string;
     url: string;
 }
 interface IUrlHeader {
-    header: IHeader;
+    header?: IHeader;
     url: string;
 }
 interface IKeyValuePair {
