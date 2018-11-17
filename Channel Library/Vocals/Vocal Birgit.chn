@@ -8,8 +8,9 @@
 /dyn/filter OFF 3.0 990.9
 /insert OFF POST OFF
 /eq ON
-/eq/1 PEQ 124.7 +0.00 2.0
-/eq/2 PEQ 248.9 -12.0 2.3
-/eq/3 PEQ 3k43 +0.25 3.9
-/eq/4 PEQ 10k74 +0.50 3.5
-/mix ON  -5.8 ON +0 OFF   -oo
+/eq/1 PEQ 124.7 -2.50 2.0
+/eq/2 PEQ 248.9 -8.50 2.3
+/eq/3 PEQ 1k30 +2.25 3.9
+/eq/4 PEQ 7k87 +2.50 3.5
+/mix ON -11.8 ON +0 OFF   -oo
+/grp %00000001 %000000
