@@ -19,7 +19,6 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 
 ### Added
 - import data from Github
-- scene preparation file for 2018-11-18 service
 
 ### Changed
 - reduced drum mics to only three
