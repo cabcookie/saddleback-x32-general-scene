@@ -11,7 +11,7 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 - PATCH version when you make backwards-compatible bug fixes.
 
 ## [Planned]
-- reduce drum mics to only three for the moment (easier setup)
+- Nothing
 
 ## [Work In Progress]
 ### Fixed
@@ -19,6 +19,9 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 
 ### Added
 - import data from Github
+
+### Changed
+- reduced drum mics to only three
 
 ## [1.0.1] - 2018-11-04
 ### Added
