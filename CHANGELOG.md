@@ -21,7 +21,8 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 - import data from Github
 
 ### Changed
-- reduced drum mics to only three
+- reduce drum mics to only three for the moment (easier setup)
+- added vocal settings for Ulrike
 
 ## [1.0.1] - 2018-11-04
 ### Added
