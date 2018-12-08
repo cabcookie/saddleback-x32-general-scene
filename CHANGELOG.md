@@ -11,7 +11,6 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 - PATCH version when you make backwards-compatible bug fixes.
 
 ## [Planned]
-- reduce drum mics to only three for the moment (easier setup)
 
 ## [Work In Progress]
 ### Fixed
@@ -19,6 +18,10 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 
 ### Added
 - import data from Github
+
+### Changed
+- reduce drum mics to only three for the moment (easier setup)
+- added vocal settings for Ulrike
 
 ## [1.0.1] - 2018-11-04
 ### Added
