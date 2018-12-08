@@ -11,6 +11,7 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 - PATCH version when you make backwards-compatible bug fixes.
 
 ## [Planned]
+- Nothing
 
 ## [Work In Progress]
 ### Fixed
