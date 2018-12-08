@@ -19,16 +19,14 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 
 ### Added
 - import data from Github
+- preparation scene file for 2018-12-09 morning services
 
 ### Changed
-- Nothing
+- reduced drum mics to only three for the moment (easier setup)
 
 ## [1.0.2] - 2018-12-09
 ### Added
 - added vocal settings for Ulrike
-
-### Changed
-- reduce drum mics to only three for the moment (easier setup)
 
 ## [1.0.1] - 2018-11-04
 ### Added
