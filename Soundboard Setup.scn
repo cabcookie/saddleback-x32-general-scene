@@ -1,4 +1,4 @@
-#2.7# "General" "" %000000000 1                                                                                                
+#2.7# "General 1.0.3" "" %000000000 1                                                                                                
 /config/chlink OFF OFF OFF OFF ON OFF ON OFF OFF OFF OFF OFF OFF OFF ON OFF
 /config/auxlink ON ON ON ON
 /config/fxlink ON ON ON ON
@@ -9,7 +9,7 @@
 /config/mono LR+M ON
 /config/solo   0.0 AUX78 0.0 PFL PFL PFL ON OFF ON -22 OFF OFF OFF   0.3 OFF OFF OFF
 /config/talk ON EXT
-/config/talk/A -12.0 OFF ON %000000000000000010
+/config/talk/A -12.0 OFF OFF %000000000000000001
 /config/talk/B -12.0 ON OFF %000000000010000000
 /config/osc -40.0 100.2 1k00 F1 PINK 17
 /config/routing REC
@@ -606,25 +606,25 @@
 /ch/18/mix/16 ON   -oo
 /ch/18/grp %00000100 %000000
 /ch/18/automix OFF -12.0
-/ch/19/config "Snare Btm" 4 RD 19
+/ch/19/config "Overhead" 10 RD 19
 /ch/19/delay OFF   0.3
-/ch/19/preamp +0.0 OFF ON 24 104
-/ch/19/gate ON EXP3 -48.0 60.0 0 20.0  141 0
-/ch/19/gate/filter ON 5.0 164.4
-/ch/19/dyn ON COMP PEAK LIN -30.0 3.0 0 6.00 46 0.04  68 POST 0 100 OFF
-/ch/19/dyn/filter OFF HC12 1k26
+/ch/19/preamp +0.0 OFF ON 24 124
+/ch/19/gate OFF GATE -80.0 60.0 1  502  983 0
+/ch/19/gate/filter OFF 3.0 990.9
+/ch/19/dyn ON COMP PEAK LOG -14.5 2.0 0 0.00 32 0.32  226 POST 0 100 OFF
+/ch/19/dyn/filter OFF 3.0 990.9
 /ch/19/insert OFF POST OFF
-/ch/19/eq ON
-/ch/19/eq/1 PEQ 805.4 -9.00 2.3
-/ch/19/eq/2 PEQ 2k19 +0.50 2.0
-/ch/19/eq/3 PEQ 4k37 -7.50 2.6
-/ch/19/eq/4 HShv 10k02 +0.00 2.0
-/ch/19/mix ON  -8.4 ON -10 ON   -oo
-/ch/19/mix/01 ON   -oo +0 PRE
+/ch/19/eq OFF
+/ch/19/eq/1 PEQ 124.7 +0.00 2.0
+/ch/19/eq/2 PEQ 496.6 +0.00 2.0
+/ch/19/eq/3 PEQ 1k97 +0.00 2.0
+/ch/19/eq/4 PEQ 7k34 +0.00  10
+/ch/19/mix ON  -1.9 ON -32 ON   -oo
+/ch/19/mix/01 ON -34.0 +0 PRE
 /ch/19/mix/02 ON   -oo
 /ch/19/mix/03 ON   -oo +0 PRE
 /ch/19/mix/04 ON   -oo
-/ch/19/mix/05 ON -23.0 +0 PRE
+/ch/19/mix/05 ON   -oo +0 PRE
 /ch/19/mix/06 ON   -oo
 /ch/19/mix/07 ON   -oo +0 PRE
 /ch/19/mix/08 ON   -oo
@@ -638,7 +638,7 @@
 /ch/19/mix/16 ON   -oo
 /ch/19/grp %00000100 %000000
 /ch/19/automix OFF -12.0
-/ch/20/config "Tom Floor" 8 RD 20
+/ch/20/config "" 8 OFF 20
 /ch/20/delay OFF   0.3
 /ch/20/preamp +0.0 OFF ON 24 101
 /ch/20/gate ON GATE -36.5 30.0 1  502  983 0
@@ -651,12 +651,12 @@
 /ch/20/eq/2 PEQ 496.6 +0.00 2.0
 /ch/20/eq/3 PEQ 1k97 +0.00 2.0
 /ch/20/eq/4 HCut 3k43 +0.50 8.6
-/ch/20/mix ON  -2.2 ON -24 ON   0.0
-/ch/20/mix/01 ON -81.0 +0 PRE
+/ch/20/mix ON   -oo ON -24 ON   0.0
+/ch/20/mix/01 ON   -oo +0 PRE
 /ch/20/mix/02 ON   -oo
 /ch/20/mix/03 ON   -oo +0 PRE
 /ch/20/mix/04 ON   -oo
-/ch/20/mix/05 ON -25.0 +0 PRE
+/ch/20/mix/05 ON   -oo +0 PRE
 /ch/20/mix/06 ON   -oo
 /ch/20/mix/07 ON   -oo +0 PRE
 /ch/20/mix/08 ON   -oo
@@ -670,7 +670,7 @@
 /ch/20/mix/16 ON   -oo
 /ch/20/grp %00000100 %000000
 /ch/20/automix OFF -12.0
-/ch/21/config "Tom" 7 RD 21
+/ch/21/config "" 7 OFF 21
 /ch/21/delay OFF   0.3
 /ch/21/preamp +0.0 OFF ON 24 104
 /ch/21/gate ON EXP4 -46.5 27.0 20  100  576 0
@@ -683,12 +683,12 @@
 /ch/21/eq/2 PEQ 1k21 -5.50 2.4
 /ch/21/eq/3 PEQ 1k97 +0.00 2.0
 /ch/21/eq/4 HCut 7k34 +0.00 2.0
-/ch/21/mix ON  -2.6 ON +20 ON   0.0
+/ch/21/mix ON   -oo ON +20 ON   0.0
 /ch/21/mix/01 ON   -oo +0 PRE
 /ch/21/mix/02 ON   -oo
 /ch/21/mix/03 ON   -oo +0 PRE
 /ch/21/mix/04 ON   -oo
-/ch/21/mix/05 ON -24.5 +0 PRE
+/ch/21/mix/05 ON   -oo +0 PRE
 /ch/21/mix/06 ON   -oo
 /ch/21/mix/07 ON   -oo +0 PRE
 /ch/21/mix/08 ON   -oo
@@ -702,7 +702,7 @@
 /ch/21/mix/16 ON   -oo
 /ch/21/grp %00000100 %000000
 /ch/21/automix OFF -12.0
-/ch/22/config "Overhead L" 10 RD 22
+/ch/22/config "" 10 OFF 22
 /ch/22/delay OFF   0.3
 /ch/22/preamp +0.0 OFF ON 24 124
 /ch/22/gate ON GATE -80.0 60.0 1  502  983 0
@@ -715,12 +715,12 @@
 /ch/22/eq/2 PEQ 496.6 +0.00 2.0
 /ch/22/eq/3 PEQ 1k97 +0.00 2.0
 /ch/22/eq/4 PEQ 7k34 +0.00  10
-/ch/22/mix ON  -2.2 ON -34 ON   -oo
+/ch/22/mix ON   -oo ON -34 ON   -oo
 /ch/22/mix/01 ON   -oo +0 PRE
 /ch/22/mix/02 ON   -oo
 /ch/22/mix/03 ON   -oo +0 PRE
 /ch/22/mix/04 ON   -oo
-/ch/22/mix/05 ON -11.0 +0 PRE
+/ch/22/mix/05 ON   -oo +0 PRE
 /ch/22/mix/06 ON   -oo
 /ch/22/mix/07 ON   -oo +0 PRE
 /ch/22/mix/08 ON   -oo
@@ -734,7 +734,7 @@
 /ch/22/mix/16 ON   -oo
 /ch/22/grp %00000100 %000000
 /ch/22/automix OFF -12.0
-/ch/23/config "Overhead R" 10 RD 23
+/ch/23/config "" 10 OFF 23
 /ch/23/delay OFF   0.3
 /ch/23/preamp +0.0 OFF ON 24 124
 /ch/23/gate ON GATE -80.0 60.0 1  502  983 0
@@ -747,12 +747,12 @@
 /ch/23/eq/2 PEQ 496.6 +0.00 2.0
 /ch/23/eq/3 PEQ 1k97 +0.00 2.0
 /ch/23/eq/4 PEQ 7k34 +0.00  10
-/ch/23/mix ON  -1.7 ON +36 ON   -oo
+/ch/23/mix ON   -oo ON +36 ON   -oo
 /ch/23/mix/01 ON   -oo +0 PRE
 /ch/23/mix/02 ON   -oo
 /ch/23/mix/03 ON   -oo +0 PRE
 /ch/23/mix/04 ON   -oo
-/ch/23/mix/05 ON -12.0 +0 PRE
+/ch/23/mix/05 ON   -oo +0 PRE
 /ch/23/mix/06 ON   -oo
 /ch/23/mix/07 ON   -oo +0 PRE
 /ch/23/mix/08 ON   -oo
@@ -2023,8 +2023,8 @@
 /headamp/046 +41.0 ON
 /headamp/047 +33.0 ON
 /headamp/048 +47.0 OFF
-/headamp/049 +23.0 OFF
-/headamp/050 +34.0 OFF
+/headamp/049 +23.0 ON
+/headamp/050 +34.0 ON
 /headamp/051 +38.5 OFF
 /headamp/052 +38.5 OFF
 /headamp/053 +60.0 OFF
