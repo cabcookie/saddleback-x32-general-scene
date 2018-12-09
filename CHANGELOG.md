@@ -23,12 +23,22 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 ### Changed
 - Nothing
 
-## [1.0.2] - 2018-12-09
+## [1.0.3] - 2018-12-09
+### Fixed
+- some instruments needed the 48V power
+- talkback mic A is now feeding into the Worship Leaders In Ear
+
 ### Added
-- added vocal settings for Ulrike
+- Setting for a solo overhead mic for the drums
 
 ### Changed
-- reduce drum mics to only three for the moment (easier setup)
+- reduced drum mics to only three for the moment (easier setup)
+- Adjusted dynamics for Sarah's vocal mic
+- Adjusted Lynne's accoustic, the violin, and the keys to work well with accoustic, keys, violin and bass guitar
+
+## [1.0.2] - 2018-12-08
+### Added
+- added vocal settings for Ulrike
 
 ## [1.0.1] - 2018-11-04
 ### Added

@@ -1,4 +1,4 @@
-#2.7# 30 "Violin" 0 %0011111100100100 1
+#2.7# 30 "Violin Vernon 1.0.3" 0 %0011111100100100 1
 /config "Violin Verno" 1 GN
 /delay OFF   0.3
 /preamp +0.0 OFF ON 24 121
@@ -11,6 +11,6 @@
 /eq/1 PEQ 143.2 +0.00 2.0
 /eq/2 PEQ 463.5 +4.25 1.6
 /eq/3 PEQ 2k79 -3.00 1.5
-/eq/4 HShv 4k08 +1.75 2.0
-/mix ON  -6.7 ON +0 OFF   -oo
+/eq/4 VEQ 9k35 +4.75 1.8
+/mix ON -16.8 ON +0 OFF   -oo
 /grp %00000010 %000000
