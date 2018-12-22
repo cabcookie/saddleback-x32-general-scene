@@ -1,14 +1,6 @@
-import {
-    CreateProposalForChannels,
-    GetNextPcoPlans,
-    CreateX32SceneFile,
-} from "../gappscript-x32-preparation/CreateProposalForChannels";
-import {
-    cloneObject
-} from "../gappscript-x32-preparation/utils/fp-library";
-import {
-    mapArrayToOneDimArray
-} from "../gappscript-x32-preparation/mapping/map-arrays";
+import { CreateProposalForChannels, GetNextPcoPlans, CreateX32SceneFile } from "../gappscript-x32-preparation/CreateProposalForChannels";
+import { cloneObject } from "../gappscript-x32-preparation/utils/fp-library";
+import { mapArrayToOneDimArray } from "../gappscript-x32-preparation/mapping/map-arrays";
 
 const expect = require('chai').expect;
 
@@ -250,7 +242,7 @@ describe("test main function (callable in Google Sheet)", () => {
             })
 
             it("should throw an error if no Github repository is provided", () => {
-                const fn = () => CreateX32SceneFile(SERVICE_TYPE, PLAN_ID, TIME_ID, CHANNELS_OF_THE_MIXER, POSITION_SETTINGS, POSITIONS_NOT_FOR_MIXER, NAMES_FOR_NON_PCO_POSITIONS, GITHUB_LIBRARY_FOLDER, X32_TEMPLATE_FILE, GENERAL_SCENE_FILE, undefined, GITHUB_REPOSITORY);
+                const fn = () => CreateX32SceneFile(SERVICE_TYPE, PLAN_ID, TIME_ID, CHANNELS_OF_THE_MIXER, POSITION_SETTINGS, POSITIONS_NOT_FOR_MIXER, NAMES_FOR_NON_PCO_POSITIONS, GITHUB_LIBRARY_FOLDER, X32_TEMPLATE_FILE, GENERAL_SCENE_FILE, GITHUB_BRANCH, undefined);
                 expect(fn()[0][0]).to.include("githubRepository");
             })
         })

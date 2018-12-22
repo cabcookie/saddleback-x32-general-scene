@@ -46,26 +46,26 @@ function CreateProposalForChannels(
     planId: number,
     timeId: number,
     channelsOfTheMixer: any[],
-    positionSettings: string [][],
+    positionSettings: string[][],
     positionsNotForMixer: any[],
     namesForNonPcoPositions: string[][]): string[][] {
-        try {
-            const pipe = flow(
-                createX32Proposal(
-                    serviceType,
-                    planId,
-                    timeId,
-                    channelsOfTheMixer,
-                    positionSettings,
-                    positionsNotForMixer,
-                    namesForNonPcoPositions),
-                mixerPositionsToTable,
-            );
-            return pipe();
-        } catch (error) {
-            return [[error.message]];
-        }
+    try {
+        const pipe = flow(
+            createX32Proposal(
+                serviceType,
+                planId,
+                timeId,
+                channelsOfTheMixer,
+                positionSettings,
+                positionsNotForMixer,
+                namesForNonPcoPositions),
+            mixerPositionsToTable,
+        );
+        return pipe();
+    } catch (error) {
+        return [[error.message]];
     }
+}
 
 /**
  * With this function the next x plans can be loaded from PCO.
@@ -124,7 +124,7 @@ function CreateX32SceneFile(
     planId: number,
     timeId: number,
     channelsOfTheMixer: any[],
-    positionSettings: string [][],
+    positionSettings: string[][],
     positionsNotForMixer: any[],
     namesForNonPcoPositions: string[][],
     presetsLibraryName: string,
@@ -155,6 +155,7 @@ function CreateX32SceneFile(
             fetchData,
             parseData,
             JSON.stringify,
+            console.log
         );
 
         return pipe(url);
