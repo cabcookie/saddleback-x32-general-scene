@@ -28,6 +28,7 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 ### Changed
 
 - Adapted markdown lint recommendations on CHANGELOG and README File
+- explained in README how the preamp and phantom power settings work in the scene file (/headamp)
 
 ## [1.0.3] - 2018-12-09
 
