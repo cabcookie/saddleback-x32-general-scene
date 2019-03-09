@@ -27,6 +27,16 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 
 ### Changed
 
+- Nothing
+
+## [1.1.0] - 2019-03-10
+
+### Added
+
+- Vocal settings for Olivier
+
+### Changed
+
 - Adapted markdown lint recommendations on CHANGELOG and README File
 - explained in README how the preamp and phantom power settings work in the scene file (/headamp)
 
