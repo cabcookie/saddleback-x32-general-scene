@@ -47,7 +47,7 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 - In standard scene adjusted graphical EQ for main output
 - Settings for Ranis vocal
 - Name of Bass guitar
-- Dynamic settings for Sarah's vocal
+- Dynamic and EQ settings for Sarah's vocal
 - Settings for Diazno's guitar
 - EQ for Johannes' electric
 - EQ on Keys
