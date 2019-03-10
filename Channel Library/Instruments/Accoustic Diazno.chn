@@ -1,7 +1,7 @@
-#2.7# 30 "" 0 %0011111100100100 1
+#2.7# 30 "Acc Diazno 1.1.0" 0 %0011111100100100 1
 /config "Acc Diazno" 23 GN
 /delay OFF   0.3
-/preamp +0.0 OFF ON 24 149
+/preamp +0.0 OFF ON 24 132
 /gate OFF GATE -17.5 10.0 8 79.6  151 0
 /gate/filter OFF 3.0 1k39
 /dyn ON COMP PEAK LIN -26.5 2.0 2 4.50 55 0.04  576 POST 0 100 OFF
@@ -9,7 +9,9 @@
 /insert OFF POST OFF
 /eq ON
 /eq/1 PEQ 148.3 -4.50 3.2
-/eq/2 PEQ 339.6 +4.25 1.3
-/eq/3 PEQ 5k97 +2.25 1.5
-/eq/4 HShv 10k02 +0.00 2.0
-/mix ON  -2.8 ON +0 ON   0.0
+/eq/2 PEQ 339.6 +1.75 1.3
+/eq/3 PEQ 2k04 -2.00 1.1
+/eq/4 HCut 8k73 +0.00 2.0
+/mix ON  -6.5 ON +0 ON   0.0
+/grp %00000010 %000000
+/automix OFF -12.0

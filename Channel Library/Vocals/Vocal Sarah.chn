@@ -1,10 +1,10 @@
-#2.7# 2 "Voc Sarah" 0 %0011111100111100 1
+#2.7# 2 "Voc Sarah 1.1.0" 0 %0011111100111100 1
 /config "Sarah" 1 CY
 /delay OFF   0.3
 /preamp +3.0 OFF OFF 24  79
 /gate ON EXP4 -41.5 27.0 32  100  658 0
 /gate/filter OFF 3.0 1k39
-/dyn ON COMP RMS LIN -23.5 2.5 1 8.00 48 0.63  538 POST 0 100 OFF
+/dyn ON COMP RMS LIN -33.5 2.5 1 8.00 46 0.63  538 POST 0 100 OFF
 /dyn/filter OFF 3.0 990.9
 /insert OFF POST OFF
 /eq ON

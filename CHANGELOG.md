@@ -48,6 +48,8 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 - Settings for Ranis vocal
 - Name of Bass guitar
 - Adjusted headamp settings in general scene file
+- Dynamic settings for Sarah's vocal
+- Settings for Diazno's guitar
 
 ## [1.0.3] - 2018-12-09
 
