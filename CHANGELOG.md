@@ -51,7 +51,7 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 - Dynamic and EQ settings for Sarah's vocal
 - Settings for Diazno's guitar
 - EQ for Johannes' electric
-- **EQ on Keys**
+- EQ on Keys
 - Settings for Mani's vocal
 - Insert De-esser for Dave
 - EQ and insert De-esser for Rick
@@ -65,6 +65,7 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 - Added low pass filter on music channel
 - EQ and insert De-esser for Rick
 - Insert De-esser for Dave
+- EQ on Keys
 
 ### Changes on documentation
 

@@ -286,7 +286,7 @@
 /ch/08/mix/16 ON   -oo
 /ch/08/grp %00000010 %000000
 /ch/08/automix OFF -12.0
-/ch/09/config "Keys" 30 GN 9
+/ch/09/config "Keys L" 30 GN 9
 /ch/09/delay OFF   0.3
 /ch/09/preamp +0.0 OFF ON 24  89
 /ch/09/gate OFF GATE -60.0 39.0 32 0.02  412 0
@@ -295,10 +295,10 @@
 /ch/09/dyn/filter OFF 3.0 990.9
 /ch/09/insert OFF POST OFF
 /ch/09/eq ON
-/ch/09/eq/1 PEQ 164.4 -4.00 2.6
-/ch/09/eq/2 PEQ 339.6 -6.00 2.2
-/ch/09/eq/3 PEQ 1k26 +3.50 1.0
-/ch/09/eq/4 HCut 5k57 +0.00 0.9
+/ch/09/eq/1 PEQ 124.7 +0.00 2.0
+/ch/09/eq/2 PEQ 496.6 +0.00 2.0
+/ch/09/eq/3 PEQ 1k97 +0.00 2.0
+/ch/09/eq/4 VEQ 1k17 -3.00 2.0
 /ch/09/mix ON  -6.8 ON -100 ON -13.5
 /ch/09/mix/01 ON -24.0 -100 PRE
 /ch/09/mix/02 ON -20.0
@@ -318,7 +318,7 @@
 /ch/09/mix/16 ON -20.5
 /ch/09/grp %00000010 %000000
 /ch/09/automix OFF -12.0
-/ch/10/config "Keys" 30 GN 10
+/ch/10/config "Keys R" 30 GN 10
 /ch/10/delay OFF   0.3
 /ch/10/preamp +0.0 OFF ON 24  89
 /ch/10/gate OFF GATE -60.0 39.0 32 0.02  412 0
@@ -327,10 +327,10 @@
 /ch/10/dyn/filter OFF 3.0 990.9
 /ch/10/insert OFF POST OFF
 /ch/10/eq ON
-/ch/10/eq/1 PEQ 164.4 -4.00 2.6
-/ch/10/eq/2 PEQ 339.6 -6.00 2.2
-/ch/10/eq/3 PEQ 1k26 +3.50 1.0
-/ch/10/eq/4 HCut 5k57 +0.00 0.9
+/ch/10/eq/1 PEQ 124.7 +0.00 2.0
+/ch/10/eq/2 PEQ 496.6 +0.00 2.0
+/ch/10/eq/3 PEQ 1k97 +0.00 2.0
+/ch/10/eq/4 VEQ 1k17 -3.00 2.0
 /ch/10/mix ON  -6.8 ON +100 ON -13.5
 /ch/10/mix/01 ON -24.0 +100 PRE
 /ch/10/mix/02 ON -20.0
