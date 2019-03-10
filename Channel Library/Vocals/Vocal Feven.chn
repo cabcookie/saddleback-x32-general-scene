@@ -1,16 +1,17 @@
-#2.7# 2 "1.1.0" 0 %0011111100111100 1
+#2.7# 2 "Feven 1.1.0" 0 %0011111100111100 1
 /config "Feven" 1 CY
 /delay OFF   0.3
-/preamp +0.0 OFF ON 24 124
-/gate ON EXP4 -42.5 27.0 20  100  576 0
+/preamp +0.0 OFF OFF 24 144
+/gate ON GATE -50.5 50.0 22 89.3  504 0
 /gate/filter OFF 3.0 1k39
-/dyn ON COMP RMS LIN -25.5 2.0 2 8.00 46 0.03  538 POST 0 100 OFF
-/dyn/filter OFF 3.0 1k06
+/dyn ON COMP RMS LIN -26.5 3.0 2 8.00 47 0.02  860 POST 0 100 OFF
+/dyn/filter OFF 3.0 990.9
 /insert OFF POST OFF
 /eq ON
-/eq/1 PEQ 232.3 -3.50 2.5
-/eq/2 PEQ 778.1 -6.50 2.3
-/eq/3 PEQ 3k09 -2.00 1.9
-/eq/4 PEQ 6k85 -0.75 2.4
-/mix ON  +3.0 ON +0 OFF   -oo
+/eq/1 PEQ 105.0 -8.75 6.1
+/eq/2 PEQ 148.3 -8.00 5.8
+/eq/3 PEQ 1k02 -5.50 3.4
+/eq/4 VEQ 5k97 -3.50 2.2
+/mix ON  +1.8 ON +0 OFF   -oo
 /grp %00000001 %000000
+/automix OFF -12.0

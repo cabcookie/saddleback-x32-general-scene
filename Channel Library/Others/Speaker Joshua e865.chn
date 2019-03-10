@@ -1,0 +1,17 @@
+#2.7# 60 "Joshua e865 1.1.0" 0 %0011111100110000 1
+/config "Joshua" 50 YE
+/delay OFF   0.3
+/preamp +0.0 OFF ON 24 144
+/gate OFF GATE -54.0 55.0 26 0.02  315 0
+/gate/filter OFF 3.0 1k39
+/dyn ON COMP PEAK LIN -23.5 3.0 2 10.5 48 0.02  412 POST 0 100 OFF
+/dyn/filter OFF 3.0 990.9
+/insert ON PRE FX3R
+/eq ON
+/eq/1 PEQ 170.2 -5.00 2.4
+/eq/2 PEQ 924.8 -4.50 1.7
+/eq/3 PEQ 417.9 -3.75 2.1
+/eq/4 VEQ 4k68 -4.50 2.2
+/mix ON  -0.8 ON +0 OFF   -oo
+/grp %01000000 %000000
+/automix OFF -12.0

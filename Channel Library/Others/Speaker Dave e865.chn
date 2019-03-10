@@ -6,7 +6,7 @@
 /gate/filter OFF 3.0 1k39
 /dyn ON COMP PEAK LIN -23.5 3.0 2 10.5 74 0.02  211 POST 0 100 OFF
 /dyn/filter OFF 3.0 990.9
-/insert OFF POST OFF
+/insert ON PRE FX3R
 /eq ON
 /eq/1 PEQ 257.6 -1.00 2.0
 /eq/2 PEQ 654.7 +1.50 2.0

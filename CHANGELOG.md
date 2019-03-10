@@ -37,25 +37,34 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 - Vocal settings for Feven
 - Vocal settings for Johannes Fenner
 - Vocal settings for Tejas
+- Vocal settings for Praise
 - Settings for Tejas' acoustic
 - Solo acoustic
+- Joshua as an announcer with a hand mic
 
 ### Changed presets
 
 - Settings vor Violin Vernon
 - Added low pass filter on music channel
-- In standard scene adjusted graphical EQ for main output
 - Settings for Ranis vocal
 - Name of Bass guitar
 - Dynamic and EQ settings for Sarah's vocal
 - Settings for Diazno's guitar
 - EQ for Johannes' electric
-- EQ on Keys
+- **EQ on Keys**
+- Settings for Mani's vocal
+- Insert De-esser for Dave
+- EQ and insert De-esser for Rick
 
 ### Changes on template
 
 - Added headamp setting to the X32 template
 - Adjusted headamp settings in general scene file
+- Adjusted graphical EQ for main output
+- Added solo acoustic
+- Added low pass filter on music channel
+- EQ and insert De-esser for Rick
+- Insert De-esser for Dave
 
 ### Changes on documentation
 

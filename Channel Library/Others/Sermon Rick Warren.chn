@@ -1,15 +1,17 @@
-#2.7# 81 "" 0 %0011111100111100 1
+#2.7# 81 "Rick 1.1.0" 0 %0011111100111100 1
 /config "Sermon Rick" 62 BL
 /delay OFF   0.3
 /preamp +0.0 OFF OFF 24  79
 /gate ON GATE -67.5 60.0 1  502  983 0
 /gate/filter OFF 3.0 990.9
-/dyn ON COMP PEAK LOG -20.0 2.0 0 3.00 54 10.0  658 POST 0 100 OFF
+/dyn ON COMP PEAK LOG -20.0 2.0 2 4.00 45 10.0  412 POST 0 100 OFF
 /dyn/filter OFF 3.0 990.9
-/insert OFF POST OFF
+/insert ON PRE FX3L
 /eq ON
-/eq/1 PEQ 339.6 -5.00 7.1
-/eq/2 PEQ 1k13 -5.25  10
-/eq/3 PEQ 805.4 -2.25 2.1
-/eq/4 HShv 12k33 +0.00 2.0
-/mix OFF   -oo ON +0 OFF  +2.5
+/eq/1 PEQ 124.7 +0.00 2.0
+/eq/2 PEQ 463.5 -2.50 1.6
+/eq/3 PEQ 1k02 -7.00 1.5
+/eq/4 PEQ 4k22 +0.00 2.2
+/mix ON   0.0 ON +0 OFF  +2.5
+/grp %00100000 %000000
+/automix OFF -12.0
