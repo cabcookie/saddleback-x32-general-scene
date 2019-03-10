@@ -1,0 +1,17 @@
+#2.7# 2 "Voc Tejas 1.1.0" 0 %0011111100111100 1
+/config "Tejas" 1 CY
+/delay OFF   0.3
+/preamp +0.0 OFF OFF 24  79
+/gate ON EXP4 -46.5 27.0 20  100  576 0
+/gate/filter OFF 3.0 1k39
+/dyn ON COMP PEAK LIN -26.0 3.0 2 8.00 71 0.03  538 POST 0 100 OFF
+/dyn/filter ON 3.0 1k17
+/insert OFF POST OFF
+/eq ON
+/eq/1 PEQ 148.3 -2.50 3.5
+/eq/2 PEQ 339.6 -3.50 4.3
+/eq/3 PEQ 611.0 -1.50 2.8
+/eq/4 HShv 10k02 +0.00 2.0
+/mix ON  -8.1 ON -14 OFF   -oo
+/grp %00000000 %000000
+/automix OFF -12.0

@@ -1,4 +1,4 @@
-#2.7# 30 "" 0 %0011111100100100 1
+#2.7# 30 "Keys 1.1.0" 0 %0011111100100100 1
 /config "Keys" 30 GN
 /delay OFF   0.3
 /preamp +0.0 OFF ON 24  89
@@ -8,8 +8,10 @@
 /dyn/filter OFF 3.0 990.9
 /insert OFF POST OFF
 /eq ON
-/eq/1 PEQ 164.4 -4.00 2.6
-/eq/2 PEQ 339.6 -6.00 2.2
-/eq/3 PEQ 1k26 +3.50 1.0
-/eq/4 HCut 5k57 +0.00 0.9
-/mix ON  -6.8 ON -100 ON -13.5
+/eq/1 PEQ 124.7 +0.00 2.0
+/eq/2 PEQ 496.6 +0.00 2.0
+/eq/3 PEQ 1k97 +0.00 2.0
+/eq/4 VEQ 1k17 -3.00 2.0
+/mix ON  -2.7 ON -100 ON -13.5
+/grp %00000010 %000000
+/automix OFF -12.0

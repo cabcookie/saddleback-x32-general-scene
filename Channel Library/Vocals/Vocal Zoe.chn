@@ -10,6 +10,6 @@
 /eq ON
 /eq/1 PEQ 105.0 -8.75 6.1
 /eq/2 PEQ 148.3 -8.00 5.8
-/eq/3 PEQ 1k97 +0.00 2.0
+/eq/3 PEQ 924.8 -3.50 2.6
 /eq/4 HShv 10k02 +0.00 2.0
-/mix ON  -2.6 ON +0 OFF   -oo
+/mix ON  -0.7 ON +0 OFF   -oo

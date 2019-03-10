@@ -1,5 +1,5 @@
-#2.7# 30 "" 0 %0011111100100100 1
-/config "Bass Leon" 17 GN
+#2.7# 30 "Bass 1.1.0" 0 %0011111100100100 1
+/config "Bass" 17 GN
 /delay OFF   0.3
 /preamp +0.0 OFF ON 24  49
 /gate ON EXP4 -48.5 60.0 1  502  983 0

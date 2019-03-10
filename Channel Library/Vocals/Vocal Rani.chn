@@ -1,0 +1,17 @@
+#2.7# 4 "Voc Rani 1.1.0" 0 %0011111100111101 1
+/config "Rani" 1 CY
+/delay OFF   0.3
+/preamp +3.0 OFF OFF 24 144
+/gate ON GATE -40.0 42.0 22  200  504 0
+/gate/filter OFF 3.0 1k39
+/dyn ON COMP RMS LIN -26.5 3.0 2 6.00 47 0.02  860 POST 0 100 OFF
+/dyn/filter OFF 3.0 990.9
+/insert OFF POST OFF
+/eq ON
+/eq/1 PEQ 105.0 -7.50 6.1
+/eq/2 PEQ 148.3 -8.00 5.8
+/eq/3 PEQ 1k02 -5.50 3.4
+/eq/4 HShv 10k02 +0.00 2.0
+/mix ON  -5.4 ON +0 OFF   -oo
+/grp %00000001 %000000
+/automix OFF -12.0
