@@ -1,4 +1,4 @@
-#2.7# 80 "Music" 0 %0011111100111100 1
+#2.7# 80 "Music 1.1.0" 0 %0011111100111100 1
 /config "Music" 62 CYi
 /delay OFF   0.3
 /preamp +0.0 OFF ON 24  70
@@ -7,9 +7,10 @@
 /dyn ON COMP PEAK LOG -14.5 2.0 0 3.00 54 10.0  658 POST 0 100 OFF
 /dyn/filter OFF 3.0 990.9
 /insert OFF POST OFF
-/eq OFF
-/eq/1 PEQ 124.7 +0.00 2.0
+/eq ON
+/eq/1 PEQ 105.0 -2.75 2.6
 /eq/2 PEQ 496.6 +0.00 2.0
 /eq/3 PEQ 1k97 +0.00 2.0
 /eq/4 HShv 10k02 +0.00 2.0
 /mix ON   0.0 ON -100 ON   0.0
+/grp %00010000 %000000

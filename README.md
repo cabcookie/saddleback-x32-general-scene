@@ -547,12 +547,18 @@ The X32 supports eight effect devices. The respective settings depend strongly o
 /outputs/rec/02 15 PRE
 ```
 
-## Headamps (Not yet evaluated)
+## Headamps
 
 [Back to TOC](#table-of-content)
 
 There are a total of 128 head amplifiers in the X32 that can be set via the scene file. The count starts at 000 and goes to 127.
 
+As you can see in the picture below the preamps are organised in blocks. The preamps from 000 to 031 are the preamp settings for the local inputs of the board. Accordingly the preamps from 032 to 079 are representing the settings for AES50 A snake from channel 1 to 48 and the preamps from 080 to 127 are representing the settings for AES50 B snake.
+
+![Preamps](/X32-images/preamp-blocks.png)
+
 ```yaml
 /headamp/000 +41.0 OFF
 ```
+
+The first value is representing the gain volume value and the setting is representing if the phantom power (48V) is switched ON or OFF.

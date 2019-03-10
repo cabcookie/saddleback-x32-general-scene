@@ -1,4 +1,4 @@
-#2.7# 2 "Voc Sarah" 0 %0011111100111100 1
+#2.7# 2 "Voc Sarah 1.1.0" 0 %0011111100111100 1
 /config "Sarah" 1 CY
 /delay OFF   0.3
 /preamp +3.0 OFF OFF 24  79
@@ -8,8 +8,10 @@
 /dyn/filter OFF 3.0 990.9
 /insert OFF POST OFF
 /eq ON
-/eq/1 PEQ 124.7 +0.00 2.0
-/eq/2 PEQ 778.1 -5.00 2.4
-/eq/3 PEQ 4k08 +3.75 1.6
+/eq/1 PEQ 1k44 -1.25 3.4
+/eq/2 PEQ 833.7 -5.00 1.8
+/eq/3 PEQ 4k08 +1.25 1.6
 /eq/4 HCut 20k00 +0.00 2.0
-/mix ON  +0.7 ON +0 OFF   -oo
+/mix ON  -6.6 ON +0 OFF   -oo
+/grp %00000001 %000000
+/automix OFF -12.0
