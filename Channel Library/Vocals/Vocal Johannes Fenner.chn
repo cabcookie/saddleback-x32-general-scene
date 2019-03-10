@@ -1,0 +1,17 @@
+#2.7# 4 "Voc Johannes 1.1.0" 0 %0011111100111101 1
+/config "Johannes" 1 CY
+/delay OFF   0.3
+/preamp +3.0 OFF ON 24 117
+/gate ON EXP4 -30.5 28.0 26  100  576 0
+/gate/filter OFF 3.0 1k39
+/dyn ON COMP RMS LIN -23.0 2.0 1 8.00 74 0.03  576 POST 0 100 OFF
+/dyn/filter OFF 3.0 990.9
+/insert OFF POST OFF
+/eq ON
+/eq/1 PEQ 148.3 -2.00 2.0
+/eq/2 PEQ 1k17 -4.00 3.5
+/eq/3 PEQ 3k20 -5.00 4.8
+/eq/4 HCut 11k91 +0.00 2.0
+/mix ON  -6.8 ON +0 OFF   -oo
+/grp %00000001 %000000
+/automix OFF -12.0
