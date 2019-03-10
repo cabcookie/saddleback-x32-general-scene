@@ -1,0 +1,17 @@
+#2.7# 30 "Acc Tejas 1.1.0" 0 %0011111100100100 1
+/config "Acc Tejas" 23 GN
+/delay OFF   0.3
+/preamp +0.0 OFF ON 24 163
+/gate OFF GATE -17.5 10.0 8 79.6  124 0
+/gate/filter OFF 3.0 1k39
+/dyn ON COMP PEAK LIN -26.5 2.0 2 4.50 55 0.04  576 POST 0 100 OFF
+/dyn/filter ON 2.0 2k43
+/insert OFF POST OFF
+/eq ON
+/eq/1 PEQ 124.7 +0.00 2.0
+/eq/2 PEQ 532.1 +0.50 5.5
+/eq/3 PEQ 1k02 -4.50 5.5
+/eq/4 VEQ 5k02 +2.25 2.5
+/mix ON  -5.3 ON +0 ON   0.0
+/grp %00000010 %000000
+/automix OFF -12.0

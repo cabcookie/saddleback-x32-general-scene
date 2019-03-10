@@ -31,25 +31,37 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 
 ## [1.1.0] - 2019-03-10
 
-### Added
+### Added presets
 
 - Vocal settings for Olivier
 - Vocal settings for Feven
 - Vocal settings for Johannes Fenner
-- Added headamp setting to the X32 template
+- Vocal settings for Tejas
+- Settings for Tejas' acoustic
+- Solo acoustic
 
-### Changed
+### Changed presets
 
-- Adapted markdown lint recommendations on CHANGELOG and README File
-- explained in README how the preamp and phantom power settings work in the scene file (/headamp)
 - Settings vor Violin Vernon
 - Added low pass filter on music channel
 - In standard scene adjusted graphical EQ for main output
 - Settings for Ranis vocal
 - Name of Bass guitar
-- Adjusted headamp settings in general scene file
 - Dynamic settings for Sarah's vocal
 - Settings for Diazno's guitar
+- EQ for Johannes' electric
+- EQ on Keys
+
+### Changes on template
+
+- Added headamp setting to the X32 template
+- Adjusted headamp settings in general scene file
+
+### Changes on documentation
+
+- Adapted markdown lint recommendations on CHANGELOG and README File
+- explained in README how the preamp and phantom power settings work in the scene file (/headamp)
+- adjusted structure on CHANGELOG file
 
 ## [1.0.3] - 2018-12-09
 

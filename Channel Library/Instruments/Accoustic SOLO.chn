@@ -1,0 +1,17 @@
+#2.7# 30 "Acc SOLO 1.1.0" 0 %0011111100100100 1
+/config "Acc SOLO" 23 GN
+/delay OFF   0.3
+/preamp +0.0 OFF OFF 24 104
+/gate ON GATE -51.5 50.0 10 20.0  101 0
+/gate/filter ON 3.0 1k21
+/dyn ON COMP PEAK LIN -16.0 3.0 0 0.00 7 0.04   9 POST 0 100 OFF
+/dyn/filter OFF 2.0 2k43
+/insert OFF POST OFF
+/eq ON
+/eq/1 PEQ 124.7 +0.00 2.0
+/eq/2 PEQ 129.1 -4.00 2.0
+/eq/3 PEQ 726.2 -3.25 2.0
+/eq/4 HShv 10k02 +0.00 2.0
+/mix ON   -oo ON +0 OFF   0.0
+/grp %00000010 %000000
+/automix OFF -12.0
