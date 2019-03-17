@@ -1,4 +1,4 @@
-import { loadPeoplePositions } from "../../gappscript-x32-preparation/pco-data/load-people-positions";
+import { loadPeoplePositions } from "../../gappscript-x32-preparation/import-data/load-people-positions";
 import { PLAN_ID, TIME_ID, SERVICE_TYPE } from "../CreateProposalForChannels.spec";
 
 const expect = require('chai').expect;

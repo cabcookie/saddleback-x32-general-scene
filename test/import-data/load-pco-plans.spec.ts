@@ -1,4 +1,4 @@
-import { loadPcoPlans } from "../../gappscript-x32-preparation/pco-data/load-pco-plans";
+import { loadPcoPlans } from "../../gappscript-x32-preparation/import-data/load-pco-plans";
 import { SERVICE_TYPE } from "../CreateProposalForChannels.spec";
 
 const expect = require('chai').expect;

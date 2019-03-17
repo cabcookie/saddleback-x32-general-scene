@@ -1,4 +1,4 @@
-import { loadPcoPlanTimes } from "../pco-data/load-pco-plans";
+import { loadPcoPlanTimes } from "../import-data/load-pco-plans";
 import { filterById, formatTime, toString } from "../utils/fp-library";
 import { IPcoPeoples, IPcoPlans, IPcoTimes, IPeoplePosition, IPlan, ITime } from "../utils/interfaces";
 

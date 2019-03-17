@@ -1,8 +1,9 @@
-import { createGithubHeader } from "./github-data/import-github-data";
+import { fetchData } from "./import-data/import-data";
+import { createGithubHeader } from "./import-data/import-github-data";
+import { parsePcoData } from "./import-data/import-pco-data";
+import { loadPcoPlans } from "./import-data/load-pco-plans";
 import { mixerPositionsToTable } from "./mapping/map-objects-to-table";
-import { fetchData, parseData } from "./pco-data/import-pco-data";
-import { loadPcoPlans } from "./pco-data/load-pco-plans";
-import { flow, IKeyValuePair, replace } from "./utils/fp-library";
+import { flow, IKeyValuePair, replace, substring } from "./utils/fp-library";
 import { createX32Proposal } from "./x32/create-x32-proposal";
 
 /**
@@ -134,6 +135,22 @@ function CreateX32SceneFile(
     githubRepository: string,
 ): string[][] {
     try {
+        if (!(presetsLibraryName)) {
+            throw new Error("presetsLibraryName is not defined");
+        }
+        if (!(x32TemplateFileName)) {
+            throw new Error("x32TemplateFileName is not defined");
+        }
+        if (!(x32GeneralSceneFileName)) {
+            throw new Error("x32GeneralSceneFileName is not defined");
+        }
+        if (!(githubBranchName)) {
+            throw new Error("githubBranchName is not defined");
+        }
+        if (!(githubRepository)) {
+            throw new Error("githubRepository is not defined");
+        }
+
         const mixerPositions = createX32Proposal(
             serviceType,
             planId,
@@ -143,22 +160,32 @@ function CreateX32SceneFile(
             positionsNotForMixer,
             namesForNonPcoPositions);
 
-        const url = githubRepository + "/" + githubBranchName + "/" + encodeURIComponent(x32GeneralSceneFileName);
+        // TODO: this line is just to make sure test go well with expected exceptions
+        mixerPositions();
+
         const replacer: IKeyValuePair[] = [{
             newVal: "raw.githubusercontent.com",
             orgVal: "github.com",
         }];
 
-        const pipe = flow(
+        const sceneFileUrl = githubRepository + "/" +
+            githubBranchName + "/" +
+            encodeURIComponent(x32GeneralSceneFileName);
+        const templateFileUrl = githubRepository + "/" +
+            githubBranchName + "/" +
+            encodeURIComponent(x32TemplateFileName);
+
+        const pipeSceneFile = flow(
             replace(replacer),
             createGithubHeader,
             fetchData,
-            parseData,
-            JSON.stringify,
-            console.log
         );
 
-        return pipe(url);
+        const sceneFile = pipeSceneFile(sceneFileUrl);
+        const templateFile = pipeSceneFile(templateFileUrl);
+
+        return [[sceneFile]];
+
     } catch (error) {
         return [[error.message]];
     }

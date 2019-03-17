@@ -1,8 +1,8 @@
-import { TEST_PCO_PLANS } from "../pco-data/results/pco-data-plans";
-import { TEST_PCO_TIME1 } from "../pco-data/results/pco-data-times";
+import { TEST_PCO_PLANS } from "../import-data/results/pco-data-plans";
+import { TEST_PCO_TIME1 } from "../import-data/results/pco-data-times";
 import { mapPlans, mapPlanTimes, mapPeople } from "../../gappscript-x32-preparation/mapping/map-pco-data-to-object";
 import { SERVICE_TYPE } from "../CreateProposalForChannels.spec";
-import { TEST_PCO_PEOPLE_POSITIONS } from "../pco-data/results/pco-people-positions";
+import { TEST_PCO_PEOPLE_POSITIONS } from "../import-data/results/pco-people-positions";
 
 const expect = require('chai').expect;
 

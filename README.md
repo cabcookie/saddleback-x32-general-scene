@@ -66,7 +66,7 @@ The following settings link two adjacent channels. For example, channels 1 & 2 o
 
 The following lines list the link settings for channels, auxiliary channels, effect channels, mix busses and matrix channels (in the order given):
 
-```yaml
+```text
 /config/chlink OFF OFF OFF OFF ON OFF ON OFF OFF OFF OFF OFF OFF OFF ON OFF
 /config/auxlink ON ON ON ON
 /config/fxlink ON ON ON ON
@@ -76,7 +76,7 @@ The following lines list the link settings for channels, auxiliary channels, eff
 
 ### Monitoring settings (Not yet evaluated)
 
-```yaml
+```text
 /config/mute OFF OFF OFF OFF OFF OFF
 /config/linkcfg ON ON ON ON
 /config/mono LR+M ON
@@ -91,7 +91,7 @@ The following lines list the link settings for channels, auxiliary channels, eff
 
 The settings, from which sources the signals are obtained (digital snake, local inputs, input via the I/O card, etc.) can be seen below. The A stands for a Digital Snake connected to Ethernet port A. The B correspondingly for Ethernet port B. In addition, the settings define which signals are routed via the outputs.
 
-```yaml
+```text
 /config/routing/IN A1-8 A9-16 A17-24 B1-8 AUX1-4
 /config/routing/AES50A OUT1-8 OUT9-16 OUT1-8 OUT9-16 P161-8 P169-16
 /config/routing/AES50B OUT1-8 OUT9-16 OUT9-16 OUT9-16 P161-8 P169-16
@@ -101,7 +101,7 @@ The settings, from which sources the signals are obtained (digital snake, local 
 
 #### Not yet evaluated
 
-```yaml
+```text
 /config/routing/PLAY AN1-8 AN1-8 AN1-8 AN1-8 AUX1-4
 /config/routing REC
 ```
@@ -112,7 +112,7 @@ These settings describe how the user controls on the right side of the X32 are c
 
 ![User Controls](/X32-images/user-controls.jpg)
 
-```yaml
+```text
 /config/userctrl/A MG
 /config/userctrl/A/enc "X000" "X100" "X201" "X300"
 /config/userctrl/A/btn "O40" "X100" "X201" "X300" "P0051" "P0052" "P0053" "P0054"
@@ -126,7 +126,7 @@ These settings describe how the user controls on the right side of the X32 are c
 
 ### Not yet evaluated
 
-```yaml
+```text
 /config/tape 0.0 0.0 ON
 /config/amixenable OFF OFF
 ```
@@ -140,7 +140,7 @@ Each line starts with the characters `/ch/` followed by the number of the respec
 
 ![Channel Settings](/X32-images/channel-settings.jpg)
 
-```yaml
+```text
 /ch/01/config "Mani" 1 CY 1
 /ch/01/delay OFF   0.3
 /ch/01/preamp +0.0 OFF ON 24 136
@@ -181,7 +181,7 @@ Many of the settings in one mixer channel also reappear in other areas. Since th
 
 This setting is used for mixer channels, aux input channels (both including the setting for the input channel), effect return channels, mix busses, matrix channels, main channels and DCA groups and always includes the following structure.
 
-```yaml
+```text
 /config "[name]" [icon] [color] [input channel - if appropriate]
 ```
 
@@ -204,7 +204,7 @@ This setting is used for mixer channels, aux input channels (both including the 
 
 A delay can be set for mixer channels and main output channels.
 
-```yaml
+```text
 /delay [ON/OFF]   [milliseconds]
 ```
 
@@ -213,7 +213,7 @@ A delay can be set for mixer channels and main output channels.
 Preamplifiers are set for mixer channels, aux input channels and matrix channels. The settings are slightly different.
 This is what the settings for a mixer channel look like:
 
-```yaml
+```text
 /preamp [amplification with +/-] [ON/OFF for polarity] [ON/OFF for low cut filter (Low))] [Strength of the low cut filter in dB per octave (always 24)] [Frequency of the low cut filter]
 ```
 
@@ -223,7 +223,7 @@ Aux input channels support only the gain and ON/OFF setting for polarity, matrix
 
 Gate settings are only available for mixer channels. They look like this.
 
-```yaml
+```text
 /gate [ON/OFF] [type of gate (EXPx or GATE)] [threshold in +/- dB] [range of reduction in dB] [attack in milliseconds]  [hold in milliseconds]  [release in milliseconds] [source channel (0 = self)]
 /gate/filter [ON/OFF] [type (width)] [frequency of filter]
 ```
@@ -232,7 +232,7 @@ Gate settings are only available for mixer channels. They look like this.
 
 Dynamic settings can be made in mixer channels, mix bus channels, matrix channels and in the main channels (L/R and M/C). The parameters are always identical.
 
-```yaml
+```text
 /dyn [ON/OFF] [COMP/EXP] [RMS/PEAK] [LIN/LOG] [threshold in +/- dB] [ratio x:1] [knee] [gain] [attack in milliseconds] [hold in milliseconds]  [release in milliseconds] [POST/PRE (before or after EQ)] 0 100 OFF
 /dyn/filter [ON/OFF] [type (width)] [frequency of filter]
 ```
@@ -241,7 +241,7 @@ Dynamic settings can be made in mixer channels, mix bus channels, matrix channel
 
 Insert settings can be made in mixer channels, mix bus channels, matrix channels and in the main channels (L/R and M/C). The parameters are always identical.
 
-```yaml
+```text
 /insert [OFF/ON] [POST/PRE (before or after EQ and dynamics)] [OFF, FX or AUX insert target]
 ```
 
@@ -254,7 +254,7 @@ The name of the inserted signals begins with FX or AUX followed by the number of
 
 Equalizer settings can be made in mixer channels, auxiliary input channels, effect return channels, mixer bus channels, matrix channels and in the main channels (L/R and M/C). The equalizer settings take up most of the space in the X32 scene file. You need a total of 408 lines, which is almost one-fifth of the total file size. The settings are almost always the same, but the mixer channels, auxiliary input channels and effect return channels each have only four parametric equalizers, while the mixer bus channels, the matrix channels and the main channels each have six parametric equalizers.
 
-```yaml
+```text
 /eq [ON/OFF]
 /eq/[no of EQ (between 1-4 or 1-6)] [type of EQ (see below)] [filter frequency] [gain +/- in dB] [bandwith or quality]
 ```
@@ -291,19 +291,19 @@ The “Mix Sends” may look slightly different for the different channel types.
 
 In any case, each channel type has the following “Mix Send”:
 
-```yaml
+```text
 /mix [ON/OFF (OFF if muted)]  [dB to L/R (-oo if “off”)] [ON/OFF (send to L/R)] [panorama (-100 for L, +100 for R)] [ON/OFF (send to M/C)]   [dB to M/C (-oo if “off”)]
 ```
 
 The matrix channels and the main channels only have the following “Mix Send”:
 
-```yaml
+```text
 /mix [ON/OFF (OFF if muted)]  [dB to L/R (-oo if “off”)]
 ```
 
 The main stereo channel (L/R) also looks like this:
 
-```yaml
+```text
 /main/st/mix [ON/OFF (OFF if muted)]  [dB to L/R (-oo if “off”)] [panorama (-100 for L, +100 for R)]
 ```
 
@@ -313,7 +313,7 @@ The mixer channels, auxiliary input channels and effect return channels can each
 
 The panorama setting can also only be set in the mix bus with the odd channel number. The idea is as follows: For example, if two mixer channels are linked together, as is usually the case with the keyboard, and these two channels are sent to a stereo mix bus, then the left channel of the keyboard sends the signal with the panorama setting -100 (the far left) to the two linked mix buses, and the right channel of the keyboard is sent to the two linked mix buses with the panorama setting +100 (the far right). This way the left keyboard signal gets into the left mix bus and the right keyboard signal into the right mix bus.
 
-```yaml
+```text
 /mix/[odd channel no] [ON/OFF (OFF if muted)]  [+/- dB to mix channel] [panorama (-100 for L, +100 for R)] [PRE/POST fader]
 /mix/[even channel no] [ON/OFF (OFF if muted)] [+/- dB to mix channel]
 ```
@@ -322,7 +322,7 @@ The panorama setting can also only be set in the mix bus with the odd channel nu
 
 Group settings can be made for mixer channels, auxiliary input channels, effect return channels and mix bus channels. There are DCA groups and mute groups. The configuration is always organized as follows:
 
-```yaml
+```text
 /grp %[switches for DCA groups] %[switches for mute groups]
 ```
 
@@ -335,7 +335,7 @@ For a better understanding a few examples:
 
 ### Automix Configuration (Not yet evaluated)
 
-```yaml
+```text
 /ch/01/automix OFF -12.0
 ```
 
@@ -345,7 +345,7 @@ For a better understanding a few examples:
 
 The auxiliary channel inputs provide the settings shown below. These are described in detail in section [Channel Configuration](#channel-configuration).
 
-```yaml
+```text
 /auxin/01/config "" 55 GN 33
 /auxin/01/preamp +8.8 OFF
 /auxin/01/eq ON
@@ -379,7 +379,7 @@ The auxiliary channel inputs provide the settings shown below. These are describ
 
 The effect return channels provide the settings shown below. These are described in detail in section [Channel Configuration](#channel-configuration).
 
-```yaml
+```text
 /fxrtn/01/config "" 61 MG
 /fxrtn/01/eq ON
 /fxrtn/01/eq/1 LCut 133.7 +0.00 2.0
@@ -412,7 +412,7 @@ The effect return channels provide the settings shown below. These are described
 
 The mix bus channels provide the settings shown below. These are described in detail in section [Channel Configuration](#channel-configuration).
 
-```yaml
+```text
 /bus/01/config "1 Mani" 53 WH
 /bus/01/dyn ON COMP RMS LOG -22.5 2.0 0 0.00 35 0.25  226 POST 0 100 OFF
 /bus/01/dyn/filter OFF 3.0 990.9
@@ -440,7 +440,7 @@ The mix bus channels provide the settings shown below. These are described in de
 
 The matrix channels provide the settings shown below. These are described in detail in section [Channel Configuration](#channel-configuration).
 
-```yaml
+```text
 /mtx/01/config "Spk L Del" 66 GNi
 /mtx/01/preamp OFF
 /mtx/01/dyn OFF COMP RMS LOG 0.0 3.0 1 0.00 10 10.0  151 POST 100 OFF
@@ -464,7 +464,7 @@ There are two main busses that can be configured: `/main/st/` (the stereo bus) a
 
 The main channels provide the settings shown below. These are described in detail in section [Channel Configuration](#channel-configuration).
 
-```yaml
+```text
 /main/st/config "" 73 GNi
 /main/st/dyn OFF COMP RMS LOG 0.0 4.0 1 0.00 10 10.0  151 POST 100 OFF
 /main/st/dyn/filter OFF 3.0 990.9
@@ -487,7 +487,7 @@ The main channels provide the settings shown below. These are described in detai
 
 In the mono bus the setting `/mix` lacks an option:
 
-```yaml
+```text
 /main/m/mix ON -16.8
 ```
 
@@ -497,7 +497,7 @@ In the mono bus the setting `/mix` lacks an option:
 
 The settings for the 8 DCA groups are always identical, which is why only one is listed here.
 
-```yaml
+```text
 /dca/1 OFF  -2.2
 /dca/1/config "Vocals" 43 CY
 ```
@@ -508,7 +508,7 @@ The settings for the 8 DCA groups are always identical, which is why only one is
 
 The X32 supports eight effect devices. The respective settings depend strongly on the selected effect, but the settings are always identical, which is why we will only give an example here.
 
-```yaml
+```text
 /fx/1 VREV
 /fx/1/source MIX15 MIX15
 /fx/1/par 40 3.0 100 OFF FRONT 0.0 76 11k9 1.00 0.70 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -520,27 +520,27 @@ The X32 supports eight effect devices. The respective settings depend strongly o
 
 ### Main Outputs
 
-```yaml
+```text
 /outputs/main/01 4 PRE OFF
 /outputs/main/01/delay OFF   0.3
 ```
 
 ### Auxiliary Outputs
 
-```yaml
+```text
 /outputs/aux/01 13 PRE OFF
 ```
 
 ### P16 Outputs
 
-```yaml
+```text
 /outputs/p16/01 26 <-EQ OFF
 /outputs/p16/01/iQ OFF none Linear 0
 ```
 
 ### Additional Outputs
 
-```yaml
+```text
 /outputs/aes/01 0 POST OFF
 /outputs/aes/02 0 POST OFF
 /outputs/rec/01 14 PRE
@@ -557,7 +557,7 @@ As you can see in the picture below the preamps are organised in blocks. The pre
 
 ![Preamps](/X32-images/preamp-blocks.png)
 
-```yaml
+```text
 /headamp/000 +41.0 OFF
 ```
 

@@ -252,18 +252,8 @@ describe("test main function (callable in Google Sheet)", () => {
                 const newPositionsNotForMixer = cloneObject(POSITIONS_NOT_FOR_MIXER);
                 const newChannelsOfTheMixer = mapArrayToOneDimArray(CHANNELS_OF_THE_MIXER);
                 const expected = [
-                    ["Channel", "Channel Name", "In Ear", "Picture", "Position Type", "Person"],
-                    ["1", "TA Singer", "4", "https://avatars.planningcenteronline.com/uploads/person/29767105-1505856373/avatar.6.jpg?g=136x136%23", "Vocals", "TA Singer"],
-                    ["2", "SP Sings", "6", "https://people.planningcenteronline.com/static/no_photo_thumbnail_gray.png?g=136x136%23", "Vocals", "SP Sings"],
-                    ["3", "Acc CD Perso", "1", "https://people.planningcenteronline.com/static/no_photo_thumbnail_gray.png?g=136x136%23", "Guitars", "CD Person"],
-                    ["5", "Bass MG Bass", "5", "https://people.planningcenteronline.com/static/no_photo_thumbnail_gray.png?g=136x136%23", "Bass", "MG Bass"],
-                    ["6", "Keys L", "3", "https://avatars.planningcenteronline.com/uploads/person/39811704-1532821102/avatar.1.jpg?g=136x136%23", "Keys", "VH Keys"],
-                    ["7", "Keys R", "3", "https://avatars.planningcenteronline.com/uploads/person/39811704-1532821102/avatar.1.jpg?g=136x136%23", "Keys", "VH Keys"],
-                    ["8", "Kick", "2", "https://people.planningcenteronline.com/static/no_photo_thumbnail_gray.png?g=136x136%23", "Drums", "JM Drummer"],
-                    ["9", "Snare", "2", "https://people.planningcenteronline.com/static/no_photo_thumbnail_gray.png?g=136x136%23", "Drums", "JM Drummer"],
-                    ["10", "Overhead", "2", "https://people.planningcenteronline.com/static/no_photo_thumbnail_gray.png?g=136x136%23", "Drums", "JM Drummer"],
-                    ["11", "Serm Rick Wa", "", "", "Sermon EN", "Rick Warren"],
-                    ["12", "CD Person", "1", "https://people.planningcenteronline.com/static/no_photo_thumbnail_gray.png?g=136x136%23", "Leader", "CD Person"],
+                    ["test", "test2"],
+                    ["line 2", "col 2"]
                 ];
                 const fn = () => CreateX32SceneFile(SERVICE_TYPE, PLAN_ID, TIME_ID, newChannelsOfTheMixer, POSITION_SETTINGS, newPositionsNotForMixer, NAMES_FOR_NON_PCO_POSITIONS, GITHUB_LIBRARY_FOLDER, X32_TEMPLATE_FILE, GENERAL_SCENE_FILE, GITHUB_BRANCH, GITHUB_REPOSITORY);
 

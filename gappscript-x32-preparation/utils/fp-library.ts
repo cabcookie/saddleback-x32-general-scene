@@ -12,6 +12,9 @@ const toString = (value: any): string =>
             value.toString()) :
         JSON.stringify(value));
 
+const substring = (position: number, length: number) => (value: string): string =>
+    value.substr(position, length);
+
 const endsWith = (str: string, end: string): boolean =>
     str.indexOf(end, str.length - end.length) > 0;
 
@@ -82,6 +85,7 @@ const pureSpliceOne = (arr: any[], position: number): any[] => pureSplice(arr, p
 export {
     replace,
     toString,
+    substring,
     endsWith,
     flow,
     IKeyValuePair,

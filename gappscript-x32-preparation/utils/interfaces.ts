@@ -1,4 +1,4 @@
-import { IHeader, IJSONContent } from "./mock-functions";
+import { IHeader } from "./mock-functions";
 
 interface IPlan {
     date: string;

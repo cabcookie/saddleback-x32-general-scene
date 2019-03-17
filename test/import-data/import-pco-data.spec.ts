@@ -1,4 +1,5 @@
-import { encodeSecret, createHeader, fetchData, parseData } from "../../gappscript-x32-preparation/pco-data/import-pco-data";
+import { fetchData } from "../../gappscript-x32-preparation/import-data/import-data";
+import { encodeSecret, createPcoHeader, parsePcoData } from "../../gappscript-x32-preparation/import-data/import-pco-data";
 import { TEST_URL_PLANS } from "../../gappscript-x32-preparation/utils/mock-functions";
 import { TEST_PCO_PLANS } from "./results/pco-data-plans";
 
@@ -24,15 +25,15 @@ describe("test file import-pco-data", () => {
         })
     })
 
-    describe("test createHeader", () => {
+    describe("test createPcoHeader", () => {
         it("should return header information as expected", () => {
-            expect(createHeader(input)).to.deep.equal(header);
+            expect(createPcoHeader(input)).to.deep.equal(header);
         })
     })
 
-    describe("test fetchData and parseData", () => {
+    describe("test fetchData and parseJsonData", () => {
         it("should fetch data as expected", () => {
-            const result = parseData(fetchData(header));
+            const result = parsePcoData(fetchData(header));
             expect(result).to.deep.equal(TEST_PCO_PLANS);
         })
     })

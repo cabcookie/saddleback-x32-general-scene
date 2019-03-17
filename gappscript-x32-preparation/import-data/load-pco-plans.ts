@@ -3,7 +3,8 @@ import { mapPlans, mapPlanTimes } from "../mapping/map-pco-data-to-object";
 import { LINES, PLAN_ID, SERVICE_TYPE, URL_PLAN_TIMES, URL_PLANS } from "../utils/constants";
 import { flow, replace } from "../utils/fp-library";
 import { ITime } from "../utils/interfaces";
-import { createHeader, encodeSecret, fetchData, parseData } from "./import-pco-data";
+import { fetchData } from "./import-data";
+import { createPcoHeader, encodeSecret, parsePcoData } from "./import-pco-data";
 
 const loadPcoPlanTimes: (serviceType: number, planId: number) => ITime[] =
     (serviceType, planId) => {
@@ -18,9 +19,9 @@ const loadPcoPlanTimes: (serviceType: number, planId: number) => ITime[] =
         const pipe = flow(
             replace(replacer),
             encodeSecret,
-            createHeader,
+            createPcoHeader,
             fetchData,
-            parseData,
+            parsePcoData,
             mapPlanTimes,
         );
 
@@ -40,9 +41,9 @@ const loadPcoPlans: (serviceType: number, lines: number) => string[][] =
     const pipe = flow(
         replace(replacer),
         encodeSecret,
-        createHeader,
+        createPcoHeader,
         fetchData,
-        parseData,
+        parsePcoData,
         mapPlans(serviceType),
         plansToTable,
     );

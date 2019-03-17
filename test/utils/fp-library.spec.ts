@@ -1,4 +1,4 @@
-import { replace, toString, endsWith, flow, formatDate, formatTime, filter, filterById, cloneObject, pureUnshift, pureShift, purePop, purePush, pureSplice, pureSpliceOne } from "../../gappscript-x32-preparation/utils/fp-library";
+import { replace, toString, endsWith, flow, formatDate, formatTime, filter, filterById, cloneObject, pureUnshift, pureShift, purePop, purePush, pureSplice, pureSpliceOne, substring } from "../../gappscript-x32-preparation/utils/fp-library";
 
 const expect = require('chai').expect;
 
@@ -36,6 +36,19 @@ describe("test file fp-library", () => {
         it("should transform an object to a JSON if it has no toString", () => {
             const obj = { a: "1", b: "2" };
             expect(toString(obj)).to.equal('{"a":"1","b":"2"}');
+        })
+    })
+
+    describe("test substring", () => {
+        const longStr = "This is a very long string with a lot of characters which should be reduced";
+        const result  = "This is a very long ";
+        const shortStr = "This";
+
+        it("should only show 20 characters of a string", () => {
+            expect(substring(0, 20)(longStr)).to.equal(result);
+        })
+        it("although I want to see 20 characters it shows only four when the string is shorter", () => {
+            expect(substring(0, 20)(shortStr)).to.equal(shortStr);
         })
     })
 

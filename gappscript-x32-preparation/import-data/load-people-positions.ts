@@ -1,8 +1,9 @@
-import { LINES, PLAN_ID, SERVICE_TYPE, URL_PEOPLE_POSITIONS } from "../../gappscript-x32-preparation/utils/constants";
 import { mapPeople } from "../mapping/map-pco-data-to-object";
+import { LINES, PLAN_ID, SERVICE_TYPE, URL_PEOPLE_POSITIONS } from "../utils/constants";
 import { flow, replace } from "../utils/fp-library";
 import { IPeoplePosition } from "../utils/interfaces";
-import { createHeader, encodeSecret, fetchData, parseData } from "./import-pco-data";
+import { fetchData } from "./import-data";
+import { createPcoHeader, encodeSecret, parsePcoData } from "./import-pco-data";
 
 const loadPeoplePositions = (serviceType: number, planId: number, timeId: number) => (): IPeoplePosition[] => {
     if (!(serviceType && serviceType > 0)) { throw new Error("serviceType is not defined"); }
@@ -18,9 +19,9 @@ const loadPeoplePositions = (serviceType: number, planId: number, timeId: number
     const pipe = flow(
         replace(replacer),
         encodeSecret,
-        createHeader,
+        createPcoHeader,
         fetchData,
-        parseData,
+        parsePcoData,
         mapPeople(timeId),
     );
 

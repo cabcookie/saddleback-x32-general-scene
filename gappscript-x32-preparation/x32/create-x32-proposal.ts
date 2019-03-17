@@ -1,8 +1,8 @@
+import { loadPeoplePositions } from "../import-data/load-people-positions";
 import { mapArrayToOneDimArray } from "../mapping/map-arrays";
 import { mixerPositionsToTable } from "../mapping/map-objects-to-table";
 import { mapPeoplePositions } from "../mapping/map-people-positions";
 import { mapPositionsToMixer } from "../mapping/map-positions-to-mixer";
-import { loadPeoplePositions } from "../pco-data/load-people-positions";
 import { flow } from "../utils/fp-library";
 import { IMixerChannel } from "../utils/interfaces";
 

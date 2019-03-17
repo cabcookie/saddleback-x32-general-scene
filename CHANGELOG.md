@@ -27,7 +27,11 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 
 ### Changed
 
-- Nothing
+- moved all data related functions (fetch PCO and Github data) into one folder
+- restored all links to the related files for fetching data
+- added functionality for headamp settings to the template
+- added a pure substring function to use in a pipe
+- updated IJSONContent interface to accept Github data as well and the mock-functions accordingly
 
 ## [1.1.0] - 2019-03-10
 
