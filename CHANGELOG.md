@@ -29,6 +29,10 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 
 - Nothing
 
+## [1.1.1] - 2019-04-15
+
+- added version number to channel 32
+
 ## [1.1.0] - 2019-03-10
 
 ### Added presets

@@ -1022,7 +1022,7 @@
 /ch/31/mix/16 ON   -oo
 /ch/31/grp %00000000 %000000
 /ch/31/automix OFF -12.0
-/ch/32/config "" 1 WHi 32
+/ch/32/config "v1.1.1" 1 WHi 32
 /ch/32/delay OFF   0.3
 /ch/32/preamp +0.0 OFF OFF 24  82
 /ch/32/gate OFF GATE -80.0 60.0 1  502  983 0
