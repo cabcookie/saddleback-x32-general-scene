@@ -561,4 +561,11 @@ As you can see in the picture below the preamps are organised in blocks. The pre
 /headamp/000 +41.0 OFF
 ```
 
+The way we use the soundboard at Saddleback the amps are mapped on the following channels:
+
+- Channels 1-8 -> headamp 032-039
+- Channels 9-16 -> headamp 040-047
+- Channels 17-24 -> headamp 048-055
+- Channels 25-32 -> headamp 080-087
+
 The first value is representing the gain volume value and the setting is representing if the phantom power (48V) is switched ON or OFF.

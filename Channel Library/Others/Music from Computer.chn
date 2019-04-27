@@ -1,7 +1,7 @@
-#2.7# 80 "Music 1.1.0" 0 %0011111100111100 1
+#2.7# 80 "Music 1.1.2" 0 %0011111100111100 1
 /config "Music" 62 CYi
 /delay OFF   0.3
-/preamp +0.0 OFF ON 24  70
+/preamp +0.0 OFF ON 24  82
 /gate ON GATE -67.5 60.0 1  502  983 0
 /gate/filter OFF 3.0 990.9
 /dyn ON COMP PEAK LOG -14.5 2.0 0 3.00 54 10.0  658 POST 0 100 OFF

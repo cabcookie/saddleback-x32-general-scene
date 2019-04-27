@@ -29,6 +29,42 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 
 - Nothing
 
+## [1.1.2] - 2019-04-27
+
+### Changed presets (till April 19th)
+
+- Gate settings Vocal Sarah
+- EQ settings and inserted a freq band compressor on Vocal Lynne
+- Pan settings Vocal Lindi
+- Minor EQ settings Vocal Diazno
+- Gate settings Vocal Daniela
+- Optimized frequencies and effects (freq band compressor) on Dave's announcer mic
+- EQ settings on Rick's voice
+- Low pass filter settings on music presets
+- EQ settings on Vernon's violin
+- We are using the nord keyboard again and adapted settings on equalizers
+- Gate, compressor and EQ settings on bass guitar
+- EQ settings on Lynne's accoustic
+- EQ and dynamics settings on Diazno's accoustic
+- Gate and pan settings on Drum Overhead
+
+### Added presets (till April 19th)
+
+- Eduardo on electric guitar - finally ;-)
+- Diazno on electric guitar
+
+### Changed soundboard template (till April 19th)
+
+- Accoustic SOLO channel now receives the signal from channel 5 as a standard
+- Adjusted pre amps (headamp) especially the ones for the sermon and the interpreter (080-082)
+- Put vocal settings for Lynne, Diazno and Dave on first three channels
+- Put Lynne's accoustic settings on channel 5
+- Adjusted settings for electric and bass guitar and keys
+- Adapted settings for freq band compressor on FX channel 4 and adjusted EQ on Dave's announcer mic accordingly
+- Adjusted reverb effect settings on FX channel 1
+
+### Explained the headamp mapping on our sound board in README
+
 ## [1.1.1] - 2019-04-15
 
 - added version number to channel 32

@@ -1,6 +1,6 @@
 {
     "name": "saddleback-x32-general-scene",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "A script to help preparing the X32 scene file based on the scheduled team in PCO",
     "main": "Soundboard Setup.scn",
     "repository": "git@github.com:cabcookie/saddleback-x32-general-scene.git",
