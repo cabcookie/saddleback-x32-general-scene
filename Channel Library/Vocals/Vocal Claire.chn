@@ -1,0 +1,17 @@
+#2.7# 2 "Voc Claire 1.1.3" 0 %0011111100111100 1
+/config "Claire" 1 CY
+/delay OFF   0.3
+/preamp +0.0 OFF OFF 24  92
+/gate ON EXP4 -42.5 27.0 20  100  576 0
+/gate/filter OFF 3.0 1k39
+/dyn ON COMP RMS LIN -25.5 2.0 2 8.00 48 0.03  538 POST 0 100 OFF
+/dyn/filter OFF 3.0 1k06
+/insert OFF PRE FX4L
+/eq ON
+/eq/1 PEQ 124.7 +0.00 2.0
+/eq/2 PEQ 351.6 -4.25 1.9
+/eq/3 PEQ 1k97 +0.00 2.0
+/eq/4 HShv 10k02 +0.00 2.0
+/mix ON   0.0 ON +0 OFF   -oo
+/grp %00000001 %000000
+/automix OFF -12.0

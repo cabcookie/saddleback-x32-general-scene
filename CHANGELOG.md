@@ -38,6 +38,11 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 - Deleted channels which were supposed for communications but were never used
 - Updated In Ear channels
 
+### Added preset files
+
+- Vocal Claire
+- Speaker Rob
+
 ## [1.1.2] - 2019-04-27
 
 ### Changed presets (till April 19th)
