@@ -29,6 +29,15 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 
 - Nothing
 
+## [1.1.3] - 2019-11-02
+
+### Changes on general scene file
+
+- Updated vocal channels to make it more relevant
+- Added a second stage announcer mic
+- Deleted channels which were supposed for communications but were never used
+- Updated In Ear channels
+
 ## [1.1.2] - 2019-04-27
 
 ### Changed presets (till April 19th)
