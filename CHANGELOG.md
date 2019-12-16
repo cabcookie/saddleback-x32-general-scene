@@ -35,6 +35,9 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 
 - Reduced volume of mix busses for nursery room
 - Added dynamics for master (limiter)
+- Added Rob as main announcer
+- Switched off effects for In Ears
+- Set all speaker levels to -10db
 
 ### Added preset files
 
@@ -42,8 +45,11 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 
 ### Changed preset files
 
-- Speaker voice Rob
-- Kick drum
+- Adapted a better EQ for Robs voice
+- Added more kick to the Kick drum
+- Adapted better EQ for bass guitar
+- Optimized EQ for Claire
+- Optimized EQ and gate for Tobi
 
 ## [1.1.3] - 2019-11-02
 

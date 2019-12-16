@@ -510,18 +510,18 @@
 /ch/15/mix/16 ON   -oo
 /ch/15/grp %01000000 %000000
 /ch/15/automix OFF -12.0
-/ch/16/config "Dave" 50 YE 3
+/ch/16/config "Rob" 50 YE 3
 /ch/16/delay OFF   0.3
-/ch/16/preamp +0.0 OFF OFF 24  62
+/ch/16/preamp +0.0 OFF ON 24  64
 /ch/16/gate OFF GATE -33.5 55.0 26 0.02  315 0
 /ch/16/gate/filter OFF 3.0 1k39
 /ch/16/dyn ON COMP PEAK LIN -23.5 3.0 2 10.5 74 0.02  211 POST 0 100 OFF
 /ch/16/dyn/filter OFF 3.0 990.9
-/ch/16/insert ON PRE FX4R
+/ch/16/insert OFF PRE OFF
 /ch/16/eq ON
-/ch/16/eq/1 PEQ 164.4 -3.50 1.2
-/ch/16/eq/2 PEQ 496.6 -1.25 1.2
-/ch/16/eq/3 PEQ 1k84 +1.75 1.0
+/ch/16/eq/1 PEQ 164.4 -3.75 2.2
+/ch/16/eq/2 PEQ 496.6 +0.00 2.0
+/ch/16/eq/3 PEQ 1k97 +0.00 2.0
 /ch/16/eq/4 HShv 10k02 +0.00 2.0
 /ch/16/mix ON  -7.4 ON +0 OFF   -oo
 /ch/16/mix/01 ON   -oo +0 PRE
