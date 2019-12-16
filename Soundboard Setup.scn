@@ -1,4 +1,4 @@
-#2.7# "General 1.1.3" "" %000000000 1                                                                                       
+#2.7# "General 1.2.0" "" %000000000 1                                                                                       
 /config/chlink OFF OFF OFF OFF ON OFF OFF OFF OFF OFF OFF OFF OFF OFF ON OFF
 /config/auxlink ON ON ON ON
 /config/fxlink ON ON ON ON
@@ -1022,7 +1022,7 @@
 /ch/31/mix/16 ON   -oo
 /ch/31/grp %00000000 %000000
 /ch/31/automix OFF -12.0
-/ch/32/config "v1.1.3" 1 WHi 32
+/ch/32/config "v1.2.0" 1 WHi 32
 /ch/32/delay OFF   0.3
 /ch/32/preamp +0.0 OFF OFF 24  82
 /ch/32/gate OFF GATE -80.0 60.0 1  502  983 0
@@ -1261,9 +1261,9 @@
 /fxrtn/01/eq/3 PEQ 1k30 -6.75 1.3
 /fxrtn/01/eq/4 PEQ 4k85 -4.75 1.6
 /fxrtn/01/mix ON   0.0 ON -100 OFF   -oo
-/fxrtn/01/mix/01 ON  -4.3 -100 POST
+/fxrtn/01/mix/01 ON   -oo -100 POST
 /fxrtn/01/mix/02 ON   -oo
-/fxrtn/01/mix/03 OFF  -3.3 -100 POST
+/fxrtn/01/mix/03 OFF   -oo -100 POST
 /fxrtn/01/mix/04 ON   -oo
 /fxrtn/01/mix/05 ON   -oo -100 POST
 /fxrtn/01/mix/06 ON   -oo
@@ -1285,9 +1285,9 @@
 /fxrtn/02/eq/3 PEQ 1k30 -6.75 1.3
 /fxrtn/02/eq/4 PEQ 4k85 -4.75 1.6
 /fxrtn/02/mix ON   0.0 ON +100 OFF   -oo
-/fxrtn/02/mix/01 ON  -4.3 +100 POST
+/fxrtn/02/mix/01 ON   -oo +100 POST
 /fxrtn/02/mix/02 ON   -oo
-/fxrtn/02/mix/03 OFF  -3.3 +100 POST
+/fxrtn/02/mix/03 OFF   -oo +100 POST
 /fxrtn/02/mix/04 ON   -oo
 /fxrtn/02/mix/05 ON   -oo +100 POST
 /fxrtn/02/mix/06 ON   -oo
@@ -1762,7 +1762,7 @@
 /mtx/01/eq/4 PEQ 1k97 +0.00 2.0
 /mtx/01/eq/5 PEQ 5k02 +0.00 2.0
 /mtx/01/eq/6 HShv 10k02 +0.00 2.0
-/mtx/01/mix ON   -oo
+/mtx/01/mix ON -10.0
 /mtx/02/config "Spk R Del" 66 GNi
 /mtx/02/preamp OFF
 /mtx/02/dyn OFF COMP RMS LOG 0.0 3.0 1 0.00 10 10.0  151 POST 100 OFF
@@ -1775,7 +1775,7 @@
 /mtx/02/eq/4 PEQ 1k97 +0.00 2.0
 /mtx/02/eq/5 PEQ 5k02 +0.00 2.0
 /mtx/02/eq/6 HShv 10k02 +0.00 2.0
-/mtx/02/mix ON   -oo
+/mtx/02/mix ON -10.0
 /mtx/03/config "Spk L" 66 GNi
 /mtx/03/preamp OFF
 /mtx/03/dyn OFF COMP RMS LOG 0.0 3.0 1 0.00 10 10.0  151 POST 100 OFF
@@ -1788,7 +1788,7 @@
 /mtx/03/eq/4 PEQ 1k97 +0.00 2.0
 /mtx/03/eq/5 PEQ 5k02 +0.00 2.0
 /mtx/03/eq/6 HShv 10k02 +0.00 2.0
-/mtx/03/mix ON -17.4
+/mtx/03/mix ON -10.0
 /mtx/04/config "Spk R" 66 GNi
 /mtx/04/preamp OFF
 /mtx/04/dyn OFF COMP RMS LOG 0.0 3.0 1 0.00 10 10.0  151 POST 100 OFF
@@ -1801,7 +1801,7 @@
 /mtx/04/eq/4 PEQ 1k97 +0.00 2.0
 /mtx/04/eq/5 PEQ 5k02 +0.00 2.0
 /mtx/04/eq/6 HShv 10k02 +0.00 2.0
-/mtx/04/mix ON -17.4
+/mtx/04/mix ON -10.0
 /mtx/05/config "Monitor" 72 WHi
 /mtx/05/preamp OFF
 /mtx/05/dyn OFF COMP RMS LOG 0.0 3.0 1 0.00 10 10.0  151 POST 100 OFF
