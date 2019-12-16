@@ -1257,9 +1257,9 @@
 /fxrtn/01/config "Reverb L" 61 MG
 /fxrtn/01/eq ON
 /fxrtn/01/eq/1 LCut 188.8 +0.00 2.0
-/fxrtn/01/eq/2 PEQ 317.0 -7.25 1.9
-/fxrtn/01/eq/3 PEQ 1k30 -6.75 1.3
-/fxrtn/01/eq/4 PEQ 4k85 -4.75 1.6
+/fxrtn/01/eq/2 PEQ 317.0 -1.75 1.9
+/fxrtn/01/eq/3 PEQ 833.7 -9.25 1.5
+/fxrtn/01/eq/4 PEQ 4k52 -5.50 0.5
 /fxrtn/01/mix ON   0.0 ON -100 OFF   -oo
 /fxrtn/01/mix/01 ON   -oo -100 POST
 /fxrtn/01/mix/02 ON   -oo
@@ -1281,9 +1281,9 @@
 /fxrtn/02/config "Reverb R" 61 MG
 /fxrtn/02/eq ON
 /fxrtn/02/eq/1 LCut 188.8 +0.00 2.0
-/fxrtn/02/eq/2 PEQ 317.0 -7.25 1.9
-/fxrtn/02/eq/3 PEQ 1k30 -6.75 1.3
-/fxrtn/02/eq/4 PEQ 4k85 -4.75 1.6
+/fxrtn/02/eq/2 PEQ 317.0 -1.75 1.9
+/fxrtn/02/eq/3 PEQ 833.7 -9.25 1.5
+/fxrtn/02/eq/4 PEQ 4k52 -5.50 0.5
 /fxrtn/02/mix ON   0.0 ON +100 OFF   -oo
 /fxrtn/02/mix/01 ON   -oo +100 POST
 /fxrtn/02/mix/02 ON   -oo

@@ -1,0 +1,17 @@
+#2.7# 2 "Choir Superlux 1.2.0" 0 %0011111100111100 1
+/config "Choir L" 1 WH
+/delay OFF   0.3
+/preamp +0.0 OFF ON 24 226
+/gate ON EXP4 -42.5 27.0 20  100  576 0
+/gate/filter OFF 3.0 1k39
+/dyn ON COMP RMS LIN -25.5 2.0 2 8.00 48 0.03  538 POST 0 100 OFF
+/dyn/filter OFF 3.0 1k06
+/insert OFF POST OFF
+/eq ON
+/eq/1 PEQ 116.4 +0.00 3.2
+/eq/2 PEQ 339.6 -5.25 2.4
+/eq/3 PEQ 726.2 -7.25 2.3
+/eq/4 HShv 10k02 +0.00 2.0
+/mix ON  -0.8 ON -100 OFF   -oo
+/grp %10000000 %000000
+/automix OFF -12.0

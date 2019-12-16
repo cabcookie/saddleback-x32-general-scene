@@ -38,10 +38,12 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 - Added Rob as main announcer
 - Switched off effects for In Ears
 - Set all speaker levels to -10db
+- Optimized EQ for reverb return channels
 
 ### Added preset files
 
 - Vocal Adam
+- Choir with Superlux mic
 
 ### Changed preset files
 
@@ -50,6 +52,7 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 - Adapted better EQ for bass guitar
 - Optimized EQ for Claire
 - Optimized EQ and gate for Tobi
+- Optimized EQ and dynamics for Cajon back mic
 
 ## [1.1.3] - 2019-11-02
 
