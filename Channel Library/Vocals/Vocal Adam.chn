@@ -1,0 +1,17 @@
+#2.7# 2 "Voc Adam 1.2.0" 0 %0011111100111100 1
+/config "Adam" 1 CY
+/delay OFF   0.3
+/preamp +3.0 OFF OFF 24  59
+/gate ON GATE -37.5 42.0 32 2.00  504 0
+/gate/filter OFF 3.0 1k39
+/dyn ON COMP RMS LIN -19.0 2.5 2 6.00 47 0.02  860 POST 0 100 OFF
+/dyn/filter OFF 3.0 990.9
+/insert OFF POST OFF
+/eq ON
+/eq/1 PEQ 158.9 -3.25 2.0
+/eq/2 PEQ 306.2 -3.75 2.6
+/eq/3 PEQ 1k97 +0.00 2.0
+/eq/4 HCut 6k62 -0.25 2.0
+/mix ON  -6.1 ON +0 OFF   -oo
+/grp %00000001 %000000
+/automix OFF -12.0

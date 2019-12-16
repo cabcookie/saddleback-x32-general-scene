@@ -1647,7 +1647,7 @@
 /bus/11/eq/4 PEQ 1k97 +0.00 2.0
 /bus/11/eq/5 PEQ 5k02 +0.00 2.0
 /bus/11/eq/6 HShv 10k02 +0.00 2.0
-/bus/11/mix ON  -4.0 OFF -100 OFF   -oo
+/bus/11/mix ON -20.0 OFF -100 OFF   -oo
 /bus/11/mix/01 ON   -oo -100 POST
 /bus/11/mix/02 ON   -oo
 /bus/11/mix/03 ON   -oo -100 POST
@@ -1666,7 +1666,7 @@
 /bus/12/eq/4 PEQ 1k97 +0.00 2.0
 /bus/12/eq/5 PEQ 5k02 +0.00 2.0
 /bus/12/eq/6 HShv 10k02 +0.00 2.0
-/bus/12/mix ON  -4.0 OFF +100 OFF   -oo
+/bus/12/mix ON -20.0 OFF -100 OFF   -oo
 /bus/12/mix/01 ON   -oo +100 POST
 /bus/12/mix/02 ON   -oo
 /bus/12/mix/03 ON   -oo +100 POST
@@ -1829,7 +1829,7 @@
 /mtx/06/eq/6 HShv 10k02 +0.00 2.0
 /mtx/06/mix ON   -oo
 /main/st/config "" 73 GNi
-/main/st/dyn OFF COMP RMS LOG 0.0 4.0 1 0.00 10 10.0  151 POST 100 OFF
+/main/st/dyn ON COMP RMS LOG -15.5 2.5 1 0.00 49 10.0  295 POST 100 OFF
 /main/st/dyn/filter OFF 3.0 990.9
 /main/st/insert ON PRE FX8L
 /main/st/eq ON

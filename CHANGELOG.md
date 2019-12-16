@@ -29,6 +29,22 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 
 - Nothing
 
+## [1.2.0] - 2019-12-16
+
+### Changes on general scene file
+
+- Reduced volume of mix busses for nursery room
+- Added dynamics for master (limiter)
+
+### Added preset files
+
+- Vocal Adam
+
+### Changed preset files
+
+- Speaker voice Rob
+- Kick drum
+
 ## [1.1.3] - 2019-11-02
 
 ### Changes on general scene file
