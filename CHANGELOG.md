@@ -29,6 +29,36 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 
 - Nothing
 
+## [1.2.0] - 2019-12-16
+
+### Changes on general scene file
+
+- Reduced volume of mix busses for nursery room
+- Added dynamics for master (limiter)
+- Added Rob as main announcer
+- Added Diazno as main announcer
+- Switched off effects for In Ears
+- Set all speaker levels to -10db
+- Optimized EQ for reverb return channels
+
+### Added preset files
+
+- Vocal Adam
+- Choir with Superlux mic
+- Hihat with Røde mic
+- Settings for Diazno talking
+
+### Changed preset files
+
+- Adapted a better EQ for Robs voice
+- Added more kick to the Kick drum
+- Adapted better EQ for bass guitar
+- Optimized EQ for Claire
+- Optimized EQ and gate for Tobi
+- Optimized EQ and dynamics for Cajon back mic
+- Optimized preamp and pan for drum overheads
+- Added low cut filter to snare mic 
+
 ## [1.1.3] - 2019-11-02
 
 ### Changes on general scene file

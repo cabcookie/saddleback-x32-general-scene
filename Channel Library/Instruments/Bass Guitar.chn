@@ -1,4 +1,4 @@
-#2.7# 30 "Bass 1.1.2" 0 %0011111100100100 1
+#2.7# 30 "Bass 1.2.0" 0 %0011111100100100 1
 /config "Bass" 17 GN
 /delay OFF   0.3
 /preamp +0.0 OFF ON 24  49
@@ -8,10 +8,10 @@
 /dyn/filter ON 3.0 101.4
 /insert OFF POST OFF
 /eq ON
-/eq/1 VEQ 116.4 -6.00 6.4
+/eq/1 VEQ 116.4 -4.75 6.4
 /eq/2 PEQ 328.1 -5.00 1.5
-/eq/3 PEQ 1k02 +2.50 1.7
-/eq/4 HCut 9k35 +0.00 2
-/mix ON  -3.4 ON +0 ON   0.0
+/eq/3 PEQ 1k02 +1.75 1.7
+/eq/4 HCut 9k35 +0.00 2.0
+/mix ON -11.8 ON +0 ON   0.0
 /grp %00000010 %000000
 /automix OFF -12.0
