@@ -1,4 +1,4 @@
-#2.7# "General 1.2.0" "" %000000000 1                                                                                       
+#2.7# "General 1.2.1" "" %000000000 1                                                                                       
 /config/chlink OFF OFF OFF OFF ON OFF OFF OFF OFF OFF OFF OFF OFF OFF ON OFF
 /config/auxlink ON ON ON ON
 /config/fxlink ON ON ON ON
@@ -512,18 +512,18 @@
 /ch/15/automix OFF -12.0
 /ch/16/config "Rob" 50 YE 3
 /ch/16/delay OFF   0.3
-/ch/16/preamp +0.0 OFF ON 24  64
+/ch/16/preamp +0.0 OFF ON 24 114
 /ch/16/gate OFF GATE -33.5 55.0 26 0.02  315 0
 /ch/16/gate/filter OFF 3.0 1k39
 /ch/16/dyn ON COMP PEAK LIN -23.5 3.0 2 10.5 74 0.02  211 POST 0 100 OFF
 /ch/16/dyn/filter OFF 3.0 990.9
 /ch/16/insert OFF PRE OFF
 /ch/16/eq ON
-/ch/16/eq/1 PEQ 164.4 -3.75 2.2
-/ch/16/eq/2 PEQ 496.6 +0.00 2.0
-/ch/16/eq/3 PEQ 1k97 +0.00 2.0
-/ch/16/eq/4 HShv 10k02 +0.00 2.0
-/ch/16/mix ON  -7.4 ON +0 OFF   -oo
+/ch/16/eq/1 PEQ 143.2 -5.25 1.5
+/ch/16/eq/2 PEQ 351.6 -3.75 1.3
+/ch/16/eq/3 PEQ 2k34 -1.75 1.6
+/ch/16/eq/4 HShv 7k09 -3.25 2.0
+/ch/16/mix ON  -1.6 ON +0 OFF   -oo
 /ch/16/mix/01 ON   -oo +0 PRE
 /ch/16/mix/02 ON   -oo
 /ch/16/mix/03 ON   -oo +0 PRE
@@ -547,15 +547,15 @@
 /ch/17/preamp +0.0 OFF ON 24  33
 /ch/17/gate ON EXP4 -61.5 60.0 0 12.6  30 0
 /ch/17/gate/filter ON 5.0 2k04
-/ch/17/dyn ON COMP PEAK LOG -25.0 4.0 0 8.00 41 0.06  185 POST 0 100 OFF
+/ch/17/dyn ON COMP PEAK LOG -25.0 4.0 0 8.00 35 0.06  185 POST 0 100 OFF
 /ch/17/dyn/filter ON 3.0 120.5
 /ch/17/insert OFF POST OFF
 /ch/17/eq ON
 /ch/17/eq/1 PEQ 143.2 -4.50 3.9
 /ch/17/eq/2 PEQ 496.6 +0.00 2.0
 /ch/17/eq/3 PEQ 1k66 +5.75 5.8
-/ch/17/eq/4 HShv 10k02 +0.00 2.0
-/ch/17/mix ON  -1.5 ON +0 ON   0.0
+/ch/17/eq/4 VEQ 5k20 +13.7 3.5
+/ch/17/mix OFF   -oo ON +0 ON  -4.3
 /ch/17/mix/01 ON   -oo +0 PRE
 /ch/17/mix/02 ON   -oo
 /ch/17/mix/03 ON   -oo +0 PRE
@@ -577,7 +577,7 @@
 /ch/18/config "Snare Top" 1 RD 18
 /ch/18/delay OFF   0.3
 /ch/18/preamp +0.0 OFF ON 24  89
-/ch/18/gate ON GATE -62.5 60.0 0 20.0  141 0
+/ch/18/gate ON GATE -51.5 60.0 0 20.0  141 0
 /ch/18/gate/filter ON 5.0 164.4
 /ch/18/dyn ON COMP PEAK LIN -30.0 3.0 3 6.00 46 0.04  35 POST 0 100 OFF
 /ch/18/dyn/filter ON HC12 1k26
@@ -587,7 +587,7 @@
 /ch/18/eq/2 PEQ 285.8 +0.00 2.0
 /ch/18/eq/3 PEQ 1k21 +0.00 2.4
 /ch/18/eq/4 HShv 10k02 +0.00 2.0
-/ch/18/mix ON  -0.9 ON +0 ON   0.0
+/ch/18/mix OFF   -oo ON +0 ON   0.0
 /ch/18/mix/01 ON   -oo +0 PRE
 /ch/18/mix/02 ON   -oo
 /ch/18/mix/03 ON   -oo +0 PRE
@@ -1022,7 +1022,7 @@
 /ch/31/mix/16 ON   -oo
 /ch/31/grp %00000000 %000000
 /ch/31/automix OFF -12.0
-/ch/32/config "v1.2.0" 1 WHi 32
+/ch/32/config "v1.2.1" 1 WHi 32
 /ch/32/delay OFF   0.3
 /ch/32/preamp +0.0 OFF OFF 24  82
 /ch/32/gate OFF GATE -80.0 60.0 1  502  983 0

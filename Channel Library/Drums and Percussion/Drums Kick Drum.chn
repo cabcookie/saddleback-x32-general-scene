@@ -1,15 +1,17 @@
-#2.7# 70 "Kick 1.2.0" 0 %0011111100110100 1
+#2.7# 70 "Kick 1.2.1" 0 %0011111100110100 1
 /config "Kick" 1 RD
 /delay OFF   0.3
 /preamp +0.0 OFF ON 24  33
 /gate ON EXP4 -61.5 60.0 0 12.6  30 0
 /gate/filter ON 5.0 2k04
-/dyn ON COMP PEAK LOG -25.0 4.0 0 8.00 41 0.06  185 POST 0 100 OFF
+/dyn ON COMP PEAK LOG -25.0 4.0 0 8.00 35 0.06  185 POST 0 100 OFF
 /dyn/filter ON 3.0 120.5
 /insert OFF POST OFF
 /eq ON
 /eq/1 PEQ 143.2 -4.50 3.9
 /eq/2 PEQ 496.6 +0.00 2.0
-/eq/3 PEQ 2k04 +6.25 5.8
-/eq/4 HShv 10k02 +0.00 2.0
-/mix ON  -1.5 ON +0 ON   0.0
+/eq/3 PEQ 1k66 +5.75 5.8
+/eq/4 VEQ 5k20 +13.7 3.5
+/mix OFF   -oo ON +0 ON  -4.3
+/grp %00000100 %000000
+/automix OFF -12.0

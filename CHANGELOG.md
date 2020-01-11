@@ -29,6 +29,25 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 
 - Nothing
 
+## [1.2.1] - 2020-01-11
+
+### Changes on general scene file
+
+- Adapted new settings for Rob, Kick Drum, Snare Top
+
+### Added preset files
+
+- Vocal Tori-Anna
+- Vocal Katie
+
+### Changed preset files
+
+- Optimized Kick Drum (high end)
+- Optimized Snare Top mic
+- Adjusted settings for Hi Hat
+- Low freq filter for Overheads
+- Adjusted settings for floor tom
+
 ## [1.2.0] - 2019-12-16
 
 ### Changes on general scene file

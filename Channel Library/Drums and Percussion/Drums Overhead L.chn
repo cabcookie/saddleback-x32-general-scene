@@ -1,8 +1,8 @@
-#2.7# 77 "Overhead L 1.2.0" 0 %0011111100100100 1
+#2.7# 77 "Overhead L 1.2.1" 0 %0011111100100100 1
 /config "Overhead L" 10 RD
 /delay OFF   0.3
 /preamp +0.0 OFF ON 24 158
-/gate OFF GATE -80.0 60.0 1  502  983 0
+/gate ON GATE -37.5 60.0 1  502  983 0
 /gate/filter OFF 3.0 990.9
 /dyn ON COMP PEAK LOG -14.5 2.0 0 0.00 32 0.32  226 POST 0 100 OFF
 /dyn/filter OFF 3.0 990.9
@@ -12,4 +12,6 @@
 /eq/2 PEQ 496.6 +0.00 2.0
 /eq/3 PEQ 1k97 +0.00 2.0
 /eq/4 PEQ 7k34 +0.00  10
-/mix ON  +1.2 ON -48 ON   -oo
+/mix OFF   -oo ON -48 OFF   -oo
+/grp %00000100 %000000
+/automix OFF -12.0

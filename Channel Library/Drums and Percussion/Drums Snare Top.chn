@@ -1,8 +1,8 @@
-#2.7# 70 "" 0 %0011111100110100 1
+#2.7# 70 "Snare Top 1.2.1" 0 %0011111100110100 1
 /config "Snare Top" 1 RD
 /delay OFF   0.3
-/preamp +0.0 ON ON 24 136
-/gate ON GATE -62.5 60.0 0 20.0  141 0
+/preamp +0.0 OFF ON 24  89
+/gate ON GATE -51.5 60.0 0 20.0  141 0
 /gate/filter ON 5.0 164.4
 /dyn ON COMP PEAK LIN -30.0 3.0 3 6.00 46 0.04  35 POST 0 100 OFF
 /dyn/filter ON HC12 1k26
@@ -12,4 +12,6 @@
 /eq/2 PEQ 285.8 +0.00 2.0
 /eq/3 PEQ 1k21 +0.00 2.4
 /eq/4 HShv 10k02 +0.00 2.0
-/mix ON  +0.1 ON +0 ON   0.0
+/mix OFF   -oo ON +0 ON   0.0
+/grp %00000100 %000000
+/automix OFF -12.0
