@@ -29,7 +29,7 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 
 - Nothing
 
-## [1.2.1] - 2020-01-11
+## [1.2.2] - 2020-01-11
 
 ### Changes on general scene file
 
@@ -47,6 +47,7 @@ In terms of this script the version number MAJOR.MINOR.PATCH would mean the foll
 - Adjusted settings for Hi Hat
 - Low freq filter for Overheads
 - Adjusted settings for floor tom
+- Adjusted settings for Rob as a speaker
 
 ## [1.2.0] - 2019-12-16
 
